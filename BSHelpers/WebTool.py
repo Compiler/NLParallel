@@ -13,3 +13,14 @@ class WebTool:
 	        return gzip.GzipFile(fileobj=io.BytesIO( resource.read())).read()
 	    else:
 	        return resource.read()
+
+	def getValidatedTopicSourceCode(title: str):
+		try:
+			sourceCode = WebTool.getTopicSourceCode(title)
+		except:
+			try:
+				sourceCode = WebTool.getTopicSourceCode(urllib.request.quote(title))
+			except:
+				print('FAILED: Could not load', title)
+				quit()
+		return sourceCode;

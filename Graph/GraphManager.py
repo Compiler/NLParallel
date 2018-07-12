@@ -8,36 +8,28 @@ from BSHelpers.SourceElement import SourceElement
 
 
 class GraphManager:
-
+	populatedNodes = {};
 	nodes = {};
 	def populateTopicNode(node: TopicNode):
+		if(node.getTopic().getName() in GraphManager.populatedNodes):
+			return
+
+
+		#before performing operations-- we must validate the info of given TopicNode
+		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
+		sourceElement = SourceElement(sourceCode)
+		sourceElement.validateName(node)
+		if(node.getTopic().getName() in GraphManager.populatedNodes):
+			return
 		print("Populating", node.getTopic())
+		#adds TopicNode to graph once validated
 		GraphManager.nodes[node.getTopic().getName()] = node
-		GraphManager.getTopicConnectionList(node.getTopic().getName());
+		links = sourceElement.grabIntroAndSeeAlsoLinks()
 
+		for link in links:
+			nextTopic = Topic(link)
+			node.addConnection(nextTopic, TopicNode(nextTopic));
 
-
-
-	#First part invokes method that pings network
-	def getTopicConnectionList(title):
-		try: sourcecode = WebTool.getTopicSourceCode(title)
-		except:
-			try: sourcecode = WebTool.getTopicSourceCode(urllib.quote(title))
-			except:
-				print('FAILED: Could not load', title)
-				return {}
-
-		try:soupobj = BeautifulSoup(sourcecode, WebTool.parser)
-		except: print('FAILED: to get soupobj')
-
-		main_name = soupobj.find("h1")
-		main_name = main_name.text
-
-		redirect = soupobj.find('span', {'class':'mw-redirectedfrom'})
-
-
-		if redirect != None:
-			redirect_from_name = (redirect.find('a', {'class':'mw-redirect'})).text
-			print(url, ' redirected from ', redirect_from_name)
-
-		print("Finished")
+		#at end we check the current node off as 'populated'
+		GraphManager.populatedNodes[node.getTopic().getName()] = True;
+		print(node)

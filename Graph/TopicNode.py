@@ -23,4 +23,7 @@ class TopicNode:
 		if len(self.connections) == 0:
 			return '{} {}'.format(self.topic.getName() , "connects to nothing.")
 		else:
-			return '{} {} {}'.format(self.topic.getName() , "connects to", list(self.connections.keys()))
+			val = ''
+			for item in self.connections.keys():
+				val = val + item.getName() + ", "
+			return '{} {} {}'.format(self.topic.getName() , "connects to", val)
