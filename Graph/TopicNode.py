@@ -1,4 +1,4 @@
-import Topic
+from Graph.Topic import Topic
 
 class TopicNode:
 
@@ -6,6 +6,8 @@ class TopicNode:
 	def __init__(self, topic):
 		self.topic = topic;
 		self.connections = {};
+		self.sourceCode = None;
+		self.mainName = None;
 
 	#uses a Topic to TopicNode relationship
 	def addConnection(self, topic, topicNode):
@@ -13,6 +15,9 @@ class TopicNode:
 
 	def getTopic(self):
 		return self.topic
+
+	def setTopicName(self, newName):
+		self.topic.setName(newName);
 
 	def __str__(self):
 		if len(self.connections) == 0:
