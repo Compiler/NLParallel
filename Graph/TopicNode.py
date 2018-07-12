@@ -13,6 +13,8 @@ class TopicNode:
 	def addConnection(self, topic, topicNode):
 		self.connections[topic] = topicNode;
 
+	def getConnections(self):
+		return self.connections
 	def getTopic(self):
 		return self.topic
 

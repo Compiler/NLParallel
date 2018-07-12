@@ -10,6 +10,13 @@ from BSHelpers.SourceElement import SourceElement
 class GraphManager:
 	populatedNodes = {};
 	nodes = {};
+
+	def beginSearch(node: TopicNode, depth: int):
+		GraphManager.populateTopicNode(node)
+		for i in range(depth-1):
+			for item in list(node.getConnections().values()):
+				GraphManager.populateTopicNode(item)
+
 	def populateTopicNode(node: TopicNode):
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
 			return
@@ -33,3 +40,4 @@ class GraphManager:
 		#at end we check the current node off as 'populated'
 		GraphManager.populatedNodes[node.getTopic().getName()] = True;
 		print(node)
+		print('\n')

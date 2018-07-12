@@ -25,19 +25,20 @@ class SourceElement:
 
 
 	def grabIntroAndSeeAlsoLinks(self):
-		links = []
+		links = {}
 		self.grabIntroLinks(links)
 		self.grabSeeAlsoLinks(links)
 
-		return links
+		return list(links.keys())
 	def grabIntroLinks(self, links):
 		intro = self.soup.find("div", {'class':'mw-parser-output'}).findAll();
 		for element in intro:
-			if element.name == 'h2': break;
+			if element.name == 'h2':
+				break;
 			if element.name == 'p':
 				introLinks = element.findAll('a', attrs={'href' : re.compile('^/wiki/')})
-		for element in introLinks:
-			links.append(element['href'][6:])
+				for element in introLinks:
+					links[element['href'][6:]] = 1
 
 		return links
 
@@ -47,12 +48,11 @@ class SourceElement:
 			for element in contents_section.contents:
 				if element.name == 'ul':
 					contents_list = element.findAll('a', attrs={'href' : re.compile('^#')})
-					for links in contents_list:
-						if links.get('href') == '#See_also':
+					for items in contents_list:
+						if items.get('href') == '#See_also':
 							see_also_section = self.soup.findAll(attrs={"id":'See_also'})#, {'class':'mw-headline'})
 							parent = see_also_section[0].parent
 							link_section = parent.findNext('ul', attrs={'style':None})
 							seeAlsoLinks = link_section.findAll('a', attrs={'href' : re.compile('^/wiki/')})
-							break;
-		for element in seeAlsoLinks:
-			links.append(element['href'][6:])
+							for element in seeAlsoLinks:
+								links[element['href'][6:]] = 1
