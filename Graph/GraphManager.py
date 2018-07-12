@@ -4,7 +4,7 @@ from Graph.TopicNode import TopicNode
 from Graph.Topic import Topic
 from BSHelpers.WebTool import WebTool
 from BSHelpers.SourceElement import SourceElement
-
+from FileWriters.GraphWriter import GraphWriter
 
 
 class GraphManager:
@@ -16,6 +16,8 @@ class GraphManager:
 		for i in range(depth-1):
 			for item in list(node.getConnections().values()):
 				GraphManager.populateTopicNode(item)
+
+		GraphWriter.writeGraph(GraphManager.nodes, 'graphData.lpf')
 
 	def populateTopicNode(node: TopicNode):
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
@@ -39,5 +41,5 @@ class GraphManager:
 
 		#at end we check the current node off as 'populated'
 		GraphManager.populatedNodes[node.getTopic().getName()] = True;
-		print(node)
+		#print(node)
 		print('\n')
