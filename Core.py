@@ -15,7 +15,11 @@ if __name__ == '__main__':
 	print('Beginning expansion...')
 
 	topicNode = TopicNode(Topic('mathematics'))
-	GraphManager.beginSearch(topicNode, (int)(depth))
+	#GraphManager.readGraph();
+	GraphManager.beginSearch(topicNode, 0, (int)(depth))
+
+	#GraphManager.dive();
+	GraphManager.saveGraph();
 
 
 	elapsedTime = timeit.default_timer() - startTime

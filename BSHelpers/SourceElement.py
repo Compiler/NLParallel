@@ -23,6 +23,21 @@ class SourceElement:
 		mainName = mainName.text
 		topic.setTopicName(mainName)
 
+	def staticValidateName(topic):
+		if(topic.nameValidated):
+			 return
+		if(topic.sourceCode == None):
+			source = WebTool.getValidatedTopicSourceCode(topic.getTopic().getName());
+			topic.setSource(source)
+		else:
+			source = topic.getSource()
+		try:soup = BeautifulSoup(source, WebTool.parser)
+		except: print('FAILED: to get self.soup')
+		mainName = soup.find("h1")
+		mainName = mainName.text
+		topic.setTopicName(mainName)
+
+
 
 	def grabIntroAndSeeAlsoLinks(self):
 		links = {}

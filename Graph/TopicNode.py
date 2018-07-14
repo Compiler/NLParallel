@@ -8,6 +8,7 @@ class TopicNode:
 		self.connections = {};
 		self.sourceCode = None;
 		self.mainName = None;
+		self.nameValidated = False
 
 	#uses a Topic to TopicNode relationship
 	def addConnection(self, topic, topicNode):
@@ -15,9 +16,18 @@ class TopicNode:
 
 	def getConnections(self):
 		return self.connections
+
+	def setSource(self, code):
+		self.sourceCode = code
+
+	def getSource(self):
+		return self.sourceCode
+
 	def getTopic(self):
 		return self.topic
 
+	def setNameValidated(self, flag):
+		self.nameValidated = flag
 	def setTopicName(self, newName):
 		self.topic.setName(newName);
 
