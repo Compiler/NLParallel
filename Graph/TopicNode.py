@@ -6,7 +6,6 @@ class TopicNode:
 	def __init__(self, topic):
 		self.topic = topic;
 		self.connections = {};
-		self.sourceCode = None;
 		self.mainName = None;
 		self.nameValidated = False
 
@@ -16,12 +15,6 @@ class TopicNode:
 
 	def getConnections(self):
 		return self.connections
-
-	def setSource(self, code):
-		self.sourceCode = code
-
-	def getSource(self):
-		return self.sourceCode
 
 	def getTopic(self):
 		return self.topic

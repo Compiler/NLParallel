@@ -14,13 +14,17 @@ class GraphManager:
 	nodes = {};
 
 	def saveGraph():
+		print("Saving graph...", end ='')
 		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/graphData.lgf')
 		pickle.dump(GraphManager.nodes, open("GraphData/graphNodes.p", "wb"))
 		pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
-
+		print("save complete!")
+		
 	def readGraph():
+		print("Reading in graph... ", end='')
 		GraphManager.nodes = pickle.load(open("GraphData/graphNodes.p", "rb"))
 		GraphManager.populatedNodes = pickle.load(open("GraphData/populatedGraphNodes.p", "rb"))
+		print("Loaded successfully")
 
 	def dive():
 		#tmp = GraphManager.nodes
@@ -45,11 +49,7 @@ class GraphManager:
 
 
 		#before performing operations-- we must validate the info of given TopicNode
-		if(node.getSource() == None):
-			sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
-			node.setSource(sourceCode)
-		else:
-			sourceCode = node.getSource()
+		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		sourceElement = SourceElement(sourceCode)
 		sourceElement.validateName(node)
 		if(node.getTopic().getName() in GraphManager.populatedNodes):

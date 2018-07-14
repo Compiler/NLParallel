@@ -26,11 +26,8 @@ class SourceElement:
 	def staticValidateName(topic):
 		if(topic.nameValidated):
 			 return
-		if(topic.sourceCode == None):
-			source = WebTool.getValidatedTopicSourceCode(topic.getTopic().getName());
-			topic.setSource(source)
-		else:
-			source = topic.getSource()
+			 
+		source = WebTool.getValidatedTopicSourceCode(topic.getTopic().getName());
 		try:soup = BeautifulSoup(source, WebTool.parser)
 		except: print('FAILED: to get self.soup')
 		mainName = soup.find("h1")
