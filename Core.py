@@ -24,7 +24,7 @@ if __name__ == '__main__':
 	#GraphManager.readGraph();
 	GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
 
-	GraphManager.dive();
+	#GraphManager.dive();
 	GraphManager.saveGraph();
 
 

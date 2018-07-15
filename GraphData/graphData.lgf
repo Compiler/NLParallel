@@ -1,119 +1,4 @@
-88
-Shape
-	->Surface (mathematics)
-	->Area
-	->Shape factor
-	->Solid geometry
-	->Glossary of shapes with metaphorical names
-==========================================================
-Surface (mathematics)
-	->Mathematics
-	->Plane (geometry)
-	->Curvature
-	->Curve
-	->Line (geometry)
-	->Science
-	->Computer graphics
-	->Volume element
-	->Coordinate system
-	->Perimeter
-	->Polyhedron
-	->Shape
-	->Signed distance function
-	->Surface area
-	->Surface integral
-==========================================================
-Area
-	->Quantity
-	->Two-dimensional space
-	->Shape
-	->Planar lamina
-	->Plane (geometry)
-	->Surface area
-	->Surface (topology)
-	->Solid geometry
-	->Paint
-	->Length
-	->Plane curve
-	->Volume
-	->Square
-	->International System of Units
-	->Square metre
-	->Metre
-	->Mathematics
-	->Unit square
-	->Dimensionless quantity
-	->Real number
-	->Formula
-	->Triangle
-	->Rectangle
-	->Circle
-	->Polygon
-	->Polygon triangulation
-	->Calculus
-	->History of calculus
-	->Sphere
-	->Greek mathematics
-	->Multivariable calculus
-	->Geometry
-	->Determinant
-	->Linear algebra
-	->Differential geometry
-	->Analysis
-	->Lebesgue measure
-	->Cyclic quadrilateral
-	->2 × 2 real matrices
-	->Heronian triangle
-	->List of triangle inequalities
-	->One-seventh area triangle
-==========================================================
-Shape factor
-	->Shape
-	->Physics
-	->Engineering
-	->Image analysis
-	->Statistics
-==========================================================
-Solid geometry
-	->Mathematics
-	->Geometry
-	->Three-dimensional space
-	->Measurement
-	->Volume
-	->Pyramid (geometry)
-	->Prism (geometry)
-	->Polyhedron
-	->Cylinder
-	->Cone
-	->Frustum
-	->Ball (mathematics)
-	->Sphere
-	->Euclidean geometry
-	->Dimension
-	->Point (geometry)
-	->Planimetrics
-	->Shape
-	->Surface (mathematics)
-	->Surface area
-	->Archimedes
-==========================================================
-Glossary of shapes with metaphorical names
-	->Metaphor
-	->Shape
-	->U
-	->Gaussian function
-	->Bell
-	->Cross section (geometry)
-	->Projection (mathematics)
-	->Latin
-	->Ancient Greek
-	->Etymology
-	->English language
-	->Glossary of leaf morphology
-	->Plant
-	->Leaf
-	->Botany
-==========================================================
+47
 Mathematics
 	->Ancient Greek
 	->Quantity
@@ -162,347 +47,35 @@ Mathematics
 	->Relationship between mathematics and physics
 	->Science, technology, engineering, and mathematics
 ==========================================================
-Plane (geometry)
-	->Mathematics
-	->Dimension
-	->Surface (topology)
-	->Two-dimensional space
-	->Point (geometry)
-	->Line (geometry)
-	->Three-dimensional space
-	->Euclidean geometry
-	->Euclidean space
-	->Geometry
-	->Trigonometry
-	->Graph theory
-	->Graph of a function
-	->Face (geometry)
-	->Flat (geometry)
-	->Half-space (geometry)
-	->Hyperplane
-	->Line–plane intersection
-	->Two-dimensional space
-	->Plane of incidence
-	->Plane of rotation
-	->Distance from a point to a plane
-	->Projective plane
-==========================================================
-Curvature
-	->Mathematics
-	->Surface (topology)
-	->Plane (geometry)
-	->Curve
-	->Line (geometry)
-	->Euclidean space
-	->Radius of curvature
-	->Curvature of Riemannian manifolds
-	->Riemannian manifold
-	->Circle
-	->Multiplicative inverse
-	->Radius
-	->Smoothness
-	->Osculating circle
-	->Scalar (mathematics)
-	->Differential geometry of curves
-	->Space
-	->Linear algebra
-	->Riemann curvature tensor
-	->Curvature form
-	->Vector bundle
-	->Principal bundle
-	->Connection (mathematics)
-	->Curvature of a measure
-	->Measure (mathematics)
-	->Parametric surface
-	->Geodesic curvature
-	->Degree of curvature
-	->Differential geometry of curves
-	->Dioptre
-	->Gauss–Bonnet theorem
-	->Gauss map
-	->Gauss's principle of least constraint
-	->Principle of least action
-	->Mean curvature
-	->Minimum railway curve radius
-	->Second fundamental form
-	->Sinuosity
-	->Torsion of a curve
-==========================================================
-Curve
-	->Mathematics
-	->Line (geometry)
-	->Linearity
-	->Curvature
-	->Topological space
-	->Homeomorphism
-	->Parabola
-	->List of curves
-	->Path (topology)
-	->Graph of a function
-	->Phillips curve
-	->Two-dimensional graph
-	->Coordinate system
-	->Curve orientation
-	->Curve sketching
-	->Differential geometry of curves
-	->Gallery of curves
-	->Implicit curve
-	->List of curves topics
-	->Osculating circle
-	->Parametric surface
-	->Position (vector)
-	->Vector-valued function
-	->Curve fitting
-	->Winding number
-==========================================================
-Line (geometry)
-	->Curvature
-	->Euclid
-	->Axiom
-	->Euclidean geometry
-	->Non-Euclidean geometry
-	->Projective geometry
-	->Affine geometry
-	->Analytic geometry
-	->Linear equation
-	->Incidence geometry
-	->Axiom
-	->Primitive notion
-	->Differential geometry
-	->Geodesic
-	->Line coordinates
-	->Line segment
-	->Curve
-	->Locus (mathematics)
-	->Distance from a point to a line
-	->Distance between two straight lines
-	->Affine transformation
-	->Incidence (geometry)
-	->Plane (geometry)
-	->Polygonal chain
-	->Rectilinear
-==========================================================
-Science
-	->Latin
-	->Knowledge
-	->Explanation
-	->Prediction
-	->Universe
-	->Classical antiquity
-	->Philosophy
-	->Western world
-	->Natural philosophy
-	->Classical physics
-	->Astronomy
-	->Medicine
-	->Natural science
-	->List of life sciences
-	->Outline of physical science
-	->Physical law
-	->Scientific method
-	->History of science
-	->Branches of science
-	->Biology
-	->Chemistry
-	->Physics
-	->Nature
-	->Social science
-	->Psychology
-	->Sociology
-	->Economics
-	->Formal science
-	->Mathematics
-	->Mathematical logic
-	->Theoretical computer science
-	->Empirical evidence
-	->Applied science
-	->Research
-	->Academic institution
-	->Research institute
-	->Government agency
-	->Company
-	->Science policy
-	->Product (business)
-	->Weapon
-	->Health care
-	->Environmental protection
-	->Antiquarian science books
-	->Criticism of science
-	->Template:Human timeline
-	->Index of branches of science
-	->Template:Life timeline
-	->List of scientific occupations
-	->Normative science
-	->Outline of science
-	->Pathological science
-	->Protoscience
-	->Science in popular culture
-	->Science wars
-	->Scientific dissent
-	->Sociology of scientific knowledge
-==========================================================
-Computer graphics
-	->User interface design
-	->Sprite (computer graphics)
-	->Vector graphics
-	->3D modeling
-	->Shader
-	->Graphics processing unit
-	->Implicit surface
-	->Ray tracing (graphics)
-	->Computer vision
-	->Geometry
-	->Optics
-	->Physics
-	->Animation
-	->Film
-	->Advertising
-	->Video game
-	->Graphic design
-	->Glossary of computer graphics
-==========================================================
-Volume element
-	->Mathematics
-	->Integral
-	->Function (mathematics)
-	->Volume
-	->Spherical coordinate system
-	->Cylindrical coordinate system
-	->Surface integral
-	->Jacobian matrix and determinant
-	->Integration by substitution
-	->Measure (mathematics)
-	->Manifold
-	->Orientability
-	->Differentiable manifold
-	->Volume form
-	->Differential form
-	->Absolute value
-	->Density on a manifold
-	->Cylindrical coordinate system
-	->Spherical coordinate system
-	->Volume integral
-==========================================================
-Coordinate system
-	->Geometry
-	->Number
-	->Point (geometry)
-	->Manifold
-	->Euclidean space
-	->Tuple
-	->Real number
-	->Elementary mathematics
-	->Complex number
-	->Commutative ring
-	->Analytic geometry
-	->Absolute angular momentum
-	->Alphanumeric grid
-	->Celestial coordinate system
-	->Axes conventions
-	->Coordinate-free
-	->Fractional coordinates
-	->Frame of reference
-	->Galilean transformation
-	->Geographic coordinate system
-	->Nomogram
-	->Rotation of axes
-	->Translation of axes
-==========================================================
-Perimeter
-	->Two-dimensional space
-	->Shape
-	->Circle
-	->Ellipse
-	->Circumference
-	->Turn (geometry)
-	->Arc length
-	->Area
-	->Coastline paradox
-	->Girth (geometry)
-	->Pythagorean theorem
-	->Surface area
-	->Volume
-	->Wetted perimeter
-==========================================================
-Polyhedron
-	->Geometry
-	->Solid geometry
-	->Three-dimensional space
-	->Polygon
-	->Face (geometry)
-	->Edge (geometry)
-	->Vertex (geometry)
+Ancient Greek
 	->Greek language
-	->Convex polytope
-	->Convex hull
-	->Cube
-	->Pyramid (geometry)
-	->Polytope
-	->Angular defect
-	->Trapezohedron
-	->M. C. Escher
-	->Extension of a polyhedron
-	->Goldberg polyhedron
-	->Regular polytope
-	->List of books about polyhedra
-	->Near-miss Johnson solid
-	->Net (polyhedron)
-	->Polyhedron model
-	->Schlegel diagram
-	->Spidron
-	->Stella (software)
-==========================================================
-Signed distance function
-	->Mathematics
-	->Metric space
-	->Boundary (topology)
-	->Metric (mathematics)
-	->Level-set method
-	->Eikonal equation
-	->Parallel curve
-==========================================================
-Surface area
-	->Solid geometry
-	->Area
-	->Surface (mathematics)
-	->Arc length
-	->Polyhedron
-	->Face (geometry)
-	->Sphere
-	->Parametric surface
-	->Infinitesimal
-	->Calculus
-	->Partial derivative
-	->Multiple integral
-	->Henri Lebesgue
-	->Hermann Minkowski
-	->Geometric measure theory
-	->Minkowski content
-	->Perimeter
-	->BET theory
-	->Surface integral
-==========================================================
-Surface integral
-	->Mathematics
-	->Multiple integral
-	->Differential geometry of surfaces
-	->Multiple integral
-	->Line integral
-	->Scalar field
-	->Function (mathematics)
-	->Scalar (mathematics)
-	->Vector field
-	->Euclidean vector
-	->Physics
-	->Classical electromagnetism
-	->Divergence theorem
-	->Stokes' theorem
-	->Volume element
-	->Volume integral
-	->Cartesian coordinate system
-	->Spherical coordinate system
-	->Cylindrical coordinate system
-	->Holstein–Herring method
+	->Ancient Greece
+	->Classical antiquity
+	->Archaic Greece
+	->Classical Greece
+	->Hellenistic period
+	->Koine Greek
+	->Mycenaean Greek
+	->Medieval Greek
+	->Attic Greek
+	->Ancient Greek dialects
+	->Homer
+	->Fifth-century Athens
+	->Ancient Greek philosophy
+	->Western world
+	->Renaissance
+	->Homeric Greek
+	->Ancient Greek grammar
+	->Proto-Greek language
+	->Katharevousa
+	->Modern Greek
+	->Varieties of Modern Greek
+	->Hellenic languages
+	->Exploring the Ancient Greek Language and Culture
+	->Greek alphabet
+	->Greek diacritics
+	->List of Greek phrases
+	->List of Greek and Latin roots in English
 ==========================================================
 Quantity
 	->Counting
@@ -522,459 +95,77 @@ Quantity
 	->Quantification (science)
 	->Observable variable
 ==========================================================
-Two-dimensional space
-	->Parameter
-	->Point (geometry)
+Mathematical structure
 	->Mathematics
-	->Dimension
-	->Universe
-	->Plane (geometry)
-	->Euclidean space
-	->Two-dimensional graph
-==========================================================
-Planar lamina
-	->Mathematics
-	->Closed set
-	->Center of mass
-	->Moment of inertia
-==========================================================
-Surface (topology)
-	->Topology
-	->Differential geometry
-	->Manifold
-	->Klein bottle
-	->Embedding
-	->Boundary (topology)
-	->Volume form
-	->Poincaré metric
-	->Roman surface
-	->Boy's surface
-	->Tetrahemihexahedron
-	->Crumpling
-==========================================================
-Paint
-	->Liquid
-	->Coating
-	->Solid
-	->Adhesive
-	->Aerosol paint
-	->Anti-graffiti coating
-	->Bresle method
-	->Brush
-	->Coating
-	->Computer graphics
-	->Distressing
-	->Environmental impact of paint
-	->Faux painting
-	->Formulation
-	->Fresco
-	->Paint sheen
-	->Interior radiation control coating
-	->Lacquer
-	->NACE International
-	->Paint adhesion testing
-	->Paint recycling
-	->Microsoft Paint
-	->Paint stripper
-	->Powder coating
-	->Primer (paint)
-	->Road surface marking
-	->Roof coating
-	->Soy paint
-	->Stain-blocking primer
-	->Varnish
-==========================================================
-Length
-	->Geometry
-	->Measurement
-	->Dimension
-	->International System of Quantities
-	->Distance
-	->Height
-	->Wire
-	->System of measurement
-	->Base unit (measurement)
-	->Area
-	->Volume
-	->Arc length
-	->Orders of magnitude (length)
-	->Reciprocal length
-	->Smoot
-	->Unit of length
-==========================================================
-Plane curve
-	->Curve
-	->Plane (geometry)
-	->Plane (geometry)
-	->Affine plane
-	->Projective plane
-	->Piecewise
-	->Algebraic curve
-	->Differential geometry
-	->Algebraic geometry
-	->Curve fitting
-	->Projective variety
-	->Two-dimensional graph
-==========================================================
-Volume
-	->Quantity
-	->Three-dimensional space
-	->Surface (topology)
-	->Solid
-	->Liquid
-	->Gas
-	->Plasma (physics)
-	->SI derived unit
-	->Cubic metre
-	->Fluid
-	->Three-dimensional space
-	->Arithmetic
-	->Formula
-	->Integral
-	->Line (geometry)
-	->Two-dimensional space
-	->Square
-	->Displacement (fluid)
-	->Additive map
-	->Differential geometry
-	->Volume form
-	->Riemannian geometry
-	->Invariant (mathematics)
-	->Thermodynamics
-	->Volume (thermodynamics)
-	->Conjugate variables (thermodynamics)
-	->Pressure
-	->Area
-	->Banach–Tarski paradox
-	->Conversion of units
-	->Dimensional weight
-	->Dimensioning
-	->Length
+	->Set (mathematics)
+	->Mathematical object
 	->Measure (mathematics)
-	->Orders of magnitude (volume)
-	->Perimeter
-	->Volume (thermodynamics)
-	->Volumography
-	->Weight
-==========================================================
-Square
+	->Algebraic structure
+	->Group (mathematics)
+	->Field (mathematics)
+	->Topology
+	->Metric space
 	->Geometry
-	->Regular polygon
-	->Quadrilateral
-	->Angle
-	->Degree (angle)
-	->Gradian
-	->Right angle
-	->Rectangle
-	->Vertex (geometry)
-	->Cube
-	->Pythagorean theorem
-	->Square lattice
-	->Squircle
-	->Unit square
+	->Order theory
+	->Event structure
+	->Equivalence relation
+	->Differential structure
+	->Category (mathematics)
+	->Topological group
+	->Map (mathematics)
+	->Domain of a function
+	->Codomain
+	->Homomorphism
+	->Homeomorphism
+	->Diffeomorphism
+	->Abstract structure
+	->Equivalent definitions of mathematical structures
+	->Intuitionistic type theory
+	->Space (mathematics)
 ==========================================================
-International System of Units
-	->French language
-	->Metric system
-	->System of measurement
-	->Coherence (units of measurement)
-	->Unit of measurement
-	->SI base unit
-	->Ampere
-	->Kelvin
-	->Second
-	->Metre
-	->Kilogram
-	->Candela
-	->Mole (unit)
-	->Metric prefix
-	->SI derived unit
-	->Speed of light
-	->Triple point
-	->Kilogram
-	->Platinum-iridium alloy
-	->Katal
-	->Centimetre–gram–second system of units
-	->Electrostatic units
-	->Centimetre–gram–second system of units
-	->Discipline (academia)
-	->General Conference on Weights and Measures
-	->Metre Convention
-	->MKS system of units
-	->Metrication
-	->Country
-	->United States
-	->Liberia
-	->Myanmar
-	->Introduction to the metric system
-	->Outline of the metric system
-	->List of international common standards
-	->Metre–tonne–second system of units
-==========================================================
-Square metre
-	->American and British English spelling differences
-	->International Bureau of Weights and Measures
-	->SI derived unit
-	->Area
-	->Unicode
-	->Square
-	->Metre
-	->SI base unit
-	->Length
-	->Light
-	->Vacuum
-	->Time
-	->Second
-	->Metric prefix
-	->Order of magnitude
-	->Kilometre
-	->Conversion of units
-	->Orders of magnitude (area)
-	->International System of Units
-==========================================================
-Metre
-	->American and British English spelling differences
-	->International Bureau of Weights and Measures
-	->Base unit (measurement)
-	->Length
-	->Metric system
-	->International System of Units
-	->Unit of measurement
-	->Second
-	->Equator
-	->North Pole
-	->Isotopes of krypton
-	->Inch
-	->Yard
-	->Conversion of units
-	->Introduction to the metric system
-	->ISO 1
-	->Length measurement
-	->Metre Convention
-	->Metric system
-	->Metric prefix
-	->Metrication
-	->Orders of magnitude (length)
-	->Metric prefix
-	->Speed of light
-	->Vertical metre
-==========================================================
-Unit square
-	->Mathematics
-	->Square
-	->Cartesian coordinate system
-	->Unit circle
-	->Unit sphere
-	->Unit cube
-==========================================================
-Dimensionless quantity
-	->Dimensional analysis
-	->Quantity
-	->International System of Units
-	->Mathematics
+Space
+	->Physical body
+	->Linearity
+	->Dimension
 	->Physics
-	->Chemistry
-	->Engineering
-	->Economics
-	->Length
 	->Time
-	->Speed
-	->Metre
-	->Second
-	->Metre per second
-	->Arbitrary unit
-	->Normalization (statistics)
-	->Standardized moment
-	->Statistics
-	->Orders of magnitude (numbers)
-	->Similitude (model)
-==========================================================
-Real number
-	->Mathematics
-	->Quantity
-	->Line (geometry)
-	->René Descartes
-	->Imaginary number
-	->Zero of a function
-	->Polynomial
-	->Rational number
-	->Integer
-	->Fraction (mathematics)
-	->Irrational number
-	->Square root of 2
-	->Algebraic number
-	->Transcendental number
-	->Pi
-	->Time
-	->Mass
-	->Energy
-	->Velocity
-	->Number line
-	->Real line
-	->Decimal representation
-	->Complex plane
-	->Complex number
-	->Least-upper-bound property
-	->Ordered field
-	->Up to
-	->Isomorphism
-	->Equivalence class
-	->Cauchy sequence
-	->Dedekind cut
-	->Uncountable set
-	->Natural number
-	->Infinite set
-	->Injective function
-	->Cardinality
-	->Cardinality of the continuum
-	->Aleph number
-	->Continuum hypothesis
-	->Zermelo–Fraenkel set theory
-	->Axiom of choice
-	->Continued fraction
-	->Real analysis
-==========================================================
-Formula
-	->Science
-	->Chemical formula
-	->Commensurability (philosophy of science)
-	->English plurals
-	->Contemporary Latin
-	->Latin influence in English
-	->Mathematics
-	->Formal language
-	->Volume
-	->Sphere
-	->Integral
-	->Geometry
-	->Method of exhaustion
-	->Parameter
-	->Radius
-	->Algebraic expression
-	->Closed-form expression
-	->Closed-form expression
-	->Chemistry
-	->Atom
-	->Chemical compound
-	->Symbol (chemistry)
-	->Water
-	->Molecule
-	->Hydrogen
-	->Oxygen
-	->Ozone
-	->Electric charge
-	->Newton's laws of motion
-	->Equation
-	->Sine wave
-	->Tide
-	->Bay
-	->Expression (mathematics)
-	->Sentence clause structure
-	->Phrase
-	->Formula editor
-	->Formula unit
-	->Mathematical notation
-	->Symbol (chemistry)
-	->Well-formed formula
-==========================================================
-Triangle
-	->Polygon
-	->Edge (geometry)
-	->Vertex (geometry)
-	->Shape
-	->Geometry
-	->Euclidean geometry
-	->Plane (geometry)
-	->Euclidean space
-	->Two-dimensional space
-	->Apollonius's theorem
-	->Congruence (geometry)
-	->Desargues's theorem
-	->Dragon's Eye (symbol)
-	->Fermat point
-	->Hadwiger–Finsler inequality
-	->Heronian triangle
-==========================================================
-Rectangle
-	->Euclidean geometry
-	->Quadrilateral
-	->Right angle
-	->Square
-	->Vertex (geometry)
-	->File:Rectanglen.PNG
-	->Latin
-	->Angle
-	->Antiparallelogram
-	->Spherical geometry
-	->Elliptic geometry
-	->Hyperbolic geometry
-	->Polygon
-	->Cuboid
-	->Golden rectangle
-	->Hyperrectangle
-	->Superellipse
-==========================================================
-Circle
-	->Shape
-	->Point (geometry)
-	->Plane (geometry)
-	->Centre (geometry)
-	->Constant (mathematics)
-	->Radius
-	->Euclidean geometry
-	->Curve
-	->Interior (topology)
-	->Disk (mathematics)
-	->Ellipse
-	->Focus (geometry)
-	->Eccentricity (mathematics)
-	->Calculus of variations
-	->Affine sphere
-	->Annulus (mathematics)
-	->Apeirogon
-	->Curve fitting
-	->List of circle topics
-	->Sphere
-	->Cramer's theorem (algebraic curves)
-	->Translation of axes
-==========================================================
-Polygon
-	->Geometry
-	->Help:IPA/English
-	->Plane (geometry)
-	->Shape
-	->Line segment
-	->Polygonal chain
-	->Edge (geometry)
-	->Vertex (geometry)
-	->Triangle
-	->Polytope
-	->Simple polygon
-	->Star polygon
-	->List of self-intersecting polygons
-	->Boolean operations on polygons
-	->Complete graph
-	->Constructible polygon
-	->Circumscribed circle
-	->Geometric shape
-	->Golygon
-	->Polyform
-	->Polygon soup
-	->Polygon triangulation
-	->Synthetic geometry
-	->Tessellation
-	->Tiling puzzle
-==========================================================
-Polygon triangulation
-	->Computational geometry
-	->Polygon
-	->Simple polygon
-	->Triangle
-	->Planar straight-line graph
-	->Outerplanar graph
-	->Nonzero-rule
-	->Catalan number
-	->Planar graph
+	->Continuum (measurement)
+	->Spacetime
+	->Universe
+	->Philosopher
+	->Conceptual framework
+	->Timaeus (dialogue)
+	->Plato
+	->Socrates
+	->Khôra
+	->Physics (Aristotle)
+	->Aristotle
+	->Ibn al-Haytham
+	->Renaissance
+	->Classical mechanics
+	->Isaac Newton
+	->Natural philosophy
+	->Gottfried Wilhelm Leibniz
+	->Distance
+	->Relative direction
+	->George Berkeley
+	->Metaphysics
+	->Immanuel Kant
+	->Critique of Pure Reason
+	->A priori and a posteriori
+	->Non-Euclidean geometry
+	->Albert Einstein
+	->General relativity
+	->Gravitational field
+	->Tests of general relativity
+	->Absolute space and time
+	->Aether theories
+	->Cosmology
+	->Proxemics
+	->Shape of the universe
+	->Space exploration
+	->Spatial–temporal reasoning
+	->Spatial analysis
 ==========================================================
 Calculus
 	->Latin
@@ -1011,463 +202,181 @@ Calculus
 	->List of important publications in mathematics
 	->Lists of integrals
 ==========================================================
-History of calculus
-	->Calculus
+Definitions of mathematics
 	->Mathematics
-	->Limit (mathematics)
-	->Function (mathematics)
-	->Derivative
-	->Integral
-	->Series (mathematics)
-	->Isaac Newton
-	->Gottfried Wilhelm Leibniz
-	->Leibniz–Newton calculus controversy
-	->Analytic geometry
-	->History of logarithms
-	->History of mathematics
-	->Multiplicative calculus
-	->Non-standard calculus
+	->Philosophy
+	->Philosophy of mathematics
 ==========================================================
-Sphere
-	->Greek language
+Pattern
 	->Geometry
-	->Solid geometry
-	->Ball (mathematics)
-	->Circle
-	->Disk (mathematics)
-	->Locus (mathematics)
-	->Radius
-	->Centre (geometry)
-	->Diameter
+	->Shape
+	->Wallpaper
+	->Sense
+	->Science
 	->Mathematics
-	->Surface (topology)
-	->Embedding
-	->Euclidean space
-	->Plane (geometry)
-	->3-sphere
-	->Affine sphere
-	->Alexander horned sphere
-	->Celestial spheres
-	->Cube
-	->Curvature
-	->Directional statistics
-	->Spherical cap
-	->Dyson sphere
-	->Hand with Reflecting Sphere
-	->M. C. Escher
-	->Hoberman sphere
-	->Homology sphere
-	->Homotopy groups of spheres
-	->Homotopy sphere
-	->Hypersphere
-	->Lénárt sphere
-	->Napkin ring problem
-	->Orb (optics)
-	->Pseudosphere
-	->Riemann sphere
-	->Solid angle
-	->Sphere packing
-	->Spherical cap
-	->Spherical coordinate system
-	->Spherical Earth
-	->Tangent indicatrix
-	->Spherical sector
-	->Spherical segment
-	->Spherical shell
-	->Spherical wedge
-	->Spherical segment
-	->Zoll surface
+	->Language
+	->Patterns in nature
+	->Chaos theory
+	->Fractal
+	->Spiral
+	->Meander
+	->Wave
+	->Foam
+	->Tessellation
+	->Fracture
+	->Symmetry
+	->Rotational symmetry
+	->Reflection symmetry
+	->Motif (visual arts)
+	->Software design pattern
+	->Die (manufacturing)
+	->Archetype
+	->Cellular automaton
+	->Form constant
+	->Pattern coin
+	->Pattern recognition
+	->Pattern (casting)
+	->Pedagogical patterns
 ==========================================================
-Greek mathematics
+Conjecture
 	->Mathematics
-	->Greek language
-	->Eastern Mediterranean
-	->Culture of Greece
-	->Alexander the Great
-	->Hellenistic period
-	->Chronology of ancient Greek mathematicians
-	->History of mathematics
-	->Timeline of ancient Greek mathematicians
+	->Consequent
+	->Proposition
+	->Formal proof
+	->Riemann hypothesis
+	->Fermat's Last Theorem
+	->Andrew Wiles
+	->Bold hypothesis
+	->Hypotheticals
+	->List of conjectures
 ==========================================================
-Multivariable calculus
-	->Calculus
-	->Variable (mathematics)
-	->Function (mathematics)
-	->Differential calculus
-	->Integral
-	->List of multivariable calculus topics
-	->Multivariate statistics
-==========================================================
-Geometry
-	->Ancient Greek
+Mathematical proof
 	->Mathematics
-	->List of geometers
-	->Length
-	->Area
-	->Volume
-	->Mathematical sciences
-	->Axiomatic system
-	->Euclid
-	->Euclid's Elements
-	->Middle Ages
-	->René Descartes
-	->Pierre de Fermat
-	->Non-Euclidean geometry
-	->Topological manifold
-	->List of geometers
-	->Category:Algebraic geometers
-	->Category:Differential geometers
-	->Category:Geometers
-	->Category:Topologists
-	->List of formulas in elementary geometry
-	->List of geometry topics
-	->List of important publications in mathematics
-	->Lists of mathematics topics
-==========================================================
-Determinant
-	->Linear algebra
-	->Square matrix
-	->Linear map
-	->Minor (linear algebra)
-	->Coefficient
-	->System of linear equations
-	->Cramer's rule
-	->Field (mathematics)
-	->Invertible matrix
-	->Characteristic polynomial
-	->Eigenvalues and eigenvectors
-	->Parallelepiped
-	->Calculus
-	->Jacobian matrix and determinant
-	->Change of variables
-	->Vandermonde's identity
-	->Matrix multiplication
-	->Orthogonal matrix
-	->Hermitian matrix
-	->Real number
-	->Cauchy matrix
-	->Dieudonné determinant
-	->Determinant identities
-	->Functional determinant
-	->Immanant
-	->Matrix determinant lemma
-	->Permanent (mathematics)
-	->Slater determinant
-==========================================================
-Linear algebra
-	->Mathematics
-	->Linear equation
-	->Linear map
-	->Matrix (mathematics)
-	->Vector space
-	->Geometry
-	->Line (geometry)
-	->Plane (geometry)
-	->Rotation (mathematics)
-	->Functional analysis
-	->Engineering
-	->Mathematical model
-	->Nonlinear system
-	->Linear equation over a ring
-	->System of linear equations
-	->Gaussian elimination
-	->Eigenvalues and eigenvectors
-	->Fundamental matrix (computer vision)
-	->Computer vision
-	->Linear regression
-	->List of linear algebra topics
-	->Numerical linear algebra
-	->Simplex algorithm
-	->Linear programming
-	->Transformation matrix
-==========================================================
-Differential geometry
-	->Mathematics
-	->Differential calculus
-	->Integral
-	->Linear algebra
-	->Multilinear algebra
-	->Geometry
-	->Differential geometry of curves
-	->Differential geometry of surfaces
-	->Euclidean space
-	->Differentiable manifold
-	->Differential topology
-	->Differential equation
-	->Abstract differential geometry
-	->Affine differential geometry
-	->Analysis on fractals
-	->Introduction to the mathematics of general relativity
-	->Discrete differential geometry
-	->Carl Friedrich Gauss
-	->Glossary of differential geometry and topology
-	->List of important publications in mathematics
-	->List of important publications in mathematics
-	->Integral geometry
-	->List of differential geometry topics
-	->Noncommutative geometry
-	->Projective differential geometry
-	->Synthetic differential geometry
-	->Systolic geometry
-==========================================================
-Analysis
-	->Complexity
-	->Mathematics
+	->Proposition
+	->Argument-deduction-proof distinctions
+	->Theorem
+	->Axiom
+	->Inference
+	->Deductive reasoning
+	->Inductive reasoning
+	->Empirical evidence
+	->Conjecture
 	->Logic
-	->Aristotle
-	->Anno Domini
-	->Ancient Greek
-	->Ibn al-Haytham
-	->René Descartes
-	->Discourse on the Method
-	->Galileo Galilei
-	->Isaac Newton
-	->Formalism (art)
-	->Methodology
-	->Scientific method
+	->Natural language
+	->Informal logic
+	->Formal proof
+	->Proof theory
+	->Proof theory
+	->Mathematical practice
+	->Quasi-empiricism in mathematics
+	->Mathematical folklore
+	->Philosophy of mathematics
+	->Language of mathematics
+	->Automated theorem proving
+	->Mathematical fallacy
+	->List of incomplete proofs
+	->List of long mathematical proofs
+	->List of mathematical proofs
+	->Constructive proof
+	->Proof by intimidation
+	->Termination analysis
+	->What the Tortoise Said to Achilles
 ==========================================================
-Lebesgue measure
-	->Measure (mathematics)
-	->France
-	->Henri Lebesgue
-	->Subset
-	->Euclidean space
-	->Length
-	->Area
-	->Volume
-	->Real analysis
-	->Lebesgue integration
-	->Lebesgue integration
-	->Volume form
-	->Lebesgue's density theorem
-	->Liouville number
-==========================================================
-Cyclic quadrilateral
-	->Euclidean geometry
-	->Quadrilateral
-	->Vertex (geometry)
-	->Circle
-	->Circumscribed circle
-	->Concyclic points
-	->Chord (geometry)
-	->Convex polygon
-	->Ancient Greek
-	->Triangle
-	->Rhombus
-	->Cyclic quadrilateral
-	->Necessity and sufficiency
-	->Butterfly theorem
-	->Circumscribed circle
-	->Power of a point
-	->Ptolemy's table of chords
-	->Robbins pentagon
-==========================================================
-2 × 2 real matrices
+Abstraction (mathematics)
 	->Mathematics
-	->Associative algebra
-	->Real number
-	->Matrix (mathematics)
-	->Matrix addition
-	->Dot product
-	->Matrix multiplication
-	->Determinant
-	->Invertible matrix
-	->General linear group
-	->Abstract algebra
-	->Ring (mathematics)
-	->Unit (ring theory)
-	->Vector space
-	->Ring homomorphism
-	->Split-quaternion
-	->Bijection
-	->Linear map
-	->Cartesian coordinate system
+	->Essence
+	->Phenomenon
+	->Category theory
+	->Model theory
+	->Abstract and concrete
+	->Generalization
+	->Abstraction
+	->Abstract logic
+	->Abstract algebraic logic
+	->Abstract model theory
+	->Abstract nonsense
 ==========================================================
-Heronian triangle
-	->Geometry
-	->Triangle
-	->Area
-	->Integer
-	->Hero of Alexandria
-	->Rational number
-	->Heronian tetrahedron
-	->Cyclic quadrilateral
-	->Robbins pentagon
-	->Integer triangle
-==========================================================
-List of triangle inequalities
-	->Geometry
-	->Inequality (mathematics)
-	->Parameter
-	->Triangle
-	->Semiperimeter
-	->Angle
-	->Trigonometric functions
-	->Area
-	->Median (geometry)
-	->Altitude (triangle)
-	->Bisection
-	->Bisection
-	->Incircle and excircles of a triangle
-	->Incircle and excircles of a triangle
-	->Circumscribed circle
-	->Two-dimensional space
-	->List of inequalities
-	->List of triangle topics
-	->Quadrilateral
-	->Quadrilateral
-==========================================================
-One-seventh area triangle
-	->Euclidean geometry
-	->Triangle
-	->Area
-	->Hugo Steinhaus
-	->Martin Gardner
-	->James Randi
-	->Richard Feynman
-	->Parallelogram
-	->Routh's theorem
-==========================================================
-Physics
+Logic
 	->Ancient Greek
 	->Romanization of Greek
-	->Literal translation
-	->Natural science
-	->Matter
-	->Motion (physics)
-	->Spacetime
-	->Energy
-	->Force
-	->Universe
-	->Discipline (academia)
-	->Astronomy
-	->Chemistry
-	->Biology
-	->Mathematics
-	->Natural philosophy
-	->Scientific Revolution
-	->Research
-	->Interdisciplinarity
-	->Biophysics
-	->Quantum chemistry
-	->Demarcation problem
+	->Truth
+	->Logical form
+	->Validity
+	->Inference
+	->Consequent
+	->Fallacy
+	->Semantics
+	->Paradox
 	->Philosophy
-	->Technology
-	->Electromagnetism
-	->Nuclear physics
-	->Society
-	->Television
-	->Computer
-	->Major appliance
-	->Nuclear weapon
-	->Thermodynamics
-	->Industrialisation
-	->Mechanics
-	->Calculus
-	->Glossary of classical physics
-	->Glossary of physics
-	->Index of physics articles
-	->Lists of physics equations
-	->Lists of physics equations
-	->List of important publications in physics
-	->List of physicists
-	->List of physics concepts in primary and secondary education curricula
-	->Outline of physics
-	->Physics outreach
-	->Perfection
-	->Relationship between mathematics and physics
-	->Timeline of developments in theoretical physics
-	->Timeline of fundamental physics discoveries
+	->Mathematics
+	->Computer science
+	->Linguistics
+	->Psychology
+	->Digital electronics
+	->Logic gate
+	->Logic gate
+	->List of logicians
+	->List of logic journals
+	->List of logic symbols
+	->Logic puzzle
+	->Lists of mathematics topics
+	->Outline of mathematics
+	->Metalogic
+	->Outline of logic
+	->Outline of philosophy
+	->Outline of philosophy
+	->Logos
+	->Reason
+	->Vector logic
 ==========================================================
-Engineering
-	->Science
-	->Empirical evidence
-	->Innovation
-	->Design
-	->Construction
-	->Maintenance (technical)
-	->Structure
-	->Machine
-	->Material
-	->System
-	->Process
-	->Organization
-	->List of engineering branches
-	->Applied mathematics
-	->Applied science
-	->Glossary of engineering
+Counting
+	->Element (mathematics)
+	->Finite set
+	->Enumeration
+	->Set (mathematics)
+	->Accounting
+	->Mathematical notation
+	->Numeral system
+	->Writing
+	->Pharmacy automation
+	->Card reading (bridge)
+	->Cardinal number
+	->Combinatorics
+	->Counting (music)
+	->Counting problem (complexity)
+	->Developmental psychology
+	->Elementary arithmetic
+	->Finger-counting
+	->History of mathematics
+	->Jeton
+	->Level of measurement
+	->Ordinal number
+	->Subitizing
+	->Tally marks
+	->Unary numeral system
+	->List of numbers
+	->List of numbers in various languages
+	->Yan Tan Tethera
+==========================================================
+Calculation
+	->Arithmetic
+	->Algorithm
+	->Heuristic
+	->Multiplication
+	->Financial instrument
+	->Black–Scholes model
+	->Estimation theory
 	->Latin
-	->Mathematical logic
+	->Abacus
+	->Greek language
+	->Calculator
+	->Calculus (disambiguation)
+	->Complexity class
+	->Computation
+	->Cost accounting
+	->List of algorithms
 	->Mathematics
-==========================================================
-Image analysis
-	->Image
-	->Digital image
-	->Digital image processing
-	->Barcode
-	->Facial recognition system
-	->Computer
-	->Visual cortex
-	->Edge detection
-	->Neural network
-	->Visual perception
-	->Multiplicative calculus
-==========================================================
-Statistics
-	->Mathematics
-	->Data
-	->Statistical population
-	->Statistical model
-	->Survey methodology
-	->Design of experiments
-	->Glossary of probability and statistics
-	->Census
-	->Statistician
-	->Sample (statistics)
-	->Experiment
-	->Observational study
-	->Descriptive statistics
-	->Index (statistics)
-	->Mean
-	->Standard deviation
-	->Statistical inference
-	->Central tendency
-	->Statistical dispersion
-	->Probability theory
-	->Statistical hypothesis testing
-	->Alternative hypothesis
-	->Null hypothesis
-	->Type I and type II errors
-	->Type I and type II errors
-	->Bias (statistics)
-	->Missing data
-	->Censoring (statistics)
-	->Calculus
-==========================================================
-Three-dimensional space
-	->Parameter
-	->Point (geometry)
-	->Dimension
-	->Physics
-	->Mathematics
-	->Euclidean vector
-	->Real number
-	->Euclidean space
-	->Universe
-	->Matter
-	->3-manifold
-	->Coordinate system
-	->Vector space
-	->Two-dimensional space
-	->Plane (geometry)
-	->Length
-	->Height
-	->Elevation
-	->Length
-	->Dimensional analysis
-	->Distance from a point to a plane
-	->Skew lines
-	->Graph of a function
+	->Mental calculation
 ==========================================================
 Measurement
 	->Natural science
@@ -1525,827 +434,935 @@ Measurement
 	->List of unusual units of measurement
 	->List of humorous units of measurement
 ==========================================================
-Pyramid (geometry)
-	->Geometry
-	->Polyhedron
-	->Polygon
-	->Apex (geometry)
-	->Cone
-	->Dual polyhedron
-	->Centroid
-	->Regular polygon
-	->Square pyramid
-	->Pyramid
-	->Triangle
-	->Tetrahedron
-	->Acute and obtuse triangles
-	->Prismatoid
-	->Bipyramid
-	->Cone
-	->Trigonal pyramidal molecular geometry
-	->Frustum
-==========================================================
-Prism (geometry)
-	->Geometry
-	->Polyhedron
-	->Polygon
-	->Base (geometry)
-	->Translation (geometry)
-	->Face (geometry)
-	->Parallelogram
-	->Corresponding sides and corresponding angles
-	->Cross section (geometry)
-	->Pentagon
-	->Prismatoid
-	->Apeirogonal prism
-	->Prismanes
-==========================================================
-Cylinder
-	->Greek language
-	->Curvilinear coordinates
-	->Tin can
-	->Infinite set
+Shape
 	->Surface (mathematics)
-	->Steinmetz solid
-==========================================================
-Cone
-	->Three-dimensional space
-	->Geometric shape
-	->Apex (geometry)
-	->Vertex (geometry)
-	->Line segment
-	->Line (geometry)
-	->Line (geometry)
-	->Plane (geometry)
-	->Circle
-	->Quadratic form
-	->One-dimensional space
-	->Solid geometry
-	->Two-dimensional space
-	->Conical surface
-	->Rotational symmetry
-	->Circular symmetry
-	->Geometry
-	->Perpendicular
-	->Conic section
 	->Area
-	->Polygon
-	->Pyramid (geometry)
-	->Convex cone
-	->Projective cone
-	->Dimension
-	->Bicone
-	->Convex cone
-	->Cone (topology)
-	->Cylinder
-	->Democritus
-	->Generalized conic
-	->Hyperboloid
-	->Pyrometric cone
-	->Quadric
-	->Rotation of axes
-	->Ruled surface
-	->Translation of axes
+	->Shape factor
+	->Solid geometry
+	->Glossary of shapes with metaphorical names
 ==========================================================
-Frustum
-	->Geometry
-	->Polyhedron
-	->Cone
-	->Pyramid (geometry)
-	->Parallel (geometry)
-	->Truncation (geometry)
-	->Pyramid (geometry)
-	->Computer graphics
-	->Viewing frustum
-	->Clipping (computer graphics)
-	->Hidden surface determination
-	->Hidden surface determination
-	->Aerospace manufacturer
-	->Payload fairing
-	->Multistage rocket
-	->Saturn V
-	->Isotoxal figure
-	->Prism (geometry)
-==========================================================
-Ball (mathematics)
+Motion (physics)
+	->Physics
+	->Position (vector)
 	->Mathematics
-	->Sphere
-	->Boundary (topology)
-	->Euclidean space
-	->Metric space
-	->n-sphere
-	->Two-dimensional space
-	->Disk (mathematics)
-	->Circle
-	->Volume
-	->Sphere
-	->One-dimensional space
-	->Line segment
-	->Euclidean geometry
-	->Ball
-	->Formal ball
-	->Neighbourhood (mathematics)
-	->3-sphere
-	->Alexander horned sphere
-	->Manifold
-	->Volume of an n-ball
-	->Octahedron
-	->Spherical shell
+	->Displacement (vector)
+	->Distance
+	->Velocity
+	->Acceleration
+	->Time
+	->Speed
+	->Frame of reference
+	->Time-invariant system
+	->Force
+	->Momentum
+	->Mass
+	->Momentum
+	->Absolute space and time
+	->Simple machine
+	->Kinematic chain
+	->Power (physics)
+	->Machine (mechanical)
+	->Motion (geometry)
+	->Linear motion
 ==========================================================
-Euclidean geometry
+History of mathematics
+	->Mathematics
+	->History of mathematical notation
+	->Modern history
+	->Mesopotamia
+	->Sumer
+	->Akkad (region)
+	->Assyria
+	->Ancient Egypt
+	->Ebla
+	->Arithmetic
+	->Algebra
+	->Geometry
+	->Astronomy
+	->Calendar
+	->Mesopotamia
+	->Plimpton 322
+	->Babylonian mathematics
+	->Rhind Mathematical Papyrus
+	->Ancient Egyptian mathematics
+	->Moscow Mathematical Papyrus
+	->Pythagorean triple
+	->Pythagorean theorem
+	->Pythagoreanism
+	->Greek language
+	->Greek mathematics
+	->Rigour
+	->Mathematical proof
+	->Pure mathematics
+	->Ancient Rome
+	->Applied mathematics
+	->Surveying
+	->Structural engineering
+	->Mechanical engineering
+	->Bookkeeping
+	->Lunar calendar
+	->Solar calendar
+	->Roman art
+	->Chinese mathematics
+	->Positional notation
+	->Negative number
+	->Hindu–Arabic numeral system
+	->Indian mathematics
+	->Western world
+	->Mathematics in medieval Islam
+	->Muhammad ibn Musa al-Khwarizmi
+	->Maya civilization
+	->Mexico
+	->Central America
+	->0
+	->Maya numerals
+	->Latin translations of the 12th century
+	->Middle Ages
+	->Post-classical history
+	->Renaissance
+	->Italy
+	->Exponential growth
+	->Isaac Newton
+	->Gottfried Wilhelm Leibniz
+	->Calculus
+	->International Congress of Mathematicians
+	->History of algebra
+	->History of calculus
+	->History of combinatorics
+	->History of the function concept
+	->History of geometry
+	->History of logic
+	->Number
+	->Number theory
+	->History of statistics
+	->History of trigonometry
+	->Numeral system
+	->Kenneth O. May Prize
+	->List of important publications in mathematics
+	->Lists of mathematicians
+	->List of mathematics history topics
+	->Timeline of mathematics
+==========================================================
+Greek mathematics
+	->Mathematics
+	->Greek language
+	->Eastern Mediterranean
+	->Culture of Greece
+	->Alexander the Great
+	->Hellenistic period
+	->Chronology of ancient Greek mathematicians
+	->History of mathematics
+	->Timeline of ancient Greek mathematicians
+==========================================================
+Euclid
+	->Help:IPA/English
+	->Greek language
+	->Help:IPA/Greek
+	->Floruit
+	->Euclid of Megara
+	->Greek mathematics
+	->Geometry
 	->Alexandria
+	->Ptolemy I Soter
+	->Euclid's Elements
+	->History of mathematics
+	->Mathematics
+	->Euclidean geometry
+	->Axiom
+	->Perspective (graphical)
+	->Conic section
+	->Spherical geometry
+	->Number theory
+	->Rigour
+	->Axiomatic system
+	->Euclid's orchard
+	->Euclidean algorithm
+	->Euclidean relation
+	->Extended Euclidean algorithm
+	->List of things named after Euclid
+==========================================================
+Euclid's Elements
+	->Ancient Greek
+	->Mathematics
+	->Treatise
 	->Greek mathematics
 	->Euclid
-	->Geometry
-	->Euclid's Elements
-	->Axiom
-	->Proposition
-	->Theorem
-	->Deductive reasoning
-	->Formal system
-	->Secondary school
-	->Axiomatic system
-	->Mathematical proof
-	->Solid geometry
-	->Three-dimensional space
-	->Algebra
-	->Number theory
-	->Parallel postulate
-	->Consistency
-	->Non-Euclidean geometry
-	->Albert Einstein
-	->General relativity
-	->Three-dimensional space
-	->Gravity
-	->Synthetic geometry
-	->Coordinate system
-	->Analytic geometry
-	->Absolute geometry
-	->Birkhoff's axioms
-	->Cartesian coordinate system
-	->Hilbert's axioms
-	->Incidence geometry
-	->List of interactive geometry software
-	->Metric space
-	->Ordered geometry
-	->Type theory
-==========================================================
-Dimension
-	->Physics
-	->Mathematics
-	->Space (mathematics)
-	->Coordinate system
-	->Point (geometry)
-	->Line (geometry)
-	->Surface (topology)
-	->Plane (geometry)
-	->Cylinder
-	->Sphere
-	->Two-dimensional space
-	->Latitude
-	->Longitude
-	->Cube
-	->Three-dimensional space
-	->Classical mechanics
-	->Space
-	->Time
-	->Absolute space and time
-	->Four-dimensional space
-	->Electromagnetism
-	->Spacetime
-	->Event (relativity)
-	->Observer (special relativity)
-	->Minkowski space
-	->Gravity
-	->Pseudo-Riemannian manifold
-	->General relativity
-	->String theory
-	->Supergravity
-	->M-theory
-	->Quantum mechanics
-	->Function space
-	->Parameter space
-	->Configuration space (mathematics)
-	->Lagrangian mechanics
-	->Hamiltonian mechanics
-	->Space (mathematics)
-	->Dimension (data warehouse)
-	->Dimension (data warehouse)
-	->Dimensional analysis
-	->Hyperspace (disambiguation)
-==========================================================
-Point (geometry)
-	->Mathematics
-	->Element (mathematics)
-	->Set (mathematics)
-	->Space (mathematics)
-	->Euclidean geometry
-	->Primitive notion
-	->Axiom
-	->Length
-	->Area
-	->Volume
-	->Dimension
-	->Euclidean space
-	->Limit point
-	->Affine space
-	->Boundary (topology)
-	->Critical point (mathematics)
-	->Cusp (singularity)
-	->Foundations of geometry
-	->Position (vector)
-	->Pointwise
-	->Singular point of a curve
-	->Whitehead's point-free geometry
-==========================================================
-Planimetrics
-	->Plane (geometry)
-==========================================================
-Archimedes
-	->Help:IPA/English
-	->Greek language
-	->Greeks
-	->Greek mathematics
-	->Physics
-	->Engineering
-	->Inventor
-	->Astronomy
-	->Scientist
-	->Classical antiquity
-	->Calculus
-	->Mathematical analysis
-	->Infinitesimal
-	->Method of exhaustion
-	->Geometry
-	->Theorem
-	->Area of a circle
-	->Surface area
-	->Volume
-	->Sphere
-	->Parabola
-	->Pi
-	->Archimedean spiral
-	->Exponentiation
-	->Hydrostatics
-	->Statics
-	->Lever
-	->Machine
-	->Archimedes' screw
-	->Block and tackle
-	->Syracuse, Sicily
-	->Siege of Syracuse (213–212 BC)
-	->Roman Republic
-	->Cicero
-	->Cylinder
 	->Alexandria
-	->Isidore of Miletus
-	->Byzantine Empire
-	->Eutocius of Ascalon
-	->Middle Ages
-	->Renaissance
-	->Archimedes Palimpsest
-	->Arbelos
-	->Archimedean property
-	->Archimedes number
-	->Vertical pressure variation
-	->Archimedean solid
-	->Twin circles
-	->Diocles (mathematician)
-	->List of things named after Archimedes
-	->Methods of computing square roots
-	->Pseudo-Archimedes
-	->Salinon
-	->Steam cannon
-	->Zhang Heng
-==========================================================
-Metaphor
-	->Figure of speech
-	->Antithesis
-	->Hyperbole
-	->Metonymy
-	->Simile
-	->All the world's a stage
-	->As You Like It
-	->William Shakespeare
-	->I. A. Richards
-	->Cognitive linguistics
-	->Alliteration
-	->Camel's nose
-	->Colemanballs
-	->Conceptual blending
-	->Description
-	->Hypocatastasis
-	->Ideasthesia
-	->List of English-language metaphors
-	->Literal and figurative language
-	->Metaphor in philosophy
-	->Misnomer
-	->Origin of language
-	->Origin of speech
-	->'Pataphysics
-	->Anthropomorphism
-	->Reification (fallacy)
-	->Sarcasm
-	->Tertium comparationis
-	->War as metaphor
-	->World Hypotheses
-==========================================================
-U
-	->English alphabet
-	->Help:IPA/English
-	->Letter (alphabet)
-	->Vowel
-	->ISO basic Latin alphabet
-	->T
-	->V
-==========================================================
-Gaussian function
-	->Mathematics
-	->Function (mathematics)
-	->Real number
-	->Carl Friedrich Gauss
-	->Graph of a function
-	->Bell
-	->Standard deviation
-	->Root mean square
-	->Probability density function
-	->Normal distribution
-	->Random variable
-	->Expected value
-	->Variance
-	->Statistics
-	->Signal processing
-	->Gaussian filter
-	->Digital image processing
-	->Gaussian blur
-	->Heat equation
-	->Diffusion equation
-	->Weierstrass transform
-	->Cauchy distribution
-	->Radial basis function kernel
-==========================================================
-Bell
-	->Struck idiophone
-	->Percussion instrument
-	->Strike tone
-	->Resonator
-	->Jingle bell
-	->Bell metal
-	->Bronze
-	->Bell-gable
-	->Ring of bells
-	->Carillon
-	->Russian Orthodox bell ringing
-	->Bell tower
-	->Striking clock
-	->Campanology
-	->American Bell Association International
-	->Bellhop
-	->Cat bell
-	->Electronic tuner
-	->Glockenspiel
-	->Handbell
-	->John Taylor & Co
-	->Ship's bell
-	->Veronese bellringing art
-	->Whitechapel Bell Foundry
-==========================================================
-Cross section (geometry)
-	->Geometry
-	->Science
-	->Intersection (set theory)
-	->Three-dimensional space
-	->Plane (geometry)
-	->Cartesian coordinate system
-	->Contour line
-	->Raised-relief map
-	->Elevation
-	->Technical drawing
-	->Hatching
-	->CT scan
-	->X-ray
-	->Descriptive geometry
-	->Exploded-view drawing
-	->Graphical projection
-	->Plan (drawing)
-==========================================================
-Projection (mathematics)
-	->Mathematics
-	->Set (mathematics)
-	->Mathematical structure
-	->Function composition
-	->Idempotence
-	->Restriction (mathematics)
+	->Ptolemaic Kingdom
+	->Theorem
+	->Compass-and-straightedge construction
+	->Mathematical proof
 	->Euclidean geometry
-	->Euclidean space
-	->Cartography
-	->Map projection
-	->3D projection
-	->Perspective (graphical)
-	->Projective geometry
-	->Homography
-	->Bijection
+	->Number theory
+	->Commensurability (mathematics)
+	->Logic
+	->Science
+	->Movable type
+	->Bible
+	->Quadrivium
+	->Oliver Byrne (mathematician)
 ==========================================================
-Latin
-	->Help:IPA/Latin
-	->Classical language
-	->Italic languages
-	->Indo-European languages
-	->Latin alphabet
-	->Old Italic script
-	->Greek alphabet
-	->Phoenician alphabet
-	->Latium
-	->Italian Peninsula
-	->Roman Republic
-	->Roman Empire
-	->Vulgar Latin
-	->Romance languages
-	->Italian language
-	->Portuguese language
-	->Spanish language
-	->French language
-	->Romanian language
-	->List of Latin words with English derivatives
-	->English words of Greek origin
-	->List of English words of French origin
-	->English language
-	->Ancient Greek
-	->Theology
-	->List of Latin and Greek words commonly used in systematic names
-	->List of medical roots, suffixes and prefixes
-	->Old Latin
-	->Standard language
-	->Classical Latin
-	->Epigraphy
-	->Plautus
-	->Terence
-	->Late Latin
-	->Medieval Latin
-	->Renaissance
-	->Renaissance Latin
-	->New Latin
-	->Vernacular
-	->Ecclesiastical Latin
-	->Holy See
-	->Roman Rite
-	->Catholic Church
-	->Fusional language
-	->Grammatical gender
-	->Grammatical case
-	->Grammatical conjugation
-	->Grammatical tense
-	->Grammatical person
-	->Grammatical mood
-	->Voice (grammar)
-	->Grammatical aspect
-	->Grammatical number
-	->Classical compound
-	->List of Greek and Latin roots in English
-	->Hybrid word
-	->Latin mnemonics
-	->Latin school
-	->List of Greek and Latin roots in English
-	->List of Latin abbreviations
-	->List of Latin phrases
-	->List of Latin translations of modern literature
-	->List of Latinised names
-	->Lorem ipsum
-	->Romanization (cultural)
-	->Toponymy
-==========================================================
-Ancient Greek
-	->Greek language
-	->Ancient Greece
-	->Classical antiquity
-	->Archaic Greece
-	->Classical Greece
-	->Hellenistic period
-	->Koine Greek
-	->Mycenaean Greek
-	->Medieval Greek
-	->Attic Greek
-	->Ancient Greek dialects
-	->Homer
-	->Fifth-century Athens
-	->Ancient Greek philosophy
-	->Western world
-	->Renaissance
-	->Homeric Greek
-	->Ancient Greek grammar
-	->Proto-Greek language
-	->Katharevousa
-	->Modern Greek
-	->Varieties of Modern Greek
-	->Hellenic languages
-	->Exploring the Ancient Greek Language and Culture
-	->Greek alphabet
-	->Greek diacritics
-	->List of Greek phrases
-	->List of Greek and Latin roots in English
-==========================================================
-Etymology
-	->Help:IPA/English
-	->History
-	->Word
-	->Meaning (linguistics)
-	->Toponymy
-	->Greek language
-	->Recorded history
-	->Comparative linguistics
-	->Comparative method
-	->Root (linguistics)
-	->Indo-European languages
-	->Language family
-	->Philology
-	->Uralic languages
-	->Austronesian languages
-	->Bongo-Bongo (linguistics)
-	->Cognate
-	->Epeolatry
-	->Etymological dictionary
-	->Etymological fallacy
-	->False cognate
-	->False etymology
-	->Folk etymology
+Giuseppe Peano
+	->Help:IPA/Italian
+	->Italy
+	->Mathematician
 	->Historical linguistics
-	->Lexicology
-	->Lists of etymologies
-	->Malapropism
-	->Medieval etymology
-	->Neologism
-	->Phono-semantic matching
-	->Proto-language
-	->Pseudoscientific language comparison
-	->Semantic change
-	->Suppletion
-	->Wörter und Sachen
+	->Mathematical logic
+	->Set theory
+	->Mathematical notation
+	->Axiomatic system
+	->Natural number
+	->Peano axioms
+	->Mathematical induction
+	->University of Turin
+	->Latino sine flexione
+	->Arithmetices principia, nova methodo exposita
+	->Foundations of geometry
 ==========================================================
-English language
-	->West Germanic languages
-	->History of Anglo-Saxon England
-	->Lingua franca
-	->Angles
-	->Germanic peoples
-	->England
-	->Angeln
-	->Baltic Sea
-	->Frisian languages
-	->Germanic languages
-	->Old Norse
-	->North Germanic languages
-	->Latin
-	->French language
-	->Anglo-Frisian languages
-	->Great Britain
-	->Anglo-Saxons
-	->Old English
-	->Middle English
-	->Norman conquest of England
-	->Early Modern English
-	->Printing press
-	->King James Version
-	->Great Vowel Shift
-	->British Empire
-	->Superpower
-	->World language
-	->English as a lingua franca
-	->List of languages by number of native speakers
-	->Standard Chinese
-	->Spanish language
-	->Second language
-	->Official language
-	->List of territorial entities where English is an official language
-	->United Kingdom
-	->United States
-	->Canada
-	->Australia
-	->Ireland
-	->New Zealand
-	->Caribbean
-	->South Asia
-	->Official languages of the United Nations
-	->Languages of the European Union
-	->Vocabulary
-	->English grammar
-	->Inflection
-	->Morphology (linguistics)
-	->Word order
-	->Analytic language
-	->Subject–verb–object
-	->Syntax
-	->Modern English
-	->Auxiliary verb
-	->Grammatical tense
-	->Grammatical aspect
-	->Grammatical mood
-	->Passive voice
-	->Interrogative
-	->Negation
-	->Regional accents of English
-	->List of dialects of the English language
-	->Phonetics
-	->Phonology
-	->Grammar
+David Hilbert
+	->Help:IPA/English
+	->Help:IPA/Standard German
+	->Mathematician
+	->Invariant theory
+	->Hilbert's axioms
+	->Hilbert space
+	->Functional analysis
+	->Georg Cantor
+	->Transfinite number
+	->Mathematics
+	->Hilbert's problems
+	->Proof theory
+	->Mathematical logic
+	->Metamathematics
+	->List of things named after David Hilbert
+	->Brouwer–Hilbert controversy
+	->Foundations of geometry
+	->Geometry and the Imagination
+	->Hilbert–Burch theorem
+	->Hilbert C*-module
+	->Hilbert cube
+	->Hilbert curve
+	->Hilbert matrix
+	->Hilbert metric
+	->Hilbert–Mumford criterion
+	->Hilbert number
+	->Jacobson ring
+	->Hilbert–Poincaré series
+	->Hilbert series and Hilbert polynomial
+	->Hilbert spectrum
+	->Hilbert system
+	->Hilbert transform
+	->Hilbert's arithmetic of ends
+	->Hilbert's irreducibility theorem
+	->Hilbert's Nullstellensatz
+	->Hilbert's theorem (differential geometry)
+	->Hilbert's Theorem 90
+	->Hilbert's syzygy theorem
+	->Hilbert–Schmidt operator
+	->Hilbert–Smith conjecture
+	->Hilbert–Speiser theorem
+	->Relativity priority dispute
+==========================================================
+Foundations of mathematics
+	->Mathematics
+	->Philosophy of mathematics
+	->Language of mathematics
+	->Model theory
+	->Metamathematics
+	->Mathematical logic
+	->Theoretical computer science
+	->Set theory
+	->Proof theory
+	->Brouwer–Hilbert controversy
+	->Church–Turing thesis
+	->Controversy over Cantor's theory
+	->Epistemology
+	->Euclid's Elements
+	->Hilbert's problems
+	->Liar paradox
+	->New Foundations
+	->Principia Mathematica
+	->Quasi-empiricism in mathematics
+	->Charles Sanders Peirce
+==========================================================
+Truth
+	->Fact
+	->Reality
+	->Modernity
+	->Authenticity (philosophy)
+	->Principle of bivalence
+	->Falsity
+	->Concept
+	->Debate
+	->Science
+	->Law
+	->Journalism
+	->Language
+	->Thought
+	->Correspondence theory of truth
+	->Information
+	->Criteria of truth
+	->Truth-bearer
+	->Knowledge
+	->Subjectivity
+	->Objectivity (philosophy)
+	->Factual relativism
+	->Absolute (philosophy)
+	->Asha
+	->Belief
+	->Confirmation holism
+	->Contextualism
+	->Contradiction
+	->Degree of truth
+	->Disposition
+	->Eclecticism
+	->Epistemic theories of truth
+	->Independence (probability theory)
+	->Imagination
+	->Invariant (mathematics)
+	->Lie
+	->McNamara fallacy
+	->Normative science
+	->On Truth and Lies in a Nonmoral Sense
+	->Perjury
+	->Perspectivism
+	->Physical symbol system
+	->Post-truth politics
+	->Proof (truth)
+	->Public opinion
+	->Revision theory
+	->Relativism
+	->Religious views on truth
+	->Satya
+	->Slingshot argument
+	->Tautology (logic)
+	->Tautology (rhetoric)
+	->Theory of justification
+	->Truth prevails
+	->Truthiness
+	->Two truths doctrine
+	->Unity of the proposition
+	->Verisimilitude
+==========================================================
+Rigour
+	->British English
+	->American English
 	->American and British English spelling differences
-	->Mutual intelligibility
+	->Honesty
+	->Intellectual
+	->Intellectual honesty
+	->Pedant
+	->Scientific method
+	->Self-deception
+	->Sophist
+	->Cognitive rigor
 ==========================================================
-Glossary of leaf morphology
-	->Leaf
-	->Plant morphology
-	->Taxonomy (biology)
-	->Leaflet (botany)
-	->Leaf
-	->Glossary of botanical terms
-	->Petiole (botany)
-	->Leaf size
-	->Sinus (botany)
-	->Rachis
-	->Petiole (botany)
-	->Plant stem
-	->Phylloclade
-	->Pinnation
+Deductive reasoning
+	->Reason
+	->Argument
+	->Logic
+	->Premise
+	->Consequent
+	->Ambiguity
+	->Logical truth
+	->Inductive reasoning
+	->Reductionism
+	->Closed-world assumption
+	->Uncertainty
+	->Mathematical induction
+	->Abductive reasoning
+	->Analogy
+	->Correspondence theory of truth
+	->Decision-making
+	->Decision theory
+	->Defeasible reasoning
+	->Fallacy
+	->Fault tree analysis
+	->Geometry
+	->Hypothetico-deductive model
+	->Inference
+	->Inquiry
+	->Logic and rationality
+	->Logical consequence
+	->Mathematical logic
+	->Natural deduction
+	->Corollary
+	->Propositional calculus
+	->Abductive reasoning
+	->Scientific method
+	->Subjective logic
+	->Theory of justification
 ==========================================================
-Plant
-	->Multicellular organism
-	->Photosynthesis
-	->Eukaryote
-	->Kingdom (biology)
-	->Clade
-	->Viridiplantae
-	->Flowering plant
-	->Pinophyta
-	->Gymnosperm
-	->Fern
-	->Lycopodiopsida
-	->Hornwort
-	->Marchantiophyta
-	->Moss
-	->Green algae
-	->Red algae
-	->Brown algae
-	->Animal
-	->Algae
-	->Fungus
-	->Prokaryote
-	->Archaea
-	->Bacteria
-	->Cell wall
-	->Cellulose
-	->Sunlight
-	->Chloroplast
-	->Endosymbiont
-	->Cyanobacteria
-	->Chlorophyll
-	->Parasitic plant
-	->Mycotroph
-	->Sexual reproduction
-	->Alternation of generations
-	->Asexual reproduction
-	->Species
-	->Spermatophyte
-	->Grain
-	->Fruit
-	->Vegetable
-	->Domestication
-	->Plants in culture
-	->Building material
-	->Writing material
-	->Medication
-	->Drug
-	->Botany
-	->Biology
-	->Biosphere
-	->DPVweb
-	->Evolutionary history of plants
-	->Leaf sensor
-	->Plant cognition
-	->Plant defense against herbivory
-	->Plant identification
-	->Plants in space
-	->The Plant List
+Axiom
+	->Truth
+	->Premise
+	->Ancient philosophy
+	->Self-evidence
+	->Logic
+	->Mathematics
+	->Arithmetic
+	->Philosophy of mathematics
+	->Axiomatic system
+	->Dogma
+	->List of axioms
+	->Model theory
+	->Regulæ Juris
+	->Theorem
+	->Presupposition
 ==========================================================
-Leaf
-	->Organ (anatomy)
-	->Vascular plant
-	->Plant stem
-	->Shoot
-	->Dorsiventral
-	->Organ (anatomy)
-	->Photosynthesis
-	->Palisade cell
-	->Eucalyptus
-	->Stoma
-	->Epicuticular wax
-	->Leaf
-	->Lycopodiopsida
-	->Bulb
-	->Cataphyll
-	->Thorns, spines, and prickles
-	->Phylloclade
-	->Petiole (botany)
-	->Glossary of botanical terms
-	->Moss
-	->Marchantiophyta
-	->Foliose lichen
-	->Plant
-	->Glossary of leaf morphology
-	->Glossary of plant morphology
-	->Crown (botany)
-	->Evolutionary history of plants
-	->Plant evolutionary developmental biology
-	->Leaf area index
-	->Leaf protein concentrate
-	->Leaf sensor
-	->Glossary of leaf morphology
-	->Vernation
+Definition
+	->Word
+	->Phrase
+	->Symbol
+	->Extensional and intensional definitions
+	->Extensional and intensional definitions
+	->Ostensive definition
+	->Mathematics
+	->Axiom
+	->Analytic–synthetic distinction
+	->Circular definition
+	->Definable set
+	->Definitionism
+	->Fallacies of definition
+	->Indeterminacy (philosophy)
+	->Lexical definition
+	->Operational definition
+	->Ramsey–Lewis method
+	->Semantics
+	->Analytic–synthetic distinction
+	->Theoretical definition
 ==========================================================
-Botany
-	->Plant
-	->Biology
-	->Scientist
-	->Ancient Greek
-	->Pasture
-	->Poaceae
-	->Fodder
-	->Grazing
-	->Fungus
-	->Algae
-	->Mycology
-	->Phycology
-	->International Botanical Congress
-	->Species
-	->Embryophyte
-	->Vascular plant
-	->Flowering plant
-	->Bryophyte
-	->Herbalism
-	->Physic garden
-	->Monastery
-	->Botanical garden
-	->University
-	->Orto botanico di Padova
-	->Plant taxonomy
-	->Binomial nomenclature
-	->Carl Linnaeus
-	->Optical microscope
-	->Live cell imaging
-	->Electron microscope
-	->Ploidy
-	->Phytochemistry
-	->Enzyme
-	->Protein
-	->Molecular biology
-	->Genomics
-	->Proteomics
-	->Nucleic acid sequence
-	->Plant morphology
-	->Cell growth
-	->Plant reproduction
-	->Plant physiology
-	->Metabolism
-	->Plant morphology
-	->Plant pathology
-	->Phylogenetics
-	->Systematics
-	->Taxonomy (biology)
-	->Molecular genetics
-	->Epigenetics
-	->Plant cell
-	->Tissue (biology)
-	->Staple food
-	->Lumber
-	->Oil
-	->Fiber
-	->Horticulture
-	->Agriculture
-	->Forestry
-	->Plant propagation
-	->Plant breeding
-	->Genetic engineering
-	->Environmental resource management
-	->Biodiversity
-	->Agricultural science
-	->Bibliography of biology
-	->Branches of botany
-	->Dendrochronology
-	->Evolutionary history of plants
-	->Genomics of domestication
-	->Glossary of botanical terms
-	->Glossary of plant morphology
-	->Herbchronology
-	->History of phycology
-	->History of plant systematics
-	->List of botany journals
-	->List of botanists
-	->List of botanical gardens
-	->List of botanists by author abbreviation (A)
-	->List of domesticated plants
-	->List of garden plants
-	->List of Russian biologists
-	->List of systems of plant taxonomy
-	->Outline of botany
-	->Plant reproductive morphology
-	->Soil science
-	->Weed
+Renaissance
+	->British English
+	->Help:IPA/English
+	->American English
+	->Periodization
+	->History of Europe
+	->Middle Ages
+	->Age of Enlightenment
+	->Modern history
+	->Italy
+	->Modern history
+	->Renaissance humanism
+	->Humanitas
+	->Protagoras
+	->Perspective (graphical)
+	->Oil painting
+	->Concrete
+	->Movable type
+	->Dante Alighieri
+	->Giotto
+	->Petrarch
+	->Painting
+	->History of education
+	->Diplomacy
+	->Inductive reasoning
+	->Polymath
+	->Leonardo da Vinci
+	->Michelangelo
+	->Florence
+	->House of Medici
+	->Greek scholars in the Renaissance
+	->Fall of Constantinople
+	->Turkish people
+	->Italian city-states
+	->Republic of Venice
+	->Republic of Genoa
+	->Duchy of Milan
+	->Bologna
+	->Rome
+	->Renaissance Papacy
+	->Historiography
+	->Art history
+	->Erwin Panofsky
+	->Italian Renaissance
+	->Nostalgia
+	->Classical antiquity
+	->Longue durée
+	->Jules Michelet
+	->Carolingian Renaissance
+	->Renaissance of the 12th century
+	->Weser Renaissance
+	->History of wood carving
+	->List of Renaissance figures
+	->List of Renaissance structures
+	->Renaissance humanism
+	->Medical Renaissance
+	->Scientific Revolution
+	->Western culture
+	->Haskalah
+==========================================================
+Timeline of scientific discoveries
+	->Science
+==========================================================
+Galileo Galilei
+	->Help:IPA/Italian
+	->Italians
+	->Polymath
+	->Natural philosophy
+	->History of science
+	->History of science in the Renaissance
+	->Scientific Revolution
+	->Heliocentrism
+	->Copernican heliocentrism
+	->Geocentric model
+	->Tychonic system
+	->Stellar parallax
+	->Roman Inquisition
+	->Dialogue Concerning the Two Chief World Systems
+	->Pope Urban VIII
+	->Society of Jesus
+	->Two New Sciences
+	->Kinematics
+	->Strength of materials
+	->Speed
+	->Velocity
+	->Gravity
+	->Free fall
+	->Principle of relativity
+	->Inertia
+	->Projectile motion
+	->Pendulum
+	->Hydrostatics
+	->Thermoscope
+	->Sector (instrument)
+	->Telescope
+	->Phases of Venus
+	->Galilean moons
+	->Jupiter
+	->Rings of Saturn
+	->Sunspot
+	->Astronomer
+	->Physicist
+	->Engineer
+	->Philosopher
+	->Mathematician
+	->Observational astronomy
+	->Scientific method
+	->Aristarchus of Samos
+	->Catholic Church and science
+	->Dialogo de Cecco di Ronchitti da Bruzene in perpuosito de la stella Nuova
+	->Galileo affair
+	->Philolaus
+	->Seleucus of Seleucia
+	->Tribune of Galileo
+	->Villa Il Gioiello
+==========================================================
+Carl Friedrich Gauss
+	->Help:IPA/English
+	->German language
+	->Help:IPA/Standard German
+	->File:De-carlfriedrichgauss.ogg
+	->Latin
+	->Algebra
+	->Mathematical analysis
+	->Astronomy
+	->Differential geometry
+	->Electrostatics
+	->Geodesy
+	->Geophysics
+	->Magnetic field
+	->Matrix (mathematics)
+	->Mechanics
+	->Number theory
+	->Optics
+	->Statistics
+	->Gaussian elimination
+	->List of German inventors and discoverers
+	->List of things named after Carl Friedrich Gauss
+	->Romanticism in science
+==========================================================
+Benjamin Peirce
+	->Help:IPA/English
+	->Royal Society
+	->Fellow of the Royal Society of Edinburgh
+	->Harvard University
+	->Celestial mechanics
+	->Number theory
+	->Algebra
+	->Philosophy of mathematics
+	->Benjamin Osgood Peirce
+	->Tachytrope
+==========================================================
+Albert Einstein
+	->Help:IPA/English
+	->Help:IPA/Standard German
+	->File:De-Albert Einstein.oga
+	->Theory of relativity
+	->Quantum mechanics
+	->Mass–energy equivalence
+	->Nobel Prize in Physics
+	->Photoelectric effect
+	->Introduction to quantum mechanics
+	->Classical mechanics
+	->Electromagnetic field
+	->Special relativity
+	->Swiss Federal Institute of Intellectual Property
+	->Bern
+	->General relativity
+	->Statistical mechanics
+	->Brownian motion
+	->Photon
+	->ETH Zurich
+	->University of Zurich
+	->Annus Mirabilis papers
+	->Annus mirabilis
+	->Adolf Hitler
+	->Prussian Academy of Sciences
+	->World War II
+	->Einstein–Szilárd letter
+	->Manhattan Project
+	->Nuclear fission
+	->Russell–Einstein Manifesto
+	->Bertrand Russell
+	->Institute for Advanced Study
+	->List of scientific publications by Albert Einstein
+	->Eugene Wigner
+	->John von Neumann
+	->Albert Einstein House
+	->Book:Albert Einstein
+	->Einstein's thought experiments
+	->Einstein notation
+	->The Einstein Theory of Relativity
+	->Genius (U.S. TV series)
+	->Heinrich Burkhardt
+	->Bern Historical Museum
+	->History of gravitational theory
+	->Special relativity
+	->List of coupled cousins
+	->List of German inventors and discoverers
+	->List of Jewish Nobel laureates
+	->List of peace activists
+	->Template:Nature timeline
+	->Political views of Albert Einstein
+	->Relativity priority dispute
+	->Religious and philosophical views of Albert Einstein
+	->Sticky bead argument
+==========================================================
+Natural science
+	->Branches of science
+	->Phenomenon
+	->Empirical evidence
+	->Observation
+	->Experiment
+	->Peer review
+	->List of life sciences
+	->Outline of physical science
+	->Physics
+	->Chemistry
+	->Astronomy
+	->Earth science
+	->Analytic philosophy
+	->Formal science
+	->Laws of science
+	->Social science
+	->Qualitative research
+	->Hard and soft science
+	->Quantification (science)
+	->Scientific method
+	->Hard and soft science
+	->Natural philosophy
+	->Ancient Greece
+	->Galileo Galilei
+	->René Descartes
+	->Francis Bacon
+	->Isaac Newton
+	->Mathematical physics
+	->Conjecture
+	->Presupposition
+	->Discovery science
+	->Natural history
+	->Empiricism
+	->Outline of academic disciplines
+	->Natural Sciences (Cambridge)
+	->Tripos
+==========================================================
+Social science
+	->Discipline (academia)
+	->Society
+	->Social relation
+	->Individual
+	->Anthropology
+	->Archaeology
+	->Communication studies
+	->Economics
+	->History
+	->Human geography
+	->Jurisprudence
+	->Linguistics
+	->Political science
+	->Psychology
+	->Public health
+	->Sociology
+	->Outline of social science
+	->Positivism
+	->Natural science
+	->History of science
+	->Antipositivism
+	->Falsifiability
+	->Eclecticism
+	->Methodology
+	->Quantitative research
+	->Qualitative research
+	->Social research
+	->Culture
+	->Structure and agency
+	->Humanities
+	->Human science
+==========================================================
+Applied mathematics
+	->Mathematical model
+	->Science
+	->Engineering
+	->Business
+	->Computer science
+	->Industry
+	->Mathematical sciences
+	->Profession
+	->Pure mathematics
+	->Engineering mathematics
+	->Society for Industrial and Applied Mathematics
+==========================================================
+Game theory
+	->Mathematical model
+	->Economics
+	->Political science
+	->Psychology
+	->Logic
+	->Computer science
+	->Zero-sum game
+	->Umbrella term
+	->John von Neumann
+	->Brouwer fixed-point theorem
+	->Convex set
+	->Mathematical economics
+	->Theory of Games and Economic Behavior
+	->Oskar Morgenstern
+	->Cooperative game theory
+	->Nobel Memorial Prize in Economic Sciences
+	->Jean Tirole
+	->John Maynard Smith
+	->Crafoord Prize
+	->Game studies
+	->Chainstore paradox
+	->Collective intentionality
+	->Combinatorial game theory
+	->Confrontation analysis
+	->Glossary of game theory
+	->Intra-household bargaining
+	->Kingmaker scenario
+	->Parrondo's paradox
+	->Quantum game theory
+	->Quantum refereed game
+	->Rationality
+	->Mechanism design
+	->Self-confirming equilibrium
+	->Zermelo's theorem (game theory)
+	->Tragedy of the commons
+	->Law and economics
+==========================================================
+Pure mathematics
+	->Mathematics
+	->Concept
+	->Navigation
+	->Astronomy
+	->Physics
+	->Economics
+	->Engineering
+	->Applied mathematics
+	->Logic
+	->Metalogic
+	->Metamathematics
+==========================================================
+Philosophy of mathematics
+	->Outline of academic disciplines
+	->Philosophy
+	->Mathematics
+	->Methodology
+	->Set theory
+	->Axiomatic system
+	->Category theory
+	->Definitions of mathematics
+	->Formal language
+	->Formal system
+	->Foundations of mathematics
+	->Golden ratio
+==========================================================
+Lists of mathematics topics
+	->Mathematics
+	->Mathematics Subject Classification
+	->American Mathematical Society
+	->Mathematical Reviews
+	->Zentralblatt MATH
+	->List of exponential topics
+	->List of factorial and binomial topics
+==========================================================
+Mathematics and art
+	->Mathematics
+	->Art
+	->Mathematical beauty
+	->Music and mathematics
+	->Dance
+	->Painting
+	->Mathematics and architecture
+	->Sculpture
+	->Mathematics and fiber arts
+	->List of mathematical artists
+	->Polykleitos
+	->Golden ratio
+	->Renaissance
+	->Luca Pacioli
+	->De divina proportione
+	->Leonardo da Vinci
+	->Piero della Francesca
+	->Euclid
+	->Perspective (graphical)
+	->Albrecht Dürer
+	->Melencolia I
+	->Graphic designer
+	->M. C. Escher
+	->Tessellation
+	->Hyperbolic geometry
+	->Harold Scott MacDonald Coxeter
+	->De Stijl
+	->Theo van Doesburg
+	->Piet Mondrian
+	->Quilting
+	->Knitting
+	->Cross-stitch
+	->Crochet
+	->Embroidery
+	->Weaving
+	->Anatolian rug
+	->Carpet
+	->Kilim
+	->Islamic art
+	->Girih
+	->Zellige
+	->Mughal architecture
+	->Jali
+	->Muqarnas
+	->Perspective (graphical)
+	->Symmetry
+	->Polyhedron
+	->Möbius strip
+	->Magnus Wenninger
+	->Stellation
+	->Recursion
+	->René Magritte
+	->Computer art
+	->Fractal
+	->Mandelbrot set
+	->Cellular automaton
+	->David Hockney
+	->Camera lucida
+	->Johannes Vermeer
+	->Camera obscura
+	->X-ray fluorescence
+	->Batik
+	->Java
+	->Fractal dimension
+	->Filippo Brunelleschi
+	->Girard Desargues
+	->Projective geometry
+	->Pythagoreanism
+	->Sacred geometry
+	->William Blake
+	->The Ancient of Days
+==========================================================
+Mathematics education
+	->Education
+	->Teacher
+	->Learning
+	->Mathematics
+	->Research
+	->List of mathematics education journals
+	->Didactic method
+	->Pedagogy
+	->Anti-bias curriculum
+	->Racism
+	->Cognitively Guided Instruction
+	->Pre-math skills
+==========================================================
+National Museum of Mathematics
+	->New York City Subway
+	->PATH (rail system)
+	->Hoboken–33rd Street
+	->Journal Square–33rd Street (via Hoboken)
+	->Journal Square–33rd Street
+	->23rd Street station (PATH)
+	->Museum
+	->Mathematics
+	->Manhattan
+	->New York City
+	->List of numbered streets in Manhattan
+	->Fifth Avenue
+	->Madison Avenue
+	->Madison Square and Madison Square Park
+	->NoMad, Manhattan
+	->North America
+	->Interactivity
+	->Tricycle
+	->Square wheel
+	->Catenary
+	->Mathematica: A World of Numbers... and Beyond
+	->Charles and Ray Eames
+==========================================================
+Relationship between mathematics and physics
+	->Philosopher
+	->Mathematician
+	->Physicist
+	->Classical antiquity
+	->Historian
+	->Teacher
+	->Mathematics
+	->Physics
+	->Physics (Aristotle)
+	->Aristotle
+	->Nature
+	->Pythagoreanism
+	->Galileo Galilei
+	->Mathematical proof
+	->Volume
+	->Sphere
+	->Archimedes
+	->Calculus
+	->Dynamics (mechanics)
+	->Isaac Newton
+	->Geometry
+	->Mechanics
+	->Superstring theory
+	->Pure mathematics
+	->Applied mathematics
+	->Theoretical physics
+	->Mathematical physics
+	->Non-Euclidean geometry
+	->Fourier series
+	->Conic section
+	->Kepler's laws of planetary motion
+	->Scientific formalism
+	->Positron
+	->The Unreasonable Effectiveness of Mathematics in the Natural Sciences
+	->Mathematical universe hypothesis
+==========================================================
+Science, technology, engineering, and mathematics
+	->Discipline (academia)
+	->Curriculum
+	->Acronym
+	->National Science Foundation
+	->Rita R. Colwell
+	->University of Massachusetts Amherst
+	->American Indian Science and Engineering Society
+	->Hard and soft science
+	->List of African-American women in STEM fields
+	->Maker culture
+	->National Society of Black Engineers
+	->NASA RealWorld-InWorld Engineering Design Challenge
+	->Society of Hispanic Professional Engineers
+	->Science, Technology, Engineering and Mathematics Network
+	->Pre-STEM
+	->STEM pipeline
+	->STEM Academy
+	->STEAM fields
+	->STEM.org
 ==========================================================

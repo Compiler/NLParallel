@@ -7,15 +7,20 @@ class TopicNode:
 		self.topic = topic;
 		self.connections = {};
 		self.connectionDetails={};
+		self.introText = None;
 		self.mainName = None;
 		self.nameValidated = False
 
+	def setIntroText(self, text):
+		self.introText = text
+	def getIntroText(self):
+		return self.introText
 	#uses a Topic to TopicNode relationship
 	def addConnection(self, topic, topicNode):
 		self.connections[topic] = topicNode;
 
 	def addConnectionDetail(self, topic, details):
-		self.connections[topic] = details;
+		self.connectionDetails[topic] = details;
 
 	def getConnections(self):
 		return self.connections

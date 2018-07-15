@@ -58,7 +58,8 @@ class GraphManager:
 		#sys.stdout.flush()
 		#adds TopicNode to graph once validated
 		GraphManager.nodes[node.getTopic().getName()] = node
-		links = sourceElement.grabIntroAndSeeAlsoLinks()
+		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
+
 
 		for link in links:
 			nextTopic = Topic(link)
@@ -76,8 +77,28 @@ class GraphManager:
 		print()
 		#at end we check the current node off as 'populated'
 		GraphManager.populatedNodes[node.getTopic().getName()] = True;
+		GraphManager.createConnectionDetails()
 		#print(node)
 
+
+	def createConnectionDetails():
+		for item in GraphManager.populatedNodes.keys():
+			node = GraphManager.nodes[item]
+			for con in node.getConnections().keys():
+				name = con.getName()
+				m = re.match(("\.(.*)" + name), node.getIntroText())
+				if(m == None):
+					m = re.match(("[\r\n]+(.*)" + name), node.getIntroText())
+					if(m == None):
+						continue
+
+					#WILL PRODUCE weird errors if behind decimals or ellipse grammar
+					mn = re.match((name+"(.*)\."), node.getIntroText())
+					if(mn != None):
+						print("Relation between", node.getTopic().getName(), "and", name, "is", m.group(1) + mn.group(1))
+						node.addConnectionDetail(con, m.group(1) + mn.group(1))
+
+				print(m.group(0))
 
 	def isBadLink(topic):
 		name = topic.getName()
