@@ -19,7 +19,7 @@ class GraphManager:
 		pickle.dump(GraphManager.nodes, open("GraphData/graphNodes.p", "wb"))
 		pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
 		print("save complete!")
-		
+
 	def readGraph():
 		print("Reading in graph... ", end='')
 		GraphManager.nodes = pickle.load(open("GraphData/graphNodes.p", "rb"))
@@ -55,17 +55,33 @@ class GraphManager:
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
 			return
 		print(node.getTopic(), '|', end='')
+		#sys.stdout.flush()
 		#adds TopicNode to graph once validated
 		GraphManager.nodes[node.getTopic().getName()] = node
 		links = sourceElement.grabIntroAndSeeAlsoLinks()
 
 		for link in links:
 			nextTopic = Topic(link)
+			if(GraphManager.isBadLink(nextTopic)):
+				print('X', end='')
+				continue
 			nextTopicNode = TopicNode(nextTopic)
 			SourceElement.staticValidateName(nextTopicNode)
+			if(GraphManager.isBadLink(nextTopic)):
+				print('X', end='')
+				continue
 			node.addConnection(nextTopic, nextTopicNode);
-			print('->', end='')
+			print('✓', end='')
+		sys.stdout.flush()
 		print()
 		#at end we check the current node off as 'populated'
 		GraphManager.populatedNodes[node.getTopic().getName()] = True;
 		#print(node)
+
+
+	def isBadLink(topic):
+		name = topic.getName()
+		if(re.search('(Wikipedia)', name) == None):
+			return False
+
+		return True

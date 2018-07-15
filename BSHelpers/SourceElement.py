@@ -26,7 +26,7 @@ class SourceElement:
 	def staticValidateName(topic):
 		if(topic.nameValidated):
 			 return
-			 
+
 		source = WebTool.getValidatedTopicSourceCode(topic.getTopic().getName());
 		try:soup = BeautifulSoup(source, WebTool.parser)
 		except: print('FAILED: to get self.soup')
@@ -48,6 +48,7 @@ class SourceElement:
 			if element.name == 'h2':
 				break;
 			if element.name == 'p':
+				print(element.text)
 				introLinks = element.findAll('a', attrs={'href' : re.compile('^/wiki/')})
 				for element in introLinks:
 					links[element['href'][6:]] = 1

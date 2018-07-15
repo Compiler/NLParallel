@@ -6,12 +6,16 @@ class TopicNode:
 	def __init__(self, topic):
 		self.topic = topic;
 		self.connections = {};
+		self.connectionDetails={};
 		self.mainName = None;
 		self.nameValidated = False
 
 	#uses a Topic to TopicNode relationship
 	def addConnection(self, topic, topicNode):
 		self.connections[topic] = topicNode;
+
+	def addConnectionDetail(self, topic, details):
+		self.connections[topic] = details;
 
 	def getConnections(self):
 		return self.connections

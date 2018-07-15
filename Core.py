@@ -1,24 +1,28 @@
 from Graph.TopicNode import TopicNode
 from Graph.Topic import Topic
 from Graph.GraphManager import GraphManager
+from BSHelpers.SourceElement import SourceElement
 import timeit, sys, codecs
 
+def convert(s):
+    try:
+        return s.group(0).encode('latin1').decode('utf8')
+    except:
+        return s.group(0)
+
+import re
 
 
 
 if __name__ == '__main__':
-	try:
-		sys.stdout = codecs.getwriter('utf8')(sys.stdout.buffer)
-	except:
-		sys.stdout = codecs.getwriter('utf8')(sys.stdout)
 
 	#startingLink = input('Enter the name of the starting link: ')
 	depth = input('Enter the depth you want the tree to expand to: ')
 	startTime = timeit.default_timer()
 	print('Beginning expansion...')
 
-	GraphManager.readGraph();
-	#GraphManager.beginSearch(TopicNode(Topic('Ł')), 0, (int)(depth))
+	#GraphManager.readGraph();
+	GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
 
 	GraphManager.dive();
 	GraphManager.saveGraph();
