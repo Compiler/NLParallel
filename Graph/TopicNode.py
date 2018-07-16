@@ -8,9 +8,15 @@ class TopicNode:
 		self.connections = {};
 		self.connectionDetails={};
 		self.introText = None;
+		self.detailingName = {};#ConnectingTopic->str(name)
 		self.mainName = None;
 		self.nameValidated = False
 
+
+	def setDetailingName(self,topic, text):
+		self.detailingName[topic] = text
+	def getDetailingName(self, topic):
+		return self.detailingName[topic]
 	def setIntroText(self, text):
 		self.introText = text
 	def getIntroText(self):

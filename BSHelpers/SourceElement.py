@@ -39,9 +39,9 @@ class SourceElement:
 	def grabIntroAndSeeAlsoLinks(self, topic):
 		links = {}
 		self.grabIntroLinks(links, topic)
-		self.grabSeeAlsoLinks(links)
+		#self.grabSeeAlsoLinks(links)
 
-		return list(links.keys())
+		return links
 	def grabIntroLinks(self, links, topic):
 		intro = self.soup.find("div", {'class':'mw-parser-output'}).findAll();
 		val = "\n";
@@ -52,7 +52,7 @@ class SourceElement:
 				val = val + element.text
 				introLinks = element.findAll('a', attrs={'href' : re.compile('^/wiki/')})
 				for element in introLinks:
-					links[element['href'][6:]] = 1
+					links[element['href'][6:]] = element.text
 		topic.setIntroText(val)
 
 		return links

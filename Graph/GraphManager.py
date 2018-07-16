@@ -61,7 +61,7 @@ class GraphManager:
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 
 
-		for link in links:
+		for link in list(links.keys()):
 			nextTopic = Topic(link)
 			if(GraphManager.isBadLink(nextTopic)):
 				print('X', end='')
@@ -71,6 +71,7 @@ class GraphManager:
 			if(GraphManager.isBadLink(nextTopic)):
 				print('X', end='')
 				continue
+			node.setDetailingName(nextTopic, links[link])
 			node.addConnection(nextTopic, nextTopicNode);
 			print('✓', end='')
 		sys.stdout.flush()
@@ -85,20 +86,22 @@ class GraphManager:
 		for item in GraphManager.populatedNodes.keys():
 			node = GraphManager.nodes[item]
 			for con in node.getConnections().keys():
-				name = con.getName()
-				m = re.match(("\.(.*)" + name), node.getIntroText())
+				name = node.getDetailingName(con)
+				m = re.search(("\.(.*)" + name), node.getIntroText())
+
+
 				if(m == None):
-					m = re.match(("[\r\n]+(.*)" + name), node.getIntroText())
+					m = re.search(("[\r\n]+(.*)" + name), node.getIntroText())
+
 					if(m == None):
 						continue
-
 					#WILL PRODUCE weird errors if behind decimals or ellipse grammar
-					mn = re.match((name+"(.*)\."), node.getIntroText())
-					if(mn != None):
-						print("Relation between", node.getTopic().getName(), "and", name, "is", m.group(1) + mn.group(1))
-						node.addConnectionDetail(con, m.group(1) + mn.group(1))
+				mn = re.search(name+"(.*)\.", node.getIntroText())
+				if(mn != None):
+					print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group())
+					node.addConnectionDetail(con, m.group() + mn.group())
 
-				print(m.group(0))
+				#print(m.group(0))
 
 	def isBadLink(topic):
 		name = topic.getName()
