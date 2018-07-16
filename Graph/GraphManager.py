@@ -98,7 +98,7 @@ class GraphManager:
 					#WILL PRODUCE weird errors if behind decimals or ellipse grammar
 				mn = re.search(name+"(.*)\.", node.getIntroText())
 				if(mn != None):
-					print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group())
+					print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
 					node.addConnectionDetail(con, m.group() + mn.group())
 
 				#print(m.group(0))
