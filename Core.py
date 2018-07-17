@@ -4,13 +4,6 @@ from Graph.GraphManager import GraphManager
 from BSHelpers.SourceElement import SourceElement
 import timeit, sys, codecs
 
-def convert(s):
-    try:
-        return s.group(0).encode('latin1').decode('utf8')
-    except:
-        return s.group(0)
-
-import re
 
 
 
