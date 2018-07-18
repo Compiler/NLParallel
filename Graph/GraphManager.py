@@ -6,6 +6,10 @@ from BSHelpers.WebTool import WebTool
 from BSHelpers.SourceElement import SourceElement
 from FileWriters.GraphWriter import GraphWriter
 import pickle
+from functools import partial
+from itertools import repeat
+from multiprocessing import Pool, freeze_support # This is a thread-based Pool
+from multiprocessing import cpu_count
 
 
 class GraphManager:
@@ -42,6 +46,22 @@ class GraphManager:
 		for item in list(currentLevelLinks):
 			GraphManager.beginSearch(item, currentDepth+1, depth)
 
+	def beginSearchPooled(depth, startingNode):
+
+		pool = Pool(cpu_count() * 2)
+		current_depth = 1
+		pool.map(populateTopicNode, [startingNode])
+		if depth == 1:
+			return
+
+		currentNode = startingNode
+		for currentDepth in range(1, depth):
+			connections = [currentNode.getConnections()]
+			for element in connections:
+				for key in element.viewkeys():
+					links.append(key.getName())
+
+			return results
 
 	def populateTopicNode(node: TopicNode):
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
@@ -98,7 +118,7 @@ class GraphManager:
 					#WILL PRODUCE weird errors if behind decimals or ellipse grammar
 				mn = re.search(name+"(.*)\.", node.getIntroText())
 				if(mn != None):
-					print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
+					#print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
 					node.addConnectionDetail(con, m.group() + mn.group())
 
 				#print(m.group(0))
