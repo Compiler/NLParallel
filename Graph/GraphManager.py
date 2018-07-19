@@ -55,6 +55,7 @@ class GraphManager:
 			return
 
 		currentNode = startingNode
+		nodesPopulated = [currentNode]
 		for currentDepth in range(1, depth):
 			connections = [currentNode.getConnections()]
 			for element in connections:
@@ -105,22 +106,28 @@ class GraphManager:
 	def createConnectionDetails():
 		for item in GraphManager.populatedNodes.keys():
 			node = GraphManager.nodes[item]
+
 			for con in node.getConnections().keys():
-				name = node.getDetailingName(con)
+				name = node.getDetailingName(con).replace('+', '\+')
+				print('sifting for . ->', name, '...', end='')
 				m = re.search(("\.(.*)" + name), node.getIntroText())
-
-
 				if(m == None):
+					print('no match.. sifting for (start ->', name, ')', end='')
 					m = re.search(("[\r\n]+(.*)" + name), node.getIntroText())
 
 					if(m == None):
+						print('no match... exitting')
 						continue
+					print('\n', m.group(0))
 					#WILL PRODUCE weird errors if behind decimals or ellipse grammar
+				print('found! now sifting for(', name, '->', '.)', end='')
 				mn = re.search(name+"(.*)\.", node.getIntroText())
 				if(mn != None):
 					#print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
+					print('found!')
 					node.addConnectionDetail(con, m.group() + mn.group())
-
+				else:
+					print('no match... exitting')
 				#print(m.group(0))
 
 	def isBadLink(topic):

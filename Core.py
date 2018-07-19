@@ -18,7 +18,7 @@ if __name__ == '__main__':
 	print('Beginning expansion...')
 
 	#GraphManager.readGraph();
-	 GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
+	GraphManager.beginSearch(TopicNode(Topic('Measure_(mathematics)')), 0, (int)(depth))
 	#GraphManager.beginSearchPooled(TopicNode(Topic('Mathematics')), (int)(depth))
 	#GraphManager.dive();
 	GraphManager.saveGraph();
