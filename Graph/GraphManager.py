@@ -8,14 +8,21 @@ from FileWriters.GraphWriter import GraphWriter
 import pickle
 from functools import partial
 from itertools import repeat
-from multiprocessing import Pool, freeze_support # This is a thread-based Pool
-from multiprocessing import cpu_count
+from multiprocessing import Pool, cpu_count, Manager
 
 
 class GraphManager:
+
+
+
+	nodes = {}
 	populatedNodes = {};
-	#topic name maps to TopicNode
-	nodes = {};
+
+	def init():
+		manager = Manager()
+		GraphManager.populatedNodes = manager.dict();
+		#topic name maps to TopicNode
+		GraphManager.nodes = manager.dict();
 
 	def saveGraph():
 		print("Saving graph...", end ='')
@@ -57,31 +64,30 @@ class GraphManager:
 
 		pool = Pool(cpu_count() * 2)
 		current_depth = 1
-		pool.map(GraphManager.populateTopicNode, [startingNode])
-		#GraphManager.populateTopicNode(startingNode)
+		#pool.map(GraphManager.populateTopicNode, [startingNode])
+		GraphManager.populateTopicNode(startingNode)
 		if depth == 1:
 			return
 
 		currentNode = startingNode
 		nodesPopulated = [currentNode]
 		connections = []
-		allNodes = {}
-		allNodes[startingNode.getTopic().getName()] = startingNode
+		merger = []
 		for currentDepth in range(1, depth):
 			connections = []
-
+			print(len(list(GraphManager.nodes.values())))
 			for item in nodesPopulated:
 				currentNode = item
-				connections = list(set(connections + list(currentNode.getConnections().values())))
-			print(connections)
+				connections +=list(currentNode.getConnections().values())
+
+			print('!')
 			nodesPopulated = pool.map(GraphManager.populateTopicNode, connections)
-			print('fuck', nodesPopulated)
-			for n in nodesPopulated:
-				print(n.getTopic().getName())
-				allNodes[n.getTopic().getName()] = n
+			merger = list(set(merger + nodesPopulated))
 
 
-		return allNodes
+
+		print('\nCount = ',len(merger) + 1)
+		return
 
 	def populateTopicNode(node: TopicNode):
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
