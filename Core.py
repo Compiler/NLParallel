@@ -9,8 +9,18 @@ from itertools import repeat
 from multiprocessing import Pool, freeze_support # This is a thread-based Pool
 from multiprocessing import cpu_count
 
-if __name__ == '__main__':
+aylmao = []
 
+def test(a):
+	aylmao.append(a)
+
+
+if __name__ == '__main__':
+	d = [1,2,3,4,5,6,7,8,9]
+	pool = Pool(cpu_count() * 2)
+	pool.map(test, d)
+
+	print(aylmao)
 	#pool = Pool(cpu_count() * 2)  # Creates a Pool with cpu_count * 2 threads.
 	#startingLink = input('Enter the name of the starting link: ')
 	depth = input('Enter the depth you want the tree to expand to: ')
@@ -18,10 +28,10 @@ if __name__ == '__main__':
 	print('Beginning expansion...')
 
 	#GraphManager.readGraph();
-	GraphManager.beginSearch(TopicNode(Topic('Measure_(mathematics)')), 0, (int)(depth))
-	#GraphManager.beginSearchPooled(TopicNode(Topic('Mathematics')), (int)(depth))
+	GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
+	#uh = GraphManager.beginSearchPooled(TopicNode(Topic('Mathematics')), (int)(depth))
 	#GraphManager.dive();
-	GraphManager.saveGraph();
+	GraphManager.saveGraphPooled(uh);
 
 
 	elapsedTime = timeit.default_timer() - startTime

@@ -24,6 +24,13 @@ class GraphManager:
 		pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
 		print("save complete!")
 
+	def saveGraphPooled(nodesToWrite):
+		print("Saving graph...", end ='')
+		GraphWriter.writeGraph(nodesToWrite, 'GraphData/graphData.lgf')
+		pickle.dump(nodesToWrite, open("GraphData/graphNodes.p", "wb"))
+		pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
+		print("save complete!")
+
 	def readGraph():
 		print("Reading in graph... ", end='')
 		GraphManager.nodes = pickle.load(open("GraphData/graphNodes.p", "rb"))
@@ -46,23 +53,35 @@ class GraphManager:
 		for item in list(currentLevelLinks):
 			GraphManager.beginSearch(item, currentDepth+1, depth)
 
-	def beginSearchPooled(depth, startingNode):
+	def beginSearchPooled(startingNode, depth):
 
 		pool = Pool(cpu_count() * 2)
 		current_depth = 1
-		pool.map(populateTopicNode, [startingNode])
+		pool.map(GraphManager.populateTopicNode, [startingNode])
+		#GraphManager.populateTopicNode(startingNode)
 		if depth == 1:
 			return
 
 		currentNode = startingNode
 		nodesPopulated = [currentNode]
+		connections = []
+		allNodes = {}
+		allNodes[startingNode.getTopic().getName()] = startingNode
 		for currentDepth in range(1, depth):
-			connections = [currentNode.getConnections()]
-			for element in connections:
-				for key in element.viewkeys():
-					links.append(key.getName())
+			connections = []
 
-			return results
+			for item in nodesPopulated:
+				currentNode = item
+				connections = list(set(connections + list(currentNode.getConnections().values())))
+			print(connections)
+			nodesPopulated = pool.map(GraphManager.populateTopicNode, connections)
+			print('fuck', nodesPopulated)
+			for n in nodesPopulated:
+				print(n.getTopic().getName())
+				allNodes[n.getTopic().getName()] = n
+
+
+		return allNodes
 
 	def populateTopicNode(node: TopicNode):
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
@@ -100,6 +119,7 @@ class GraphManager:
 		#at end we check the current node off as 'populated'
 		GraphManager.populatedNodes[node.getTopic().getName()] = True;
 		GraphManager.createConnectionDetails()
+		return node
 		#print(node)
 
 
@@ -108,27 +128,18 @@ class GraphManager:
 			node = GraphManager.nodes[item]
 
 			for con in node.getConnections().keys():
-				name = node.getDetailingName(con).replace('+', '\+')
-				print('sifting for . ->', name, '...', end='')
+				name = re.escape(node.getDetailingName(con))
 				m = re.search(("\.(.*)" + name), node.getIntroText())
 				if(m == None):
-					print('no match.. sifting for (start ->', name, ')', end='')
 					m = re.search(("[\r\n]+(.*)" + name), node.getIntroText())
 
 					if(m == None):
-						print('no match... exitting')
 						continue
-					print('\n', m.group(0))
-					#WILL PRODUCE weird errors if behind decimals or ellipse grammar
-				print('found! now sifting for(', name, '->', '.)', end='')
+				#WILL PRODUCE weird errors if behind decimals or ellipse grammar
 				mn = re.search(name+"(.*)\.", node.getIntroText())
 				if(mn != None):
 					#print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
-					print('found!')
 					node.addConnectionDetail(con, m.group() + mn.group())
-				else:
-					print('no match... exitting')
-				#print(m.group(0))
 
 	def isBadLink(topic):
 		name = topic.getName()

@@ -23,4 +23,4 @@ class GraphWriter:
 
 					writer.write("\n==========================================================\n")
 				except:
-					print("! ", END = '')
+					print("! ", end = '')
