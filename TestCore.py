@@ -1,19 +1,29 @@
 from multiprocessing import *
-
+from functools import partial
+from itertools import repeat
 class Foo:
     def __init__(self, n):
         self.n = n
     def __repr__(self):
-        return "Foo(%d)" % self.n
+        return "TopicNode(%d)" % self.n
 
-manager = Manager()
-aylmao = manager.dict()
 
-def test(a):
-    aylmao[str(a)] = Foo(a)
+aylmao ={}
 
-d = [1,2,3,4,5,6,7,8,9]
-pool = Pool(cpu_count() * 2)
-pool.map(test, d)
+def test(a, q):
+	print('1')
+	s = q.get()
+	print(s)
+	s[str(a)] = Foo(a)
+	pritn('2')
 
-print(aylmao)
+if __name__ == '__main__':
+	m = Manager()
+	q = m.Queue()
+	aylmao = Manager().dict()
+	q.put(aylmao)
+	d = [1,2,3]
+	pool = Pool(cpu_count() * 2)
+	pool.starmap(test, zip(d, repeat(q)))
+	print(aylmao)
+	print(q.get())

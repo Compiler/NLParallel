@@ -101,7 +101,6 @@ class GraphManager:
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
 			return
 		print(node.getTopic(), '|', end='')
-		#sys.stdout.flush()
 		#adds TopicNode to graph once validated
 		GraphManager.nodes[node.getTopic().getName()] = node
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
