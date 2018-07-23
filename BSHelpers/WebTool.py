@@ -1,8 +1,9 @@
 import sys, re,urllib,requests, codecs, operator, gzip, timeit, io
+from splinter import Browser
+
 
 class WebTool:
 	parser = 'lxml'
-
 	#Gets the html of the page given end half of url (just the topic)
 	#THIS REQUIRES PINGING NETWORK
 	def getTopicSourceCode(topic: str):
@@ -13,6 +14,14 @@ class WebTool:
 	        return gzip.GzipFile(fileobj=io.BytesIO( resource.read())).read()
 	    else:
 	        return resource.read()
+
+
+	#def getValidatedTopicSourceCode(title: str):
+		#with Browser('externals/chromedriver.exe') as browser:
+			#browser.visit('https://en.wikipedia.org/wiki/' + title)
+			#return browser.html
+
+
 
 	def getValidatedTopicSourceCode(title: str):
 		try:

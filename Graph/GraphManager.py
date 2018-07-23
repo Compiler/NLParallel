@@ -9,8 +9,7 @@ import pickle
 from functools import partial
 from itertools import repeat
 from multiprocessing import Pool, cpu_count, Manager
-
-
+from multiprocessing.managers import BaseManager
 class GraphManager:
 
 
@@ -52,11 +51,13 @@ class GraphManager:
 				GraphManager.populateTopicNode(node);
 
 	def beginSearch(currentNode, currentDepth, depth):
-		if currentDepth > depth:
+		if currentDepth >= depth:
 			return
+		print("Searching ", currentNode)
 		GraphManager.populateTopicNode(currentNode)
 		currentLevelLinks = currentNode.getConnections().values();
 
+		print('size of ccurrentLevel:', len(list(currentLevelLinks)))
 		for item in list(currentLevelLinks):
 			GraphManager.beginSearch(item, currentDepth+1, depth)
 
@@ -103,29 +104,33 @@ class GraphManager:
 		print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
 		GraphManager.nodes[node.getTopic().getName()] = node
+
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 
+		GraphManager.addInfoToNewNodes(node, links)
 
-		for link in list(links.keys()):
-			nextTopic = Topic(link)
-			if(GraphManager.isBadLink(nextTopic)):
-				print('X', end='')
-				continue
-			nextTopicNode = TopicNode(nextTopic)
-			SourceElement.staticValidateName(nextTopicNode)
-			if(GraphManager.isBadLink(nextTopic)):
-				print('X', end='')
-				continue
-			node.setDetailingName(nextTopic, links[link])
-			node.addConnection(nextTopic, nextTopicNode);
-			print('✓', end='')
-		sys.stdout.flush()
 		print()
 		#at end we check the current node off as 'populated'
 		GraphManager.populatedNodes[node.getTopic().getName()] = True;
 		GraphManager.createConnectionDetails()
 		return node
 		#print(node)
+
+	def addInfoToNewNodes(node, links):
+		for link in list(links.keys()):
+			nextTopic = Topic(link)
+			if(GraphManager.isBadLink(nextTopic)):
+				print('X', end='')
+				return
+			nextTopicNode = TopicNode(nextTopic)
+			SourceElement.staticValidateName(nextTopicNode)
+			if(GraphManager.isBadLink(nextTopic)):
+				print('X', end='')
+				return
+			#node.setDetailingName(nextTopic, links[link])
+			node.setDetailingName(nextTopic, link)
+			node.addConnection(nextTopic, nextTopicNode);
+			print('✓', end='')
 
 
 	def createConnectionDetails():

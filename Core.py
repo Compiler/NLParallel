@@ -12,11 +12,12 @@ if __name__ == '__main__':
 	startTime = timeit.default_timer()
 	print('Beginning expansion...')
 
+
 	#GraphManager.readGraph();
-	#GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
-	GraphManager.init()
-	print(GraphManager.nodes.keys())
-	uh = GraphManager.beginSearchPooled(TopicNode(Topic('Mathematics')), (int)(depth))
+	GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
+	#GraphManager.init()
+	#print(GraphManager.nodes.keys())
+	#uh = GraphManager.beginSearchPooled(TopicNode(Topic('Mathematics')), (int)(depth))
 	#GraphManager.dive();
 	#GraphManager.saveGraphPooled(uh);
 	GraphManager.saveGraph();

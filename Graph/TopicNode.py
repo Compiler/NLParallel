@@ -11,12 +11,23 @@ class TopicNode:
 		self.detailingName = {};#ConnectingTopic->str(name)
 		self.mainName = None;
 		self.nameValidated = False
+		self.categories = []
 
 
 	def setDetailingName(self,topic, text):
 		self.detailingName[topic] = text
 	def getDetailingName(self, topic):
 		return self.detailingName[topic]
+
+	def addCategory(self, cat):
+		self.categories.append(cat)
+
+	def setCategory(self, cats):
+		self.categories = cats
+
+	def getCategory(self):
+		return self.categories
+
 	def setIntroText(self, text):
 		self.introText = text
 	def getIntroText(self):
