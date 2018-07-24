@@ -19,8 +19,9 @@ if __name__ == '__main__':
 	#GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
 	#GraphManager.init()
 	#print(GraphManager.nodes.keys())
-	#uh = GraphManager.beginSearchPooled(TopicNode(Topic('Mathematics')), (int)(depth))
-	GraphManager.dive();
+	#GraphManager.beginSearchPooled(TopicNode(Topic('Mathematics')), (int)(depth))
+	#GraphManager.dive();
+	GraphManager.p_dive()
 	#GraphManager.saveGraphPooled(uh);
 	GraphManager.saveGraph();
 

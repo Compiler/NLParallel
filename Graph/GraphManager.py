@@ -30,13 +30,6 @@ class GraphManager:
 		pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
 		print("save complete!")
 
-	def saveGraphPooled(nodesToWrite):
-		print("Saving graph...", end ='')
-		GraphWriter.writeGraph(nodesToWrite, 'GraphData/graphData.lgf')
-		pickle.dump(nodesToWrite, open("GraphData/graphNodes.p", "wb"))
-		pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
-		print("save complete!")
-
 	def readGraph():
 		print("Reading in graph... ", end='')
 		GraphManager.nodes = pickle.load(open("GraphData/graphNodes.p", "rb"))
@@ -49,6 +42,21 @@ class GraphManager:
 			for node in GraphManager.nodes[item].getConnections().values():
 				#print('sending in :', node)
 				GraphManager.populateTopicNode(node);
+
+	def p_dive():
+		#tmp = GraphManager.nodes
+		pool = Pool(cpu_count() *2)
+		for item in list(GraphManager.nodes.keys()):
+			cons = list(GraphManager.nodes[item].getConnections().values())
+			print('waiting')
+			nodesPopulated = pool.map(GraphManager.populateTopicNode, cons)
+			print('Home!')
+			pool.close()
+			pool.join()
+			print('finished diving')
+			for node in nodesPopulated:
+				if(node != None):
+					GraphManager.nodes[node.getTopic().getName()] = node
 
 	def beginSearch(currentNode, currentDepth, depth):
 		if currentDepth >= depth:
@@ -80,9 +88,13 @@ class GraphManager:
 				currentNode = item
 				connections +=list(currentNode.getConnections().values())
 
-			print('!')
 			nodesPopulated = pool.map(GraphManager.populateTopicNode, connections)
+			pool.close()
+			pool.join()
 			merger = list(set(merger + nodesPopulated))
+			for node in merger:
+				if(node != None):
+					GraphManager.nodes[node.getTopic().getName()] = node
 
 
 
