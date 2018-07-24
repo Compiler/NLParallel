@@ -25,7 +25,7 @@ class TopicNode:
 	def setCategory(self, cats):
 		self.categories = cats
 
-	def getCategory(self):
+	def getCategories(self):
 		return self.categories
 
 	def setIntroText(self, text):

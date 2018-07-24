@@ -51,12 +51,13 @@ class GraphManager:
 			print('waiting')
 			nodesPopulated = pool.map(GraphManager.populateTopicNode, cons)
 			print('Home!')
-			pool.close()
-			pool.join()
+
 			print('finished diving')
 			for node in nodesPopulated:
 				if(node != None):
 					GraphManager.nodes[node.getTopic().getName()] = node
+		pool.close()
+		pool.join()
 
 	def beginSearch(currentNode, currentDepth, depth):
 		if currentDepth >= depth:
@@ -68,7 +69,7 @@ class GraphManager:
 		for item in list(currentLevelLinks):
 			GraphManager.beginSearch(item, currentDepth+1, depth)
 
-	def beginSearchPooled(startingNode, depth):
+	def p_beginSearch(startingNode, depth):
 
 		pool = Pool(cpu_count() * 2)
 		current_depth = 1
@@ -95,6 +96,7 @@ class GraphManager:
 			for node in merger:
 				if(node != None):
 					GraphManager.nodes[node.getTopic().getName()] = node
+					GraphManager.populatedNodes[node.getTopic().getName()] = True;
 
 
 
@@ -103,7 +105,7 @@ class GraphManager:
 
 	def populateTopicNode(node: TopicNode):
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
-			return
+			return None
 
 
 		#before performing operations-- we must validate the info of given TopicNode
@@ -111,15 +113,15 @@ class GraphManager:
 		sourceElement = SourceElement(sourceCode)
 		sourceElement.validateName(node)
 		if(node.getTopic().getName() in GraphManager.populatedNodes):
-			return
+			return None
 		print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
 		GraphManager.nodes[node.getTopic().getName()] = node
 
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
-
-		GraphManager.addInfoToNewNodes(node, links)
 		node.setCategory(sourceElement.getCategories())
+		GraphManager.addInfoToNewNodes(node, links)
+
 		print()
 		#at end we check the current node off as 'populated'
 		GraphManager.populatedNodes[node.getTopic().getName()] = True;
@@ -130,12 +132,9 @@ class GraphManager:
 	def addInfoToNewNodes(node, links):
 		for link in list(links.keys()):
 			nextTopic = Topic(link)
-			if(GraphManager.isBadLink(nextTopic)):
-				print('X', end='')
-				return
 			nextTopicNode = TopicNode(nextTopic)
 			SourceElement.staticValidateName(nextTopicNode)
-			if(GraphManager.isBadLink(nextTopic)):
+			if(GraphManager.isBadLink(nextTopicNode)):
 				print('X', end='')
 				return
 			#node.setDetailingName(nextTopic, links[link])
@@ -162,9 +161,19 @@ class GraphManager:
 					#print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
 					node.addConnectionDetail(con, m.group() + mn.group())
 
-	def isBadLink(topic):
-		name = topic.getName()
-		if(re.search('(Wikipedia)', name) == None):
-			return False
+	def isBadLink(topicNode):
+		name = topicNode.getTopic().getName()
+		if(re.search('(Wikipedia)', name) != None):
+			return True
+		if any(re.findall('Wiki|wiki|list', name, re.IGNORECASE)):
+			print('(FNC!)', end='')
+			return True
 
-		return True
+		#check categories
+		categories = topicNode.getCategories()
+		for cat in categories:
+			if any(re.findall('list of|wiki|list', name, re.IGNORECASE)):
+				print('(FCC!)', end='')
+				return True
+
+		return False
