@@ -53,11 +53,10 @@ class GraphManager:
 	def beginSearch(currentNode, currentDepth, depth):
 		if currentDepth >= depth:
 			return
-		print("Searching ", currentNode)
 		GraphManager.populateTopicNode(currentNode)
 		currentLevelLinks = currentNode.getConnections().values();
 
-		print('size of ccurrentLevel:', len(list(currentLevelLinks)))
+		print('size of currentLevel:', len(list(currentLevelLinks)))
 		for item in list(currentLevelLinks):
 			GraphManager.beginSearch(item, currentDepth+1, depth)
 
@@ -108,7 +107,7 @@ class GraphManager:
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 
 		GraphManager.addInfoToNewNodes(node, links)
-
+		node.setCategory(sourceElement.getCategories())
 		print()
 		#at end we check the current node off as 'populated'
 		GraphManager.populatedNodes[node.getTopic().getName()] = True;

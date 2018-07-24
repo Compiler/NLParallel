@@ -35,7 +35,13 @@ class SourceElement:
 		topic.setTopicName(mainName)
 
 
-
+	def getCategories(self):
+		cat=self.soup.find('div',id="mw-normal-catlinks")
+		cats = []
+		if cat != None:
+			for link in cat.findAll('a', attrs={'href': re.compile("^/wiki/Category")}):
+				cats.append(link.text)
+		return cats
 	def grabIntroAndSeeAlsoLinks(self, topic):
 		links = {}
 		self.grabIntroLinks(links, topic)

@@ -50,6 +50,16 @@ class TopicNode:
 	def setTopicName(self, newName):
 		self.topic.setName(newName);
 
+	def detailingText(self):
+		val = self.topic.getName() +' is connected to ' + (str)(len(self.connections.keys())) + ' different topics:\n'
+		for i in list(self.connections.keys()):
+			val = val + i.getName() + ', ';
+		val += '\n' + self.topic.getName() + ' is in the category of: \n'
+		for i in self.categories:
+			val += i + ', '
+		return val
+
+
 	def __str__(self):
 		if len(self.connections) == 0:
 			return '{} {}'.format(self.topic.getName() , "connects to nothing.")
