@@ -25,15 +25,15 @@ class GraphManager:
 
 	def saveGraph():
 		print("Saving graph...", end ='')
-		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/graphData.lgf')
-		pickle.dump(GraphManager.nodes, open("GraphData/graphNodes.p", "wb"))
-		pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
+		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/p_graphData.lgf')
+		pickle.dump(GraphManager.nodes, open("GraphData/p_graphNodes.p", "wb"))
+		#pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
 		print("save complete!")
 
 	def readGraph():
 		print("Reading in graph... ", end='')
 		GraphManager.nodes = pickle.load(open("GraphData/graphNodes.p", "rb"))
-		GraphManager.populatedNodes = pickle.load(open("GraphData/populatedGraphNodes.p", "rb"))
+		#GraphManager.populatedNodes = pickle.load(open("GraphData/populatedGraphNodes.p", "rb"))
 		print("Loaded successfully")
 
 	def dive():
@@ -86,14 +86,11 @@ class GraphManager:
 			connections = []
 			print(len(list(GraphManager.nodes.values())))
 			for item in nodesPopulated:
-				if item == None:
-					continue
-				connections +=list(item.getConnections().values())
-
+				if item != None:
+					connections +=list(item.getConnections().values())
 			nodesPopulated = pool.map(GraphManager.populateTopicNode, connections)
-			merger = list(set(merger + nodesPopulated))
-			for node in merger:
-				if(node != None):
+			for node in nodesPopulated:
+				if node != None:
 					GraphManager.nodes[node.getTopic().getName()] = node
 					#GraphManager.populatedNodes[node.getTopic().getName()] = True;
 
@@ -137,7 +134,6 @@ class GraphManager:
 			#SourceElement.staticValidateName(nextTopicNode)
 			SourceElement.staticValidation(nextTopicNode)
 			if(GraphManager.isBadLink(nextTopicNode)):
-				print('X', end='')
 				return
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, link)
@@ -166,7 +162,7 @@ class GraphManager:
 
 	def isBadLink(topicNode):
 		name = topicNode.getTopic().getName()
-		if any(re.findall('Wikipedia', name, re.IGNORECASE)):
+		if any(re.findall('Wikipedia|file:', name, re.IGNORECASE)):
 			print('(N)',  end='')
 			return True
 

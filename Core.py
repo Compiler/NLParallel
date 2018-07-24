@@ -16,14 +16,14 @@ if __name__ == '__main__':
 
 
 	#GraphManager.readGraph();
-	GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
+	#GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
 	#GraphManager.init()
 	#print(GraphManager.nodes.keys())
-	#GraphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(depth))
+	GraphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(depth))
 	#GraphManager.dive();
 	#GraphManager.p_dive()
 	#GraphManager.saveGraphPooled(uh);
-	GraphManager.saveGraph();
+	#GraphManager.saveGraph();
 
 
 	elapsedTime = timeit.default_timer() - startTime
