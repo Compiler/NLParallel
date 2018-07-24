@@ -12,7 +12,14 @@ class TopicNode:
 		self.mainName = None;
 		self.nameValidated = False
 		self.categories = []
+		self.populated = False
 
+
+	def isPopulated(self):
+		return self.populated
+		
+	def setIsPopulated(self):
+		self.populated = True
 
 	def setDetailingName(self,topic, text):
 		self.detailingName[topic] = text
@@ -24,6 +31,7 @@ class TopicNode:
 
 	def setCategory(self, cats):
 		self.categories = cats
+
 
 	def getCategories(self):
 		return self.categories

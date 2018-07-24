@@ -91,21 +91,20 @@ class GraphManager:
 				connections +=list(currentNode.getConnections().values())
 
 			nodesPopulated = pool.map(GraphManager.populateTopicNode, connections)
-			pool.close()
-			pool.join()
 			merger = list(set(merger + nodesPopulated))
 			for node in merger:
 				if(node != None):
 					GraphManager.nodes[node.getTopic().getName()] = node
-					GraphManager.populatedNodes[node.getTopic().getName()] = True;
+					#GraphManager.populatedNodes[node.getTopic().getName()] = True;
 
+		pool.close()
+		pool.join()
 
-
-		print('\nCount = ',len(merger) + 1)
+		print('\nCount = ',len(list(GraphManager.nodes.keys())))
 		return
 
 	def populateTopicNode(node: TopicNode):
-		if(node.getTopic().getName() in GraphManager.populatedNodes):
+		if(node.getTopic().getName() in GraphManager.nodes):
 			return None
 
 
@@ -113,7 +112,7 @@ class GraphManager:
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		sourceElement = SourceElement(sourceCode)
 		sourceElement.validateName(node)
-		if(node.getTopic().getName() in GraphManager.populatedNodes):
+		if(node.getTopic().getName() in GraphManager.nodes):
 			return None
 		print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
@@ -122,10 +121,11 @@ class GraphManager:
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		node.setCategory(sourceElement.getCategories())
 		GraphManager.addInfoToNewNodes(node, links)
+		node.setIsPopulated()
 
 		print()
 		#at end we check the current node off as 'populated'
-		GraphManager.populatedNodes[node.getTopic().getName()] = True;
+		#GraphManager.populatedNodes[node.getTopic().getName()] = True;
 		GraphManager.createConnectionDetails()
 		return node
 		#print(node)
@@ -134,7 +134,8 @@ class GraphManager:
 		for link in list(links.keys()):
 			nextTopic = Topic(link)
 			nextTopicNode = TopicNode(nextTopic)
-			SourceElement.staticValidateName(nextTopicNode)
+			#SourceElement.staticValidateName(nextTopicNode)
+			SourceElement.staticValidation(nextTopicNode)
 			if(GraphManager.isBadLink(nextTopicNode)):
 				print('X', end='')
 				return
@@ -145,9 +146,9 @@ class GraphManager:
 
 
 	def createConnectionDetails():
-		for item in GraphManager.populatedNodes.keys():
-			node = GraphManager.nodes[item]
-
+		for node in GraphManager.nodes.values():
+			if node.isPopulated() == False:
+				continue
 			for con in node.getConnections().keys():
 				name = re.escape(node.getDetailingName(con))
 				m = re.search(("\.(.*)" + name), node.getIntroText())
@@ -162,19 +163,20 @@ class GraphManager:
 					#print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
 					node.addConnectionDetail(con, m.group() + mn.group())
 
+
 	def isBadLink(topicNode):
 		name = topicNode.getTopic().getName()
-		if any(re.findall('Wiki|wiki|list', name, re.IGNORECASE)):
-			#print('(FNC!)',  end='')
-			print('!',name,'!', end='')
+		if any(re.findall('Wikipedia', name, re.IGNORECASE)):
+			print('(N)',  end='')
 			return True
 
 		#check categories
+		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
 		categories = topicNode.getCategories()
 		for cat in categories:
-			if any(re.findall('wiki|list|lists', cat, re.IGNORECASE)):
-				#print('(FCC!)', end='')
-				print('!',name,'!', end='')
+			if any(re.findall(catCheck, cat, re.IGNORECASE)):
+				print('(C)', end='')
+				#print('!',cat,'!', end='')
 				return True
 
 		return False

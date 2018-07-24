@@ -33,6 +33,25 @@ class SourceElement:
 		mainName = soup.find("h1")
 		mainName = mainName.text
 		topic.setTopicName(mainName)
+		topic.setNameValidated(True)
+
+	def staticValidation(topic):
+		if(topic.nameValidated):
+			 return
+
+		source = WebTool.getValidatedTopicSourceCode(topic.getTopic().getName());
+		try:soup = BeautifulSoup(source, WebTool.parser)
+		except: print('FAILED: to get self.soup')
+		mainName = soup.find("h1")
+		mainName = mainName.text
+		topic.setTopicName(mainName)
+		topic.setNameValidated(True)
+
+		cat=soup.find('div',id="mw-normal-catlinks")
+		cats = []
+		if cat != None:
+			for link in cat.findAll('a', attrs={'href': re.compile("^/wiki/Category")}):
+				topic.addCategory(link.text)
 
 
 	def getCategories(self):
