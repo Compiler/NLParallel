@@ -66,7 +66,6 @@ class GraphManager:
 		GraphManager.populateTopicNode(currentNode)
 		currentLevelLinks = currentNode.getConnections().values();
 
-		print('size of currentLevel:', len(list(currentLevelLinks)))
 		for item in list(currentLevelLinks):
 			GraphManager.beginSearch(item, currentDepth+1, depth)
 
@@ -87,8 +86,9 @@ class GraphManager:
 			connections = []
 			print(len(list(GraphManager.nodes.values())))
 			for item in nodesPopulated:
-				currentNode = item
-				connections +=list(currentNode.getConnections().values())
+				if item == None:
+					continue
+				connections +=list(item.getConnections().values())
 
 			nodesPopulated = pool.map(GraphManager.populateTopicNode, connections)
 			merger = list(set(merger + nodesPopulated))
