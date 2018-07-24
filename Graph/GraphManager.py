@@ -56,6 +56,7 @@ class GraphManager:
 			for node in nodesPopulated:
 				if(node != None):
 					GraphManager.nodes[node.getTopic().getName()] = node
+					GraphManager.populatedNodes[node.getTopic().getName()] = True;
 		pool.close()
 		pool.join()
 
@@ -163,17 +164,17 @@ class GraphManager:
 
 	def isBadLink(topicNode):
 		name = topicNode.getTopic().getName()
-		if(re.search('(Wikipedia)', name) != None):
-			return True
 		if any(re.findall('Wiki|wiki|list', name, re.IGNORECASE)):
-			print('(FNC!)', end='')
+			#print('(FNC!)',  end='')
+			print('!',name,'!', end='')
 			return True
 
 		#check categories
 		categories = topicNode.getCategories()
 		for cat in categories:
-			if any(re.findall('list of|wiki|list', name, re.IGNORECASE)):
-				print('(FCC!)', end='')
+			if any(re.findall('wiki|list|lists', cat, re.IGNORECASE)):
+				#print('(FCC!)', end='')
+				print('!',name,'!', end='')
 				return True
 
 		return False

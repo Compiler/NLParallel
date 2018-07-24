@@ -15,13 +15,13 @@ if __name__ == '__main__':
 	print('Beginning expansion...')
 
 
-	GraphManager.readGraph();
+	#GraphManager.readGraph();
 	#GraphManager.beginSearch(TopicNode(Topic('Mathematics')), 0, (int)(depth))
 	#GraphManager.init()
 	#print(GraphManager.nodes.keys())
-	#GraphManager.beginSearchPooled(TopicNode(Topic('Mathematics')), (int)(depth))
+	GraphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(depth))
 	#GraphManager.dive();
-	GraphManager.p_dive()
+	#GraphManager.p_dive()
 	#GraphManager.saveGraphPooled(uh);
 	GraphManager.saveGraph();
 
