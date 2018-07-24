@@ -27,7 +27,6 @@ class GraphManager:
 		print("Saving graph...", end ='')
 		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/p_graphData.lgf')
 		pickle.dump(GraphManager.nodes, open("GraphData/p_graphNodes.p", "wb"))
-		#pickle.dump(GraphManager.populatedNodes, open("GraphData/populatedGraphNodes.p", "wb"))
 		print("save complete!")
 
 	def readGraph():
@@ -103,7 +102,6 @@ class GraphManager:
 	def populateTopicNode(node: TopicNode):
 		if(node.getTopic().getName() in GraphManager.nodes):
 			return None
-
 
 		#before performing operations-- we must validate the info of given TopicNode
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())

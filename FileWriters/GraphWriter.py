@@ -10,17 +10,21 @@ class GraphWriter:
 			val = str(len(graph.keys()))
 			writer.write(val)
 			writer.write('\n')
-			for item in graph.keys():
+			sortedKeys=sorted(graph.keys(), key=lambda x:x.lower())
+			for item in sortedKeys:
 				try:
 					writer.write('')
 					writer.write(item)
 					subtnCount = 1;
 					tnCount += 1
-
-					for element in graph[item].getConnections().values():
+					todo = []
+					for kk in list(graph[item].getConnections().keys()):
+						todo.append(kk.getName())
+					sortedValues=sorted(todo, key=str.lower)
+					for element in sortedValues:
 						writer.write("\n\t->")
-						writer.write(element.getTopic().getName())
+						writer.write(element)
 
 					writer.write("\n==========================================================\n")
 				except:
-					print("! ", end = '')
+					print("(!)", end = '')

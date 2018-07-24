@@ -23,7 +23,7 @@ if __name__ == '__main__':
 	#GraphManager.dive();
 	#GraphManager.p_dive()
 	#GraphManager.saveGraphPooled(uh);
-	#GraphManager.saveGraph();
+	GraphManager.saveGraph();
 
 
 	elapsedTime = timeit.default_timer() - startTime
