@@ -14,66 +14,60 @@ class GraphManager:
 
 
 
-	nodes = {}
-	populatedNodes = {};
+	def __init__(self):
+		self.nodes = {}
+		self.populatedNodes = {};
 
-	def init():
-		manager = Manager()
-		GraphManager.populatedNodes = manager.dict();
-		#topic name maps to TopicNode
-		GraphManager.nodes = manager.dict();
-
-	def saveGraph():
+	def saveGraph(self, name):
 		print("Saving graph...", end ='')
-		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/p3_graphData.lgf')
-		pickle.dump(GraphManager.nodes, open("GraphData/p3_graphNodes.p", "wb"))
-		print("save complete!")
+		GraphWriter.writeGraph(self.nodes, 'GraphData/'+ name + '_graphData.lgf')
+		pickle.dump(self.nodes, open('GraphData/'+ name +'_graphNodes.p', "wb"))
+		print("Save complete!")
 
-	def readGraph():
+	def readGraph(self, name):
 		print("Reading in graph... ", end='')
-		GraphManager.nodes = pickle.load(open("GraphData/graphNodes.p", "rb"))
-		#GraphManager.populatedNodes = pickle.load(open("GraphData/populatedGraphNodes.p", "rb"))
+		self.nodes = pickle.load(open("GraphData/" + name + "graphNodes.p", "rb"))
 		print("Loaded successfully")
 
-	def dive():
-		#tmp = GraphManager.nodes
-		for item in list(GraphManager.nodes.keys()):
-			for node in GraphManager.nodes[item].getConnections().values():
+	def dive(self):
+		#tmp = self.nodes
+		for item in list(self.nodes.keys()):
+			for node in self.nodes[item].getConnections().values():
 				#print('sending in :', node)
-				GraphManager.populateTopicNode(node);
+				self.populateTopicNode(node);
 
-	def p_dive():
-		#tmp = GraphManager.nodes
+	def p_dive(self):
+		#tmp = self.nodes
 		pool = Pool(cpu_count() *2)
-		for item in list(GraphManager.nodes.keys()):
-			cons = list(GraphManager.nodes[item].getConnections().values())
+		for item in list(self.nodes.keys()):
+			cons = list(self.nodes[item].getConnections().values())
 			print('waiting')
-			nodesPopulated = pool.map(GraphManager.populateTopicNode, cons)
+			nodesPopulated = pool.map(self.populateTopicNode, cons)
 			print('Home!')
 
 			print('finished diving')
 			for node in nodesPopulated:
 				if(node != None):
-					GraphManager.nodes[node.getTopic().getName()] = node
-					GraphManager.populatedNodes[node.getTopic().getName()] = True;
+					self.nodes[node.getTopic().getName()] = node
+					self.populatedNodes[node.getTopic().getName()] = True;
 		pool.close()
 		pool.join()
 
-	def beginSearch(currentNode, currentDepth, depth):
+	def beginSearch(self, currentNode, currentDepth, depth):
 		if currentDepth >= depth:
 			return
-		GraphManager.populateTopicNode(currentNode)
+		self.populateTopicNode(currentNode)
 		currentLevelLinks = currentNode.getConnections().values();
 
 		for item in list(currentLevelLinks):
-			GraphManager.beginSearch(item, currentDepth+1, depth)
+			self.beginSearch(item, currentDepth+1, depth)
 
-	def p_beginSearch(startingNode, depth):
+	def p_beginSearch(self, startingNode, depth):
 
 		#pool = Pool(cpu_count() * 2)
 		current_depth = 1
-		#pool.map(GraphManager.populateTopicNode, [startingNode])
-		GraphManager.populateTopicNode(startingNode)
+		#pool.map(self.populateTopicNode, [startingNode])
+		self.populateTopicNode(startingNode)
 		if depth == 1:
 			return
 
@@ -84,57 +78,57 @@ class GraphManager:
 		for currentDepth in range(1, depth):
 			connections = []
 			pool = Pool(cpu_count() * 2)
-			print(len(list(GraphManager.nodes.values())))
+			print(len(list(self.nodes.values())))
 			for item in nodesPopulated:
 				if item != None:
 					if item.isPopulated() == True:
 						connections +=list(item.getConnections().values())
-			nodesPopulated = pool.map(GraphManager.populateTopicNode, connections)
+			nodesPopulated = pool.map(self.populateTopicNode, connections)
 			for node in nodesPopulated:
 				if node != None:
 					if item.isPopulated() == True:
-						GraphManager.nodes[node.getTopic().getName()] = node
-					#GraphManager.populatedNodes[node.getTopic().getName()] = True;
+						self.nodes[node.getTopic().getName()] = node
+					#self.populatedNodes[node.getTopic().getName()] = True;
 
 			pool.close()
 			pool.join()
 
-		print('\nCount = ',len(list(GraphManager.nodes.keys())))
+		print('\nCount = ',len(list(self.nodes.keys())))
 		return
 
-	def populateTopicNode(node: TopicNode):
-		if(node.getTopic().getName() in GraphManager.nodes):
+	def populateTopicNode(self, node: TopicNode):
+		if(node.getTopic().getName() in self.nodes):
 			return None
 
 		#before performing operations-- we must validate the info of given TopicNode
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		sourceElement = SourceElement(sourceCode)
 		sourceElement.validateName(node)
-		if(node.getTopic().getName() in GraphManager.nodes):
+		if(node.getTopic().getName() in self.nodes):
 			return None
 		print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
-		GraphManager.nodes[node.getTopic().getName()] = node
+		self.nodes[node.getTopic().getName()] = node
 
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		node.setCategory(sourceElement.getCategories())
-		GraphManager.addInfoToNewNodes(node, links)
+		self.addInfoToNewNodes(node, links)
 		node.setIsPopulated()
 
 		print()
 		#at end we check the current node off as 'populated'
-		#GraphManager.populatedNodes[node.getTopic().getName()] = True;
-		GraphManager.createConnectionDetails()
+		#self.populatedNodes[node.getTopic().getName()] = True;
+		self.createConnectionDetails()
 		return node
 		#print(node)
 
-	def addInfoToNewNodes(node, links):
+	def addInfoToNewNodes(self, node, links):
 		for link in list(links.keys()):
 			nextTopic = Topic(link)
 			nextTopicNode = TopicNode(nextTopic)
 			#SourceElement.staticValidateName(nextTopicNode)
 			SourceElement.staticValidation(nextTopicNode)
-			if(GraphManager.isBadLink(nextTopicNode)):
+			if(self.isBadLink(nextTopicNode)):
 				continue
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, link)
@@ -142,8 +136,8 @@ class GraphManager:
 			print('✓', end='')
 
 
-	def createConnectionDetails():
-		for node in GraphManager.nodes.values():
+	def createConnectionDetails(self):
+		for node in self.nodes.values():
 			if node.isPopulated() == False:
 				continue
 			for con in node.getConnections().keys():
@@ -161,7 +155,7 @@ class GraphManager:
 					node.addConnectionDetail(con, m.group() + mn.group())
 
 
-	def isBadLink(topicNode):
+	def isBadLink(self, topicNode):
 		name = topicNode.getTopic().getName()
 		n = any(re.findall('List of|Wikipedia|File:', name, re.IGNORECASE))
 		if n:
