@@ -25,8 +25,8 @@ class GraphManager:
 
 	def saveGraph():
 		print("Saving graph...", end ='')
-		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/p_graphData.lgf')
-		pickle.dump(GraphManager.nodes, open("GraphData/p_graphNodes.p", "wb"))
+		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/tst_graphData.lgf')
+		pickle.dump(GraphManager.nodes, open("GraphData/tst_graphNodes.p", "wb"))
 		print("save complete!")
 
 	def readGraph():
@@ -127,12 +127,14 @@ class GraphManager:
 
 	def addInfoToNewNodes(node, links):
 		for link in list(links.keys()):
+			print(link, end='')
 			nextTopic = Topic(link)
 			nextTopicNode = TopicNode(nextTopic)
 			#SourceElement.staticValidateName(nextTopicNode)
 			SourceElement.staticValidation(nextTopicNode)
 			if(GraphManager.isBadLink(nextTopicNode)):
-				return
+				print('!',nextTopic.getName())
+				continue
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, link)
 			node.addConnection(nextTopic, nextTopicNode);
