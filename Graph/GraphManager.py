@@ -25,8 +25,8 @@ class GraphManager:
 
 	def saveGraph():
 		print("Saving graph...", end ='')
-		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/p_graphData.lgf')
-		pickle.dump(GraphManager.nodes, open("GraphData/p_graphNodes.p", "wb"))
+		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/p3_graphData.lgf')
+		pickle.dump(GraphManager.nodes, open("GraphData/p3_graphNodes.p", "wb"))
 		print("save complete!")
 
 	def readGraph():
@@ -70,7 +70,7 @@ class GraphManager:
 
 	def p_beginSearch(startingNode, depth):
 
-		pool = Pool(cpu_count() * 2)
+		#pool = Pool(cpu_count() * 2)
 		current_depth = 1
 		#pool.map(GraphManager.populateTopicNode, [startingNode])
 		GraphManager.populateTopicNode(startingNode)
@@ -83,18 +83,21 @@ class GraphManager:
 		merger = []
 		for currentDepth in range(1, depth):
 			connections = []
+			pool = Pool(cpu_count() * 2)
 			print(len(list(GraphManager.nodes.values())))
 			for item in nodesPopulated:
 				if item != None:
-					connections +=list(item.getConnections().values())
+					if item.isPopulated() == True:
+						connections +=list(item.getConnections().values())
 			nodesPopulated = pool.map(GraphManager.populateTopicNode, connections)
 			for node in nodesPopulated:
 				if node != None:
-					GraphManager.nodes[node.getTopic().getName()] = node
+					if item.isPopulated() == True:
+						GraphManager.nodes[node.getTopic().getName()] = node
 					#GraphManager.populatedNodes[node.getTopic().getName()] = True;
 
-		pool.close()
-		pool.join()
+			pool.close()
+			pool.join()
 
 		print('\nCount = ',len(list(GraphManager.nodes.keys())))
 		return
@@ -160,24 +163,18 @@ class GraphManager:
 
 	def isBadLink(topicNode):
 		name = topicNode.getTopic().getName()
-		n = any(re.findall('Wikipedia|File:', name, re.IGNORECASE))
-		#if n:
-			#print('(N)',  end='')
-			#return True
+		n = any(re.findall('List of|Wikipedia|File:', name, re.IGNORECASE))
+		if n:
+			print('(N)',  end='')
+			return True
 
 		#check categories
 		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
 		categories = topicNode.getCategories()
 		for cat in categories:
 			c =  any(re.findall(catCheck, cat, re.IGNORECASE))
-			if c and n:
-				print('(NC)', end='')
-				return True
-			elif c and not n:
+			if c:
 				print('(C)', end='')
-				return True
-			elif n and not c:
-				print('(N)', end='')
 				return True
 
 		return False
