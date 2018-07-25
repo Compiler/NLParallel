@@ -25,8 +25,8 @@ class GraphManager:
 
 	def saveGraph():
 		print("Saving graph...", end ='')
-		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/tst_graphData.lgf')
-		pickle.dump(GraphManager.nodes, open("GraphData/tst_graphNodes.p", "wb"))
+		GraphWriter.writeGraph(GraphManager.nodes, 'GraphData/p_graphData.lgf')
+		pickle.dump(GraphManager.nodes, open("GraphData/p_graphNodes.p", "wb"))
 		print("save complete!")
 
 	def readGraph():
@@ -127,13 +127,11 @@ class GraphManager:
 
 	def addInfoToNewNodes(node, links):
 		for link in list(links.keys()):
-			print(link, end='')
 			nextTopic = Topic(link)
 			nextTopicNode = TopicNode(nextTopic)
 			#SourceElement.staticValidateName(nextTopicNode)
 			SourceElement.staticValidation(nextTopicNode)
 			if(GraphManager.isBadLink(nextTopicNode)):
-				print('!',nextTopic.getName())
 				continue
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, link)
@@ -162,17 +160,24 @@ class GraphManager:
 
 	def isBadLink(topicNode):
 		name = topicNode.getTopic().getName()
-		if any(re.findall('Wikipedia|file:', name, re.IGNORECASE)):
-			print('(N)',  end='')
-			return True
+		n = any(re.findall('Wikipedia|File:', name, re.IGNORECASE))
+		#if n:
+			#print('(N)',  end='')
+			#return True
 
 		#check categories
 		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
 		categories = topicNode.getCategories()
 		for cat in categories:
-			if any(re.findall(catCheck, cat, re.IGNORECASE)):
+			c =  any(re.findall(catCheck, cat, re.IGNORECASE))
+			if c and n:
+				print('(NC)', end='')
+				return True
+			elif c and not n:
 				print('(C)', end='')
-				#print('!',cat,'!', end='')
+				return True
+			elif n and not c:
+				print('(N)', end='')
 				return True
 
 		return False
