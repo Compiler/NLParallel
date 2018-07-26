@@ -5,7 +5,7 @@ from Graph.Topic import Topic
 from BSHelpers.WebTool import WebTool
 from BSHelpers.SourceElement import SourceElement
 from FileWriters.GraphWriter import GraphWriter
-import pickle
+import pickle, dill
 from functools import partial
 from itertools import repeat
 from multiprocessing import Pool, cpu_count, Manager
@@ -26,7 +26,7 @@ class GraphManager:
 
 	def readGraph(self, name):
 		print("Reading in graph... ", end='')
-		self.nodes = pickle.load(open("GraphData/" + name + "graphNodes.p", "rb"))
+		self.nodes = pickle.load(open("GraphData/" + name + "_graphNodes.p", "rb"))
 		print("Loaded successfully")
 
 	def dive(self):
@@ -75,69 +75,93 @@ class GraphManager:
 		nodesPopulated = [currentNode]
 		connections = []
 		merger = []
+		pool = Pool(cpu_count() * 2)
 		for currentDepth in range(1, depth):
+			print('A')
 			connections = []
-			pool = Pool(cpu_count() * 2)
+
 			print(len(list(self.nodes.values())))
+			print('B')
 			for item in nodesPopulated:
 				if item != None:
 					if item.isPopulated() == True:
 						connections +=list(item.getConnections().values())
+			print('C')
 			nodesPopulated = pool.map(self.populateTopicNode, connections)
+			print('C.2')
 			for node in nodesPopulated:
 				if node != None:
 					if item.isPopulated() == True:
+						print('C.3')
 						self.nodes[node.getTopic().getName()] = node
 					#self.populatedNodes[node.getTopic().getName()] = True;
 
-			pool.close()
-			pool.join()
+		pool.close()
+		pool.join()
 
 		print('\nCount = ',len(list(self.nodes.keys())))
 		return
 
 	def populateTopicNode(self, node: TopicNode):
+		print('D')
 		if(node.getTopic().getName() in self.nodes):
 			return None
-
+		print('E')
 		#before performing operations-- we must validate the info of given TopicNode
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
+		print('F')
 		sourceElement = SourceElement(sourceCode)
+		print('G')
 		sourceElement.validateName(node)
+		print('H')
 		if(node.getTopic().getName() in self.nodes):
 			return None
 		print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
 		self.nodes[node.getTopic().getName()] = node
-
+		print('I')
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
+		print('J')
 		node.setCategory(sourceElement.getCategories())
+		print('K')
 		self.addInfoToNewNodes(node, links)
+		print('L')
 		node.setIsPopulated()
-
+		print('M')
 		print()
 		#at end we check the current node off as 'populated'
 		#self.populatedNodes[node.getTopic().getName()] = True;
 		self.createConnectionDetails()
-		return node
+		print('N')
+		if dill.pickles(node):
+			return node
+		else:
+			print( dill.detect.badtypes(node, depth=1).keys())
+			return None
 		#print(node)
 
 	def addInfoToNewNodes(self, node, links):
+		print('1')
 		for link in list(links.keys()):
+			print('2')
 			nextTopic = Topic(link)
 			nextTopicNode = TopicNode(nextTopic)
 			#SourceElement.staticValidateName(nextTopicNode)
 			SourceElement.staticValidation(nextTopicNode)
+			print('3')
 			if(self.isBadLink(nextTopicNode)):
 				continue
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, link)
+			print('4')
 			node.addConnection(nextTopic, nextTopicNode);
 			print('✓', end='')
 
 
 	def createConnectionDetails(self):
+		print('5')
 		for node in self.nodes.values():
+			print('6')
 			if node.isPopulated() == False:
 				continue
 			for con in node.getConnections().keys():
@@ -150,6 +174,7 @@ class GraphManager:
 						continue
 				#WILL PRODUCE weird errors if behind decimals or ellipse grammar
 				mn = re.search(name+"(.*)\.", node.getIntroText())
+				print('8')
 				if(mn != None):
 					#print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
 					node.addConnectionDetail(con, m.group() + mn.group())
@@ -157,14 +182,17 @@ class GraphManager:
 
 	def isBadLink(self, topicNode):
 		name = topicNode.getTopic().getName()
+		print('9')
 		n = any(re.findall('List of|Wikipedia|File:', name, re.IGNORECASE))
 		if n:
 			print('(N)',  end='')
 			return True
-
+		print('12')
 		#check categories
 		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
+		print('11')
 		categories = topicNode.getCategories()
+		print('10')
 		for cat in categories:
 			c =  any(re.findall(catCheck, cat, re.IGNORECASE))
 			if c:

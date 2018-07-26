@@ -11,8 +11,11 @@ if __name__ == '__main__':
 	print('Beginning expansion...')
 
 	graphManager = GraphManager()
+	#graphManager.readGraph('deep3')
+	#graphManager.p_dive()
 	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(depth))
-	graphManager.saveGraph('tester');
+
+	graphManager.saveGraph('deep4');
 
 
 	elapsedTime = timeit.default_timer() - startTime
