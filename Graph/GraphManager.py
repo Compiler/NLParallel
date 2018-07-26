@@ -5,7 +5,7 @@ from Graph.Topic import Topic
 from BSHelpers.WebTool import WebTool
 from BSHelpers.SourceElement import SourceElement
 from FileWriters.GraphWriter import GraphWriter
-import pickle
+import pickle, dill
 from functools import partial
 from itertools import repeat
 from multiprocessing import Pool, cpu_count, Manager
@@ -26,7 +26,7 @@ class GraphManager:
 
 	def readGraph(self, name):
 		print("Reading in graph... ", end='')
-		self.nodes = pickle.load(open("GraphData/" + name + "graphNodes.p", "rb"))
+		self.nodes = pickle.load(open("GraphData/" + name + "_graphNodes.p", "rb"))
 		print("Loaded successfully")
 
 	def dive(self):
@@ -75,31 +75,41 @@ class GraphManager:
 		nodesPopulated = [currentNode]
 		connections = []
 		merger = []
+		pool = Pool(cpu_count() * 2)
 		for currentDepth in range(1, depth):
+			print('A')
 			connections = []
-			pool = Pool(cpu_count() * 2)
+
 			print(len(list(self.nodes.values())))
+			print('B')
 			for item in nodesPopulated:
 				if item != None:
-					if item.isPopulated() == True:
+					if item.isPopulated():
 						connections +=list(item.getConnections().values())
+			print('C')
+			print("con",len(connections))
+			print("nodesPopulated",len(nodesPopulated))
+			print("self.nodes",len(self.nodes.keys()))
 			nodesPopulated = pool.map(self.populateTopicNode, connections)
+			print('C.2')
 			for node in nodesPopulated:
 				if node != None:
-					if item.isPopulated() == True:
+					if item.isPopulated():
+						print('C.3')
 						self.nodes[node.getTopic().getName()] = node
 					#self.populatedNodes[node.getTopic().getName()] = True;
 
-			pool.close()
-			pool.join()
+		pool.close()
+		pool.join()
 
 		print('\nCount = ',len(list(self.nodes.keys())))
 		return
 
 	def populateTopicNode(self, node: TopicNode):
+		print('D', end='')
 		if(node.getTopic().getName() in self.nodes):
 			return None
-
+		print('E', end='')
 		#before performing operations-- we must validate the info of given TopicNode
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		sourceElement = SourceElement(sourceCode)
@@ -109,17 +119,20 @@ class GraphManager:
 		print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
 		self.nodes[node.getTopic().getName()] = node
-
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		node.setCategory(sourceElement.getCategories())
 		self.addInfoToNewNodes(node, links)
 		node.setIsPopulated()
-
 		print()
 		#at end we check the current node off as 'populated'
 		#self.populatedNodes[node.getTopic().getName()] = True;
 		self.createConnectionDetails()
-		return node
+		if dill.pickles(node):
+			return node
+		else:
+			print( dill.detect.badtypes(node, depth=1).keys())
+			quit()
+			return None
 		#print(node)
 
 	def addInfoToNewNodes(self, node, links):
@@ -161,7 +174,6 @@ class GraphManager:
 		if n:
 			print('(N)',  end='')
 			return True
-
 		#check categories
 		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
 		categories = topicNode.getCategories()
