@@ -84,14 +84,17 @@ class GraphManager:
 			print('B')
 			for item in nodesPopulated:
 				if item != None:
-					if item.isPopulated() == True:
+					if item.isPopulated():
 						connections +=list(item.getConnections().values())
 			print('C')
+			print("con",len(connections))
+			print("nodesPopulated",len(nodesPopulated))
+			print("self.nodes",len(self.nodes.keys()))
 			nodesPopulated = pool.map(self.populateTopicNode, connections)
 			print('C.2')
 			for node in nodesPopulated:
 				if node != None:
-					if item.isPopulated() == True:
+					if item.isPopulated():
 						print('C.3')
 						self.nodes[node.getTopic().getName()] = node
 					#self.populatedNodes[node.getTopic().getName()] = True;
@@ -103,65 +106,51 @@ class GraphManager:
 		return
 
 	def populateTopicNode(self, node: TopicNode):
-		print('D')
+		print('D', end='')
 		if(node.getTopic().getName() in self.nodes):
 			return None
-		print('E')
+		print('E', end='')
 		#before performing operations-- we must validate the info of given TopicNode
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
-		print('F')
 		sourceElement = SourceElement(sourceCode)
-		print('G')
 		sourceElement.validateName(node)
-		print('H')
 		if(node.getTopic().getName() in self.nodes):
 			return None
 		print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
 		self.nodes[node.getTopic().getName()] = node
-		print('I')
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
-		print('J')
 		node.setCategory(sourceElement.getCategories())
-		print('K')
 		self.addInfoToNewNodes(node, links)
-		print('L')
 		node.setIsPopulated()
-		print('M')
 		print()
 		#at end we check the current node off as 'populated'
 		#self.populatedNodes[node.getTopic().getName()] = True;
 		self.createConnectionDetails()
-		print('N')
 		if dill.pickles(node):
 			return node
 		else:
 			print( dill.detect.badtypes(node, depth=1).keys())
+			quit()
 			return None
 		#print(node)
 
 	def addInfoToNewNodes(self, node, links):
-		print('1')
 		for link in list(links.keys()):
-			print('2')
 			nextTopic = Topic(link)
 			nextTopicNode = TopicNode(nextTopic)
 			#SourceElement.staticValidateName(nextTopicNode)
 			SourceElement.staticValidation(nextTopicNode)
-			print('3')
 			if(self.isBadLink(nextTopicNode)):
 				continue
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, link)
-			print('4')
 			node.addConnection(nextTopic, nextTopicNode);
 			print('✓', end='')
 
 
 	def createConnectionDetails(self):
-		print('5')
 		for node in self.nodes.values():
-			print('6')
 			if node.isPopulated() == False:
 				continue
 			for con in node.getConnections().keys():
@@ -174,7 +163,6 @@ class GraphManager:
 						continue
 				#WILL PRODUCE weird errors if behind decimals or ellipse grammar
 				mn = re.search(name+"(.*)\.", node.getIntroText())
-				print('8')
 				if(mn != None):
 					#print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
 					node.addConnectionDetail(con, m.group() + mn.group())
@@ -182,17 +170,13 @@ class GraphManager:
 
 	def isBadLink(self, topicNode):
 		name = topicNode.getTopic().getName()
-		print('9')
 		n = any(re.findall('List of|Wikipedia|File:', name, re.IGNORECASE))
 		if n:
 			print('(N)',  end='')
 			return True
-		print('12')
 		#check categories
 		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
-		print('11')
 		categories = topicNode.getCategories()
-		print('10')
 		for cat in categories:
 			c =  any(re.findall(catCheck, cat, re.IGNORECASE))
 			if c:
