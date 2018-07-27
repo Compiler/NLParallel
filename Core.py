@@ -18,14 +18,14 @@ if __name__ == '__main__':
 	#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(4))
 	#graphManager.saveGraph('p4');
 
-	nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
+	nodes = pickle.load(open("GraphData/n2_graphNodes.p", "rb"))
 	print('Loaded')
 	search = SearchUtils(nodes)
 	if 'Mathematics' in nodes:
 		print(True)
 	if 'Bible' in nodes:
 		print(True)
-	path = search.dijkstra('Mathematics', 'Bible')
+	path = search.dijkstra('Mathematics', 'Albert Einstein')
 	sz = len(path)
 	for i in range(0, sz):
 		print(nodes[path[sz - i - 1]].getConnectionDetail(Topic(path[sz-i-2])))
