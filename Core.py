@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
 	graphManager = GraphManager()
 	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(2))
-	graphManager.saveGraph('p2');
+	graphManager.saveGraph('p4');
 
 	nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
 	print('Loaded')

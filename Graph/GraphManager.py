@@ -77,16 +77,13 @@ class GraphManager:
 		merger = []
 		pool = Pool(cpu_count() * 2)
 		for currentDepth in range(1, depth):
-			print('A')
 			connections = []
 
 			print(len(list(self.nodes.values())))
-			print('B')
 			for item in nodesPopulated:
 				if item != None:
 					if item.isPopulated():
 						connections +=list(item.getConnections().values())
-			print('C')
 			print("con",len(connections))
 			print("nodesPopulated",len(nodesPopulated))
 			print("self.nodes",len(self.nodes.keys()))
@@ -95,7 +92,6 @@ class GraphManager:
 			for node in nodesPopulated:
 				if node != None:
 					if item.isPopulated():
-						print('C.3')
 						self.nodes[node.getTopic().getName()] = node
 					#self.populatedNodes[node.getTopic().getName()] = True;
 
@@ -106,24 +102,22 @@ class GraphManager:
 		return
 
 	def populateTopicNode(self, node: TopicNode):
-		print('D', end='')
 		if(node.getTopic().getName() in self.nodes):
 			return None
-		print('E', end='')
 		#before performing operations-- we must validate the info of given TopicNode
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		sourceElement = SourceElement(sourceCode)
 		sourceElement.validateName(node)
 		if(node.getTopic().getName() in self.nodes):
 			return None
-		print(node.getTopic(), '|', end='')
+		#print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
 		self.nodes[node.getTopic().getName()] = node
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		node.setCategory(sourceElement.getCategories())
 		self.addInfoToNewNodes(node, links)
 		node.setIsPopulated()
-		print()
+		#print()
 		#at end we check the current node off as 'populated'
 		#self.populatedNodes[node.getTopic().getName()] = True;
 		self.createConnectionDetails()
@@ -146,7 +140,7 @@ class GraphManager:
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, link)
 			node.addConnection(nextTopic, nextTopicNode);
-			print('✓', end='')
+			#print('✓', end='')
 
 
 	def createConnectionDetails(self):
@@ -172,7 +166,7 @@ class GraphManager:
 		name = topicNode.getTopic().getName()
 		n = any(re.findall('List of|Wikipedia|File:', name, re.IGNORECASE))
 		if n:
-			print('(N)',  end='')
+			#print('(N)',  end='')
 			return True
 		#check categories
 		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
@@ -180,7 +174,7 @@ class GraphManager:
 		for cat in categories:
 			c =  any(re.findall(catCheck, cat, re.IGNORECASE))
 			if c:
-				print('(C)', end='')
+				#print('(C)', end='')
 				return True
 
 		return False

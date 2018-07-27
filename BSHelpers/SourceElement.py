@@ -63,9 +63,7 @@ class SourceElement:
 		return cats
 	def grabIntroAndSeeAlsoLinks(self, topic):
 		links = {}
-		print('CVCVC')
 		self.grabIntroLinks(links, topic)
-		print('CSDW')
 		#self.grabSeeAlsoLinks(links)
 
 		return links
