@@ -68,6 +68,7 @@ class GraphManager:
 		current_depth = 1
 		#pool.map(self.populateTopicNode, [startingNode])
 		self.populateTopicNode(startingNode)
+		self.nodes[startingNode.getTopic().getName()] = startingNode
 		if depth == 1:
 			return
 
@@ -75,25 +76,26 @@ class GraphManager:
 		nodesPopulated = [currentNode]
 		connections = []
 		merger = []
-		pool = Pool(cpu_count() * 2)
+		pool = Pool(cpu_count())
 		for currentDepth in range(1, depth):
+			print('=' * 70)
+			print("=  At depth", currentDepth)
 			connections = []
-
-			print(len(list(self.nodes.values())))
 			for item in nodesPopulated:
 				if item != None:
 					if item.isPopulated():
 						connections +=list(item.getConnections().values())
-			print("con",len(connections))
-			print("nodesPopulated",len(nodesPopulated))
-			print("self.nodes",len(self.nodes.keys()))
+			print("=  Current number of connections:",len(connections))
+			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
+			print("=  Total number of nodes",len(self.nodes.keys()))
 			nodesPopulated = pool.map(self.populateTopicNode, connections)
-			print('C.2')
+			print('\n=  Successfully populated another round of nodes')
 			for node in nodesPopulated:
 				if node != None:
 					if item.isPopulated():
 						self.nodes[node.getTopic().getName()] = node
 					#self.populatedNodes[node.getTopic().getName()] = True;
+			print('=  Updated self.nodes\n')
 
 		pool.close()
 		pool.join()
@@ -102,7 +104,7 @@ class GraphManager:
 		return
 
 	def populateTopicNode(self, node: TopicNode):
-		if(node.getTopic().getName() in self.nodes):
+		if(node.isPopulated()):
 			return None
 		#before performing operations-- we must validate the info of given TopicNode
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
@@ -112,7 +114,7 @@ class GraphManager:
 			return None
 		#print(node.getTopic(), '|', end='')
 		#adds TopicNode to graph once validated
-		self.nodes[node.getTopic().getName()] = node
+		#self.nodes[node.getTopic().getName()] = node
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		node.setCategory(sourceElement.getCategories())
 		self.addInfoToNewNodes(node, links)
@@ -120,7 +122,7 @@ class GraphManager:
 		#print()
 		#at end we check the current node off as 'populated'
 		#self.populatedNodes[node.getTopic().getName()] = True;
-		self.createConnectionDetails()
+		self.createConnectionDetails(node)
 		if dill.pickles(node):
 			return node
 		else:
@@ -138,28 +140,24 @@ class GraphManager:
 			if(self.isBadLink(nextTopicNode)):
 				continue
 			#node.setDetailingName(nextTopic, links[link])
-			node.setDetailingName(nextTopic, link)
+			node.setDetailingName(nextTopic, links[link])
 			node.addConnection(nextTopic, nextTopicNode);
 			#print('✓', end='')
 
 
-	def createConnectionDetails(self):
-		for node in self.nodes.values():
-			if node.isPopulated() == False:
-				continue
-			for con in node.getConnections().keys():
-				name = re.escape(node.getDetailingName(con))
-				m = re.search(("\.(.*)" + name), node.getIntroText())
+	def createConnectionDetails(self, node):
+		for con in node.getConnections().keys():
+			name = re.escape(node.getDetailingName(con))
+			m = re.search(("\.(.*)" + name), node.getIntroText())
+			if(m == None):
+				m = re.search(("[\r\n]+(.*)" + name), node.getIntroText())
 				if(m == None):
-					m = re.search(("[\r\n]+(.*)" + name), node.getIntroText())
+					continue
+			#WILL PRODUCE weird errors if behind decimals or ellipse grammar
+			mn = re.search(name+"(.*)\.", node.getIntroText())
+			if(mn != None):
+				node.addConnectionDetail(con, m.group() + mn.group())
 
-					if(m == None):
-						continue
-				#WILL PRODUCE weird errors if behind decimals or ellipse grammar
-				mn = re.search(name+"(.*)\.", node.getIntroText())
-				if(mn != None):
-					#print("Relation between", node.getTopic().getName(), "and", name, "is", m.group() + mn.group()[len(name):])
-					node.addConnectionDetail(con, m.group() + mn.group())
 
 
 	def isBadLink(self, topicNode):
