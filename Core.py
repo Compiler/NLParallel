@@ -18,7 +18,6 @@ if __name__ == '__main__':
 	#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(4))
 	#graphManager.saveGraph('p4');
 
-
 	nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
 	print('Loaded')
 	search = SearchUtils(nodes)
@@ -29,7 +28,7 @@ if __name__ == '__main__':
 	path = search.dijkstra('Mathematics', 'Bible')
 	sz = len(path)
 	for i in range(0, sz):
-		print(path[sz - i - 1], ' -> ', end = '')
+		print(nodes[path[sz - i - 1]].getConnectionDetail(Topic(path[sz-i-2])))
 
 	elapsedTime = timeit.default_timer() - startTime
 	val = "{0:.2f}".format((elapsedTime / 60.0))

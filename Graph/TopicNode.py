@@ -6,7 +6,7 @@ class TopicNode:
 	def __init__(self, topic):
 		self.topic = topic;
 		self.connections = {};
-		self.connectionDetails={};
+		self.connectionDetails={}; #Topic->details(str)
 		self.introText = None;
 		self.detailingName = {};#ConnectingTopic->str(name)
 		self.mainName = None;
@@ -17,7 +17,7 @@ class TopicNode:
 
 	def isPopulated(self):
 		return self.populated
-		
+
 	def setIsPopulated(self):
 		self.populated = True
 
@@ -46,7 +46,11 @@ class TopicNode:
 
 	def addConnectionDetail(self, topic, details):
 		self.connectionDetails[topic] = details;
-
+	def getConnectionDetail(self, topic):
+		if topic in self.connectionDetails:
+			return self.connectionDetails[topic]
+		else:
+			print(topic, 'not in', self.topic,' connections')
 	def getConnections(self):
 		return self.connections
 
