@@ -14,18 +14,22 @@ if __name__ == '__main__':
 	startTime = timeit.default_timer()
 	#print('Beginning expansion...')
 
-	graphManager = GraphManager()
-	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(2))
-	graphManager.saveGraph('p4');
+	#graphManager = GraphManager()
+	#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(4))
+	#graphManager.saveGraph('p4');
+
 
 	nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
 	print('Loaded')
 	search = SearchUtils(nodes)
 	if 'Mathematics' in nodes:
 		print(True)
-	if 'Concept' in nodes:
+	if 'Bible' in nodes:
 		print(True)
-	search.dijkstra('Mathematics', 'Concept')
+	path = search.dijkstra('Mathematics', 'Bible')
+	sz = len(path)
+	for i in range(0, sz):
+		print(path[sz - i - 1], ' -> ', end = '')
 
 	elapsedTime = timeit.default_timer() - startTime
 	val = "{0:.2f}".format((elapsedTime / 60.0))

@@ -25,19 +25,42 @@ class SearchUtils:
 
 		for key in self.nodes.keys():
 			distance[key] = sys.maxsize
+			for oth in self.nodes[key].getConnections().keys():
+				distance[oth.getName()] = sys.maxsize
 
-
+		distance[source] = 0
 
 
 		queue.put((distance[source], source))
 		while queue.empty() == False:
-			currentShortest = queue.get()
+			currentShortest = queue.get()[1]
+			if currentShortest not in self.nodes:
+				if(currentShortest == goal):
+					curDistance = distance[currentShortest] + edgeWeight
+					if curDistance < distance[currentShortest]:
+						distance[currentShortest] = curDistance
+				visited[currentShortest] = None
+				continue
 			for node in self.nodes[currentShortest].getConnections().keys():
+				node = node.getName()
 				if node in visited:
 					continue
 				curDistance = distance[currentShortest] + edgeWeight
 				if curDistance < distance[node]:
 					distance[node] = curDistance
+
 				parent[node] = currentShortest
 				queue.put((distance[node], node))
-				visited[currentShortest]
+				visited[currentShortest] = None
+		if goal not in distance:
+			print('no path found')
+			return
+		node = goal
+		print(distance[goal])
+		path = []
+		while parent[node] != None:
+			path.append(node)
+			node = parent[node]
+		path.append(source)
+		return path
+		
