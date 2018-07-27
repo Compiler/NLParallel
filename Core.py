@@ -14,9 +14,9 @@ if __name__ == '__main__':
 	startTime = timeit.default_timer()
 	#print('Beginning expansion...')
 
-	#graphManager = GraphManager()
-	#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(depth))
-	#graphManager.saveGraph('tester');
+	graphManager = GraphManager()
+	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(2))
+	graphManager.saveGraph('p2');
 
 	nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
 	print('Loaded')
@@ -25,7 +25,7 @@ if __name__ == '__main__':
 		print(True)
 	if 'Concept' in nodes:
 		print(True)
-	search.findAllPaths('Mathematics', 'Concept')
+	search.dijkstra('Mathematics', 'Concept')
 
 	elapsedTime = timeit.default_timer() - startTime
 	val = "{0:.2f}".format((elapsedTime / 60.0))
