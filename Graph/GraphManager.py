@@ -156,7 +156,9 @@ class GraphManager:
 			#WILL PRODUCE weird errors if behind decimals or ellipse grammar
 			mn = re.search(name+"(.*)\.", node.getIntroText())
 			if(mn != None):
-				node.addConnectionDetail(con, m.group() + mn.group())
+				text = m.group()[:-(len(name))] + ' ' +mn.group()
+				text = re.sub('\[\d+\]', '',text)
+				node.addConnectionDetail(con, text)
 
 
 
