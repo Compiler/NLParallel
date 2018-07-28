@@ -17,7 +17,6 @@ A priori and a posteriori
 	->Modern philosophy
 	->Noun
 	->Philosophy
-	->Philosophy
 	->Theory of justification
 ==========================================================
 Abacus
@@ -104,7 +103,6 @@ Accounting
 	->Economic entity
 	->Financial accounting
 	->Financial Accounting Standards Board
-	->Financial statement
 	->Financial statement
 	->International Financial Reporting Standards
 	->Investor
@@ -297,7 +295,6 @@ Algorithm
 	->David Hilbert
 	->Determinism
 	->Effective method
-	->Effective method
 	->Emil Leon Post
 	->Empty string
 	->Entscheidungsproblem
@@ -377,7 +374,6 @@ Ancient Greece
 	->Central Asia
 	->Civilization
 	->Classical Greece
-	->Culture of Greece
 	->Culture of Greece
 	->Deity
 	->Early Middle Ages
@@ -465,7 +461,6 @@ Andrew Wiles
 	->Fermat's Last Theorem
 	->Number theory
 	->Order of the British Empire
-	->Order of the British Empire
 	->Regius Professor
 	->University of Oxford
 	->Wiles's proof of Fermat's Last Theorem
@@ -521,7 +516,6 @@ Archaeology
 	->Paleobotany
 	->Paleoecology
 	->Paleolithic
-	->Paleontology
 	->Paleontology
 	->Paleozoology
 	->Physics
@@ -676,9 +670,11 @@ Astronomy
 	->Atmosphere of Earth
 	->Babylonian astronomy
 	->Calendar
+	->Celestial event
 	->Celestial navigation
 	->Chemistry
 	->Chronology of the universe
+	->Citizen science
 	->Comet
 	->Cosmic microwave background
 	->Egyptian astronomy
@@ -693,13 +689,13 @@ Astronomy
 	->Night sky
 	->Nubians
 	->Observational astronomy
-	->Phenomenon
 	->Physical cosmology
 	->Physics
 	->Planet
 	->Star
 	->Supernova
 	->Theoretical astronomy
+	->Transient astronomical event
 	->Universe
 ==========================================================
 Attic Greek
@@ -758,7 +754,6 @@ Benjamin Peirce
 ==========================================================
 Bern
 	->Alemannic German
-	->Alemannic German
 	->Bernese German
 	->Canton of Bern
 	->Capital city
@@ -790,7 +785,6 @@ Bertrand Russell
 	->Gottlob Frege
 	->Linguistics
 	->Logic
-	->Logic
 	->Ludwig Wittgenstein
 	->Mathematical logic
 	->Metaphysics
@@ -815,7 +809,6 @@ Black–Scholes model
 	->Black–Scholes model
 	->Chicago Board Options Exchange
 	->Delta neutral
-	->Derivative (finance)
 	->Derivative (finance)
 	->Edward O. Thorp
 	->Financial market
@@ -1062,7 +1055,6 @@ Chaos theory
 	->Computer science
 	->Deterministic system
 	->Dynamical system
-	->Dynamical system
 	->Ecology
 	->Economics
 	->Edge of chaos
@@ -1110,8 +1102,6 @@ Chemistry
 	->Glass
 	->Hydrogen bond
 	->Ion
-	->Ion
-	->Ion
 	->Ionic bonding
 	->Josiah Willard Gibbs
 	->Metal
@@ -1134,7 +1124,6 @@ Class (philosophy)
 	->Natural kind
 	->Philosopher
 	->Socrates
-	->Type–token distinction
 	->Type–token distinction
 	->Universal (metaphysics)
 ==========================================================
@@ -1185,7 +1174,6 @@ Classification of discontinuities
 Closed-world assumption
 	->Knowledge representation and reasoning
 	->Mathematical logic
-	->Mathematical logic
 	->Negation as failure
 	->Open-world assumption
 ==========================================================
@@ -1193,7 +1181,6 @@ Codomain
 	->Cartesian product
 	->Class (set theory)
 	->Domain of a function
-	->Function (mathematics)
 	->Function (mathematics)
 	->Image (mathematics)
 	->Mathematics
@@ -1319,7 +1306,6 @@ Convergent series
 	->Mathematics
 	->Sequence
 	->Series (mathematics)
-	->Series (mathematics)
 	->Summation
 ==========================================================
 Convex set
@@ -1400,7 +1386,6 @@ Criteria of truth
 ==========================================================
 Critique of Pure Reason
 	->A priori and a posteriori
-	->A priori and a posteriori
 	->Analytic–synthetic distinction
 	->Christian Wolff (philosopher)
 	->Critique of Judgment
@@ -1473,7 +1458,6 @@ Deductive reasoning
 Definition
 	->Axiom
 	->Extensional and intensional definitions
-	->Extensional and intensional definitions
 	->Mathematics
 	->Ostensive definition
 	->Phrase
@@ -1493,7 +1477,6 @@ Die (manufacturing)
 	->Tool
 ==========================================================
 Diffeomorphism
-	->Differentiable manifold
 	->Differentiable manifold
 	->Inverse function
 	->Isomorphism
@@ -1515,7 +1498,6 @@ Differential calculus
 	->Functional analysis
 	->Fundamental theorem of calculus
 	->Graph of a function
-	->Integral
 	->Integral
 	->Linear approximation
 	->Mathematics
@@ -1625,10 +1607,8 @@ Discovery science
 Displacement (vector)
 	->Distance
 	->Euclidean vector
-	->Euclidean vector
 	->Position (vector)
 	->Rate (mathematics)
-	->Speed
 	->Speed
 	->Velocity
 ==========================================================
@@ -1889,7 +1869,6 @@ Euclidean geometry
 	->Synthetic geometry
 	->Theorem
 	->Three-dimensional space
-	->Three-dimensional space
 ==========================================================
 Eugene Wigner
 	->Albert Einstein
@@ -1991,7 +1970,6 @@ Falsifiability
 	->Proposition
 	->Pseudoscience
 	->Scientific method
-	->Scientific method
 	->Theory
 ==========================================================
 Falsity
@@ -2022,7 +2000,6 @@ Field (mathematics)
 	->Algebra
 	->Algebraic function field
 	->Algebraic geometry
-	->Algebraic number field
 	->Algebraic number field
 	->Algebraic structure
 	->Analysis
@@ -2084,7 +2061,6 @@ Foam
 	->Liquid
 	->Phenol formaldehyde resin
 	->Polystyrene
-	->Polystyrene
 	->Polyurethane
 	->Quantum foam
 	->Reticulated foam
@@ -2093,11 +2069,9 @@ Foam
 ==========================================================
 Force
 	->Acceleration
-	->Acceleration
 	->Angular acceleration
 	->Deformation (engineering)
 	->Drag (physics)
-	->Euclidean vector
 	->Euclidean vector
 	->Fluid
 	->International System of Units
@@ -2122,7 +2096,6 @@ Formal proof
 	->Computational complexity theory
 	->Effective method
 	->Formal language
-	->Formal system
 	->Formal system
 	->Generalization
 	->Logical consequence
@@ -2446,7 +2419,6 @@ Geophysics
 	->Atmosphere
 	->Atmospheric electricity
 	->Earth
-	->Earth
 	->Earth's magnetic field
 	->Environmental protection
 	->Exploration geophysics
@@ -2579,14 +2551,12 @@ Gravity
 	->Fundamental interaction
 	->Galaxy formation and evolution
 	->General relativity
-	->General relativity
 	->Gravitational singularity
 	->Macroscopic scale
 	->Mass
 	->Moon
 	->Newton's law of universal gravitation
 	->Orbit
-	->Proportionality (mathematics)
 	->Proportionality (mathematics)
 	->Quantum gravity
 	->Quantum mechanics
@@ -2597,7 +2567,6 @@ Gravity
 	->Strong interaction
 	->Supergravity
 	->Theory of everything
-	->Tide
 	->Tide
 	->Time
 	->Timeline of the formation of the Universe
@@ -2629,7 +2598,6 @@ Greek language
 	->International scientific vocabulary
 	->Koine Greek
 	->Languages of the European Union
-	->Latin
 	->Latin
 	->Linear B
 	->Lingua franca
@@ -2669,7 +2637,6 @@ Group (mathematics)
 	->Geometric group theory
 	->Geometry
 	->Group representation
-	->Group theory
 	->Group theory
 	->Identity element
 	->Integer
@@ -2830,7 +2797,6 @@ Hellenistic period
 	->South Asia
 	->Theatre of ancient Greece
 	->Western Asia
-	->Western Asia
 ==========================================================
 Heuristic
 	->Ancient Greek
@@ -2865,7 +2831,6 @@ Hilbert space
 	->Limit (mathematics)
 	->Linear algebra
 	->Linear map
-	->Lp space
 	->Lp space
 	->Mathematical structure
 	->Mathematics
@@ -3209,7 +3174,6 @@ Institute for Advanced Study
 ==========================================================
 Integral
 	->Antiderivative
-	->Antiderivative
 	->Area
 	->Bernhard Riemann
 	->Calculus
@@ -3220,7 +3184,6 @@ Integral
 	->Function (mathematics)
 	->Fundamental theorem of calculus
 	->Graph of a function
-	->Interval (mathematics)
 	->Interval (mathematics)
 	->Line integral
 	->Mathematics
@@ -3245,7 +3208,6 @@ International System of Units
 	->Ampere
 	->Candela
 	->Centimetre–gram–second system of units
-	->Centimetre–gram–second system of units
 	->Coherence (units of measurement)
 	->Country
 	->Discipline (academia)
@@ -3254,7 +3216,6 @@ International System of Units
 	->General Conference on Weights and Measures
 	->Katal
 	->Kelvin
-	->Kilogram
 	->Kilogram
 	->Liberia
 	->Metre
@@ -3320,7 +3281,6 @@ Italians
 	->France
 	->Istria
 	->Italian diaspora
-	->Italian language
 	->Italian language
 	->Italian Peninsula
 	->Italic peoples
@@ -3446,6 +3406,7 @@ John von Neumann
 	->Linear programming
 	->Mathematician
 	->Mathematics
+	->National Academy of Sciences
 	->Nuclear physics
 	->Nuclear weapon design
 	->Numerical analysis
@@ -3481,7 +3442,6 @@ Journalism
 	->Private sector
 	->Profit motive
 	->Report
-	->Smartphone
 	->Smartphone
 ==========================================================
 Jupiter
@@ -3530,7 +3490,6 @@ Jurisprudence
 	->Civil law (legal system)
 	->International law
 	->Jurist
-	->Law
 	->Law
 	->Natural law
 	->Philosophy of law
@@ -3775,7 +3734,6 @@ Law
 	->Common law
 	->Constitution
 	->Contract
-	->Contract
 	->Criminal law
 	->Decree
 	->Economics
@@ -3824,6 +3782,7 @@ Laws of science
 	->Physical law
 	->Physics
 	->Prediction
+	->Scientific law
 	->Scientific method
 	->Scientific theory
 	->Theorem
@@ -3871,15 +3830,12 @@ Linguistics
 	->Dictionary
 	->Discourse
 	->Discourse analysis
-	->Discourse analysis
 	->Evolutionary linguistics
 	->Ferdinand de Saussure
 	->Foreign language
 	->Generative grammar
-	->Generative grammar
 	->Genre
 	->Grammar
-	->Historical linguistics
 	->Historical linguistics
 	->India
 	->Jacques Derrida
@@ -4044,8 +4000,6 @@ Mass–energy equivalence
 	->General relativity
 	->Henri Poincaré
 	->Invariant mass
-	->Invariant mass
-	->Invariant mass
 	->Light
 	->Mass
 	->Mass in special relativity
@@ -4087,7 +4041,6 @@ Mathematical economics
 	->Friedrich Hayek
 	->Game theory
 	->John Maynard Keynes
-	->Mathematical optimization
 	->Mathematical optimization
 	->Matrix (mathematics)
 	->Recurrence relation
@@ -4239,7 +4192,6 @@ Mathematical proof
 	->Natural language
 	->Philosophy of mathematics
 	->Proof theory
-	->Proof theory
 	->Proposition
 	->Quasi-empiricism in mathematics
 	->Theorem
@@ -4254,7 +4206,6 @@ Mathematical sciences
 	->Discipline (academia)
 	->Econometrics
 	->Inverse probability
-	->Mathematics
 	->Mathematics
 	->Observation
 	->Operations research
@@ -4296,7 +4247,6 @@ Mathematician
 	->Mathematical model
 	->Mathematical problem
 	->Mathematical structure
-	->Mathematics
 	->Mathematics
 	->Number
 	->Quantity
@@ -4354,7 +4304,6 @@ Matrix (mathematics)
 	->Computer graphics
 	->Conformable matrix
 	->Derivative
-	->Derivative
 	->Determinant
 	->Diagonal matrix
 	->Dimension
@@ -4378,7 +4327,6 @@ Matrix (mathematics)
 	->Matrix (mathematics)
 	->Matrix addition
 	->Matrix calculus
-	->Matrix multiplication
 	->Matrix multiplication
 	->Number
 	->Numerical analysis
@@ -4450,7 +4398,6 @@ Measurement
 	->Engineering
 	->International Bureau of Weights and Measures
 	->International System of Units
-	->Level of measurement
 	->Level of measurement
 	->Metrology
 	->Natural science
@@ -4582,7 +4529,6 @@ Modernity
 	->Marxism
 	->Modern art
 	->Modern history
-	->Modern history
 	->Modern warfare
 	->Modernism
 	->Nation state
@@ -4640,7 +4586,6 @@ Motion (physics)
 	->Frame of reference
 	->Mass
 	->Mathematics
-	->Momentum
 	->Momentum
 	->Physics
 	->Position (vector)
@@ -4754,7 +4699,6 @@ Natural science
 	->Formal science
 	->Galileo Galilei
 	->Hard and soft science
-	->Hard and soft science
 	->Laws of science
 	->Mathematical physics
 	->Observation
@@ -4851,7 +4795,6 @@ Nuclear fission
 	->Photon
 	->Proton emission
 	->Radioactive decay
-	->Radioactive decay
 	->Radioactive waste
 	->Spontaneous fission
 	->Ternary fission
@@ -4882,7 +4825,6 @@ Numeral system
 	->Decimal
 	->Finite set
 	->Mathematical notation
-	->Number
 	->Number
 	->Numerical digit
 	->p-adic number
@@ -4931,13 +4873,11 @@ Optics
 	->Classical electromagnetism
 	->Diffraction
 	->Electromagnetic radiation
-	->Electromagnetic radiation
 	->Engineering
 	->Geometrical optics
 	->Infrared
 	->Laser
 	->Lens (optics)
-	->Light
 	->Light
 	->Matter
 	->Medicine
@@ -5049,7 +4989,6 @@ Patterns in nature
 	->Soap film
 	->Spiral
 	->Symmetry
-	->Symmetry
 	->Tessellation
 	->Tree
 	->Wave
@@ -5092,7 +5031,6 @@ Pendulum
 	->Frequency
 	->Galileo Galilei
 	->Gravimeter
-	->Gravity
 	->Gravity
 	->Mechanical equilibrium
 	->Oscillation
@@ -5251,7 +5189,6 @@ Photon
 	->Gauge theory
 	->Gilbert N. Lewis
 	->Invariant mass
-	->Invariant mass
 	->Laser
 	->Lens (optics)
 	->Light
@@ -5313,7 +5250,6 @@ Physical body
 	->Scientific modelling
 	->Spacetime
 	->Three-dimensional space
-	->Three-dimensional space
 	->Time
 	->Universe
 ==========================================================
@@ -5325,7 +5261,6 @@ Physicist
 	->Particle physics
 	->Phenomenon
 	->Physical cosmology
-	->Physics
 	->Physics
 	->Scientist
 	->Universe
@@ -5383,7 +5318,6 @@ Plato
 	->Metaphysics
 	->Parmenides
 	->Philosopher
-	->Philosophy
 	->Philosophy
 	->Platonic Academy
 	->Political philosophy
@@ -5550,7 +5484,6 @@ Projectile motion
 	->Ballistics
 	->Closed-form expression
 	->Drag (physics)
-	->Drag (physics)
 	->Euclidean vector
 	->Friction
 	->Galileo Galilei
@@ -5701,18 +5634,14 @@ Public health
 	->Disease surveillance
 	->Environmental health
 	->Environmental health officer
-	->Environmental health officer
 	->Epidemiology
 	->Hand washing
 	->Health
 	->Health care
-	->Health care
 	->Health economics
 	->Health indicator
 	->Interdisciplinarity
-	->Interdisciplinarity
 	->Medical assistant
-	->Mental health
 	->Mental health
 	->Microbiologist
 	->Midwife
@@ -5742,12 +5671,17 @@ Qualitative research
 	->Experiment
 	->Grounded theory
 	->Human behavior
+	->Journalism
 	->Market research
 	->Methodology
 	->Natural science
+	->Nonprofit organization
+	->Observation
 	->Phenomenology (philosophy)
+	->Qualitative property
 	->Quantitative research
 	->Sample (statistics)
+	->Scientific method
 	->Social science
 	->Symbolic interactionism
 	->Truth
@@ -5852,10 +5786,6 @@ Quasi-empiricism in mathematics
 	->Mathematics
 	->Penelope Maddy
 	->Philosophy of mathematics
-	->Philosophy of mathematics
-	->Philosophy of mathematics
-	->Philosophy of mathematics
-	->Philosophy of mathematics
 	->Physics
 	->Quasi-empirical method
 	->Social science
@@ -5887,7 +5817,6 @@ Reason
 	->Behavior
 	->Belief
 	->Causality
-	->Causality
 	->Cognition
 	->Cognitive science
 	->Comparative psychology
@@ -5903,7 +5832,6 @@ Reason
 	->Information
 	->Institution
 	->Intellect
-	->Intuition
 	->Intuition
 	->Language
 	->Logic
@@ -5980,7 +5908,6 @@ Riemann hypothesis
 	->Bernhard Riemann
 	->Clay Mathematics Institute
 	->Complex number
-	->Complex number
 	->Conjecture
 	->David Hilbert
 	->Function (mathematics)
@@ -6029,7 +5956,6 @@ Romanization of Greek
 	->Ancient Greek
 	->Ancient Rome
 	->Archaic Greek alphabets
-	->Archaic Greek alphabets
 	->Aspirated consonant
 	->B
 	->Chi (letter)
@@ -6043,7 +5969,6 @@ Romanization of Greek
 	->Greek alphabet
 	->Greek language
 	->Greek name
-	->Greek orthography
 	->Greek orthography
 	->Greeklish
 	->Hellenic Organization for Standardization
@@ -6088,12 +6013,12 @@ Russell–Einstein Manifesto
 ==========================================================
 Science
 	->Academic institution
+	->Ancient Egypt
 	->Applied science
 	->Astronomy
 	->Biology
 	->Branches of science
 	->Chemistry
-	->Classical physics
 	->Company
 	->Economics
 	->Empirical evidence
@@ -6111,7 +6036,6 @@ Science
 	->Nature
 	->Physical law
 	->Physics
-	->Pre-Socratic philosophy
 	->Prediction
 	->Product (business)
 	->Psychology
@@ -6133,7 +6057,6 @@ Scientific method
 	->Empirical evidence
 	->Experiment
 	->Falsifiability
-	->Hypothesis
 	->Hypothesis
 	->Inductive reasoning
 	->Large Hadron Collider
@@ -6188,7 +6111,6 @@ Semantics
 	->International scientific vocabulary
 	->Language
 	->Lexicology
-	->Linguistics
 	->Linguistics
 	->Meaning (linguistics)
 	->Michel Bréal
@@ -6251,7 +6173,6 @@ Sequence
 	->List (abstract data type)
 	->Mathematics
 	->Natural number
-	->Natural number
 	->Parity (mathematics)
 	->Set (mathematics)
 	->Stream (computing)
@@ -6285,7 +6206,6 @@ Series (mathematics)
 	->Summation
 	->Term (logic)
 	->Zeno of Elea
-	->Zeno's paradoxes
 	->Zeno's paradoxes
 ==========================================================
 Set (mathematics)
@@ -6324,7 +6244,6 @@ Social relation
 	->Gemeinschaft and Gesellschaft
 	->Max Weber
 	->Social actions
-	->Social science
 	->Social science
 	->Social structure
 	->Sociology
@@ -6483,11 +6402,9 @@ Socrates
 	->Classical Greece
 	->Epistemology
 	->Ethics
-	->Ethics
 	->Irony
 	->Pedagogy
 	->Philosopher
-	->Plato
 	->Plato
 	->Playwright
 	->Romanization of Greek
@@ -6579,7 +6496,6 @@ Special relativity
 	->Galilean transformation
 	->Galileo Galilei
 	->General relativity
-	->General relativity
 	->Gravitational field
 	->Gravity
 	->Lorentz transformation
@@ -6597,10 +6513,7 @@ Special relativity
 	->Scientific theory
 	->Space
 	->Spacetime
-	->Spacetime
-	->Spacetime
 	->Special case
-	->Speed of light
 	->Speed of light
 	->Time dilation
 ==========================================================
@@ -6632,7 +6545,6 @@ Spherical geometry
 	->Dimension
 	->Elliptic geometry
 	->Euclidean geometry
-	->Euclidean geometry
 	->Geodesic
 	->Geometry
 	->Great circle
@@ -6657,7 +6569,6 @@ Statistical mechanics
 	->Irreversible process
 	->Probability theory
 	->Statistical mechanics
-	->Thermodynamics
 	->Thermodynamics
 ==========================================================
 Statistics
@@ -6687,7 +6598,6 @@ Statistics
 	->Statistical population
 	->Statistician
 	->Survey methodology
-	->Type I and type II errors
 	->Type I and type II errors
 ==========================================================
 Stellar parallax
@@ -6739,7 +6649,6 @@ Substance theory
 	->Hylomorphism
 	->Immanence
 	->Metaphysics
-	->Mind–body dualism
 	->Mind–body dualism
 	->Monism
 	->Object (philosophy)
@@ -6794,7 +6703,6 @@ Swiss Federal Institute of Intellectual Property
 ==========================================================
 Symbol
 	->Alphabet
-	->Cartography
 	->Cartography
 	->Number
 	->Numeral system
@@ -6878,7 +6786,6 @@ Tessellation
 	->Ceramic
 	->Dimension
 	->Euclidean geometry
-	->Euclidean tilings by convex regular polygons
 	->Euclidean tilings by convex regular polygons
 	->Geometric shape
 	->Hexagonal tiling
@@ -7049,7 +6956,6 @@ Topology
 Trade
 	->Barter
 	->Bilateral trade
-	->Bilateral trade
 	->Boutique
 	->Business
 	->Commodity
@@ -7070,7 +6976,6 @@ Trade
 	->Online and offline
 	->Precious metal
 	->Product (business)
-	->Retail
 	->Retail
 	->Sales
 	->System
@@ -7137,7 +7042,6 @@ Tychonic system
 	->Coordinate system
 	->Earth
 	->Geocentric model
-	->Geocentric model
 	->Moon
 	->Newton's law of universal gravitation
 	->Nilakantha Somayaji
@@ -7152,7 +7056,6 @@ Tychonic system
 Umbrella term
 	->Categorization
 	->Cryptanalysis
-	->Cryptography
 	->Cryptography
 	->Morpheme
 	->Phrase
@@ -7192,7 +7095,6 @@ Universe
 	->Energy
 	->Exoplanet
 	->Expansion of the universe
-	->Expansion of the universe
 	->Foam
 	->Fundamental interaction
 	->Galaxy
@@ -7211,7 +7113,6 @@ Universe
 	->Multiverse
 	->Newton's law of universal gravitation
 	->Nicolaus Copernicus
-	->Observable universe
 	->Observable universe
 	->Open cluster
 	->Planet
@@ -7314,19 +7215,16 @@ Wave
 	->Transverse wave
 	->Ultraviolet
 	->Vacuum
-	->Vacuum
 	->Vibration
 	->Wave equation
 	->Wavelength
 	->X-ray
 ==========================================================
 Western world
-	->Americas
-	->Ancient Greece
 	->Ancient Greece
 	->Ancient Rome
 	->Art of Europe
-	->Catholic Church
+	->Australasia
 	->Catholic Church
 	->Christianity
 	->Culture of ancient Rome
@@ -7343,8 +7241,10 @@ Western world
 	->History of architecture
 	->Judaism
 	->Latin
+	->Latin America
 	->Law
 	->MENA
+	->North America
 	->Orient
 	->Protestantism
 	->South Asia
@@ -7359,7 +7259,6 @@ Word
 	->Clause
 	->Compound (linguistics)
 	->Grapheme
-	->Language
 	->Language
 	->Linguistics
 	->Meaning (linguistics)
