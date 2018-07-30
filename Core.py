@@ -15,12 +15,13 @@ if __name__ == '__main__':
 	#print('Beginning expansion...')
 
 	graphManager = GraphManager()
-	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(2))
-	graphManager.saveGraph('p2');
+	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(4))
+	graphManager.saveGraph('p4');
+	elapsedTime = timeit.default_timer() - startTime
+	val = "{0:.2f}".format((elapsedTime / 60.0))
+	print('Finished in', val, 'minutes.')
 
-
-
-	#quit()
+	quit()
 
 	nodes = pickle.load(open("GraphData/p2_graphNodes.p", "rb"))
 	print('Loaded')
