@@ -19,7 +19,7 @@ if __name__ == '__main__':
 	graphManager.saveGraph('p4');
 	elapsedTime = timeit.default_timer() - startTime
 	val = "{0:.2f}".format((elapsedTime / 60.0))
-	print('Finished in', val, 'minutes.')
+	print('Populated graph in', val, 'minutes.')
 
 	quit()
 

@@ -64,9 +64,11 @@ class GraphManager:
 
 	def w_populateTopicNode(self, node):
 		try:
-			self.populateTopicNode(node)
-		except:
-			print('%s' % traceback.format_exc())
+
+			return self.populateTopicNode(node)
+		except Exception as e:
+			print("ERROR IN POPNODE:\n", e)
+			return None
 
 	def p_beginSearch(self, startingNode, depth):
 
@@ -90,7 +92,7 @@ class GraphManager:
 			for item in nodesPopulated:
 				if item != None:
 					if item.isPopulated():
-						for otherItem in list(item.getConnections().values())
+						for otherItem in list(item.getConnections().values()):
 							if otherItem != None:
 								connections.append(otherItem)
 			print("=  Current number of connections:",len(connections))
@@ -112,31 +114,39 @@ class GraphManager:
 		return
 
 	def populateTopicNode(self, node):
-		print("Entered: ",end='')
+		print("1. Entered: ",end='')
+
 		print(node.getTopic().getName())
+		keyxyz = node.getTopic().getName()
 		if(node.isPopulated()):
 			return None
-		print('Checked isPopulated')
+		print(keyxyz,'2. Checked isPopulated')
 		#before performing operations-- we must validate the info of given TopicNode
-		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
-		print('Got topic html source')
+		try:
+			sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
+		except Exception as e:
+			print("ERROR IN WEBTOOL:\n", e)
+			return None
+
+		print(keyxyz,'3. Got topic html source')
 		sourceElement = SourceElement(sourceCode)
-		print('Created source element')
+		print(keyxyz,'4. Created source element')
 		sourceElement.validateName(node)
-		print('validated name')
+		print(keyxyz,'5. validated name')
 		if(node.getTopic().getName() in self.nodes):
 			return None
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
-		print('got links')
+		print(keyxyz,'6. got links')
 		print(node.getTopic(), '|', end='')
 		self.addInfoToNewNodes(node, links)
-		print('added info to new links(nodes)')
+		print()
+		print(keyxyz,'7. added info to new links(nodes)')
 		node.setCategory(sourceElement.getCategories())
-		print('set categories')
+		print(keyxyz,'8. set categories')
 		node.setIsPopulated()
-		print('set node to populated')
+		print(keyxyz,'9. set node to populated')
 		self.createConnectionDetails(node)
-		print('added connection details')
+		print(keyxyz,'10. added connection details')
 		print()
 		if dill.pickles(node):
 			return node
