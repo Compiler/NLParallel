@@ -71,19 +71,23 @@ class SourceElement:
 
 
 	def grabIntroLinks(self, links, topic):
-		intro = self.soup.find("div", {'class':'mw-parser-output'}).findAll();
-		val = "\n";
-		for element in intro:
-			if element.name == 'h2':
-				break;
-			if element.name == 'p':
-				val = val + element.text
-				introLinks = element.findAll('a', attrs={'href' : re.compile('^/wiki/')})
-				for element in introLinks:
-					links[element['href'][6:]] = element.text
-		topic.setIntroText(val)
+		try:
+			intro = self.soup.find("div", {'class':'mw-parser-output'}).findAll();
+			val = "\n";
+			for element in intro:
+				if element.name == 'h2':
+					break;
+				if element.name == 'p':
+					val = val + element.text
+					introLinks = element.findAll('a', attrs={'href' : re.compile('^/wiki/')})
+					for element in introLinks:
+						links[element['href'][6:]] = element.text
+			topic.setIntroText(val)
 
-		return links
+			return links
+		except Exception as e:
+			print("ERROR IN WEBTOOL:\n", e)
+			return None
 
 	def grabSeeAlsoLinks(self, links):
 		contents_section = self.soup.find("div", {'id' : 'toc'})

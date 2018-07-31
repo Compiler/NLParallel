@@ -7,7 +7,7 @@ from BSHelpers.SourceElement import SourceElement
 from FileWriters.GraphWriter import GraphWriter
 import pickle, dill
 from functools import partial
-from itertools import repeat
+from itertools import repeat, chain
 from multiprocessing import Pool, cpu_count, Manager
 from multiprocessing.managers import BaseManager
 class GraphManager:
@@ -64,7 +64,6 @@ class GraphManager:
 
 	def w_populateTopicNode(self, node):
 		try:
-
 			return self.populateTopicNode(node)
 		except Exception as e:
 			print("ERROR IN POPNODE:\n", e)
@@ -98,6 +97,8 @@ class GraphManager:
 			print("=  Current number of connections:",len(connections))
 			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
 			print("=  Total number of nodes",len(self.nodes.keys()))
+			name = 'currentBatch'
+			#pickle.dump(connections, open('GraphData/'+ name +'_graphNodes.p', "wb"))
 			nodesPopulated = pool.map(self.w_populateTopicNode, connections)
 			print('\n=  Successfully populated another round of nodes')
 			for node in nodesPopulated:
@@ -135,7 +136,13 @@ class GraphManager:
 		print(keyxyz,'5. validated name')
 		if(node.getTopic().getName() in self.nodes):
 			return None
-		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
+		try:
+			links = sourceElement.grabIntroAndSeeAlsoLinks(node)
+		except Exception as e:
+			print("ERROR IN grabintro:\n", e)
+			return None
+		if links == None:
+			return None
 		print(keyxyz,'6. got links')
 		print(node.getTopic(), '|', end='')
 		self.addInfoToNewNodes(node, links)
@@ -161,7 +168,11 @@ class GraphManager:
 			nextTopic = Topic(link)
 			nextTopicNode = TopicNode(nextTopic)
 			#SourceElement.staticValidateName(nextTopicNode)
-			SourceElement.staticValidation(nextTopicNode)
+			try:
+				SourceElement.staticValidation(nextTopicNode)
+			except Exception as e:
+				print("ERROR IN STATIC EVAL:\n", e)
+				continue
 			if(self.isBadLink(nextTopicNode)):
 				continue
 			#node.setDetailingName(nextTopic, links[link])
