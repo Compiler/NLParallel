@@ -135,7 +135,10 @@ class GraphManager:
 		sourceElement.validateName(node)
 		print(keyxyz,'5. validated name')
 		if(node.getTopic().getName() in self.nodes):
+			print('returning nothing')
 			return None
+
+		print('checked something')
 		try:
 			links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		except Exception as e:
