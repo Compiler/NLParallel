@@ -62,9 +62,9 @@ class GraphManager:
 		for item in list(currentLevelLinks):
 			self.beginSearch(item, currentDepth+1, depth)
 
-	def w_populateTopicNode(self, node):
+	def w_populateTopicNode(self, key):
 		try:
-			return self.populateTopicNode(node)
+			return self.populateTopicNode(key)
 		except Exception as e:
 			print("ERROR IN POPNODE:\n", e)
 			return None
@@ -74,8 +74,8 @@ class GraphManager:
 		#pool = Pool(cpu_count() * 2)
 		current_depth = 1
 		#pool.map(self.populateTopicNode, [startingNode])
-		self.populateTopicNode(startingNode)
 		self.nodes[startingNode.getTopic().getName()] = startingNode
+		startingNode = self.populateTopicNode(startingNode.getTopic().getName())
 		if depth == 1:
 			return
 
@@ -83,30 +83,31 @@ class GraphManager:
 		nodesPopulated = [currentNode]
 		connections = []
 		merger = []
-		pool = Pool(cpu_count())
+		pool = Pool(cpu_count()+2)
+		print('=' * 70)
 		for currentDepth in range(1, depth):
-			print('=' * 70)
+
 			print("=  At depth", currentDepth)
 			connections = []
+			print('=  Successfully populated another round of nodes\n')
+			for node in nodesPopulated:
+				if node != None:
+					self.nodes[node.getTopic().getName()] = node
 			for item in nodesPopulated:
 				if item != None:
-					if item.isPopulated():
 						for otherItem in list(item.getConnections().values()):
 							if otherItem != None:
-								connections.append(otherItem)
+								topicName = otherItem.getTopic().getName()
+								self.nodes[topicName] = TopicNode(Topic(topicName))
+								connections.append(topicName)
 			print("=  Current number of connections:",len(connections))
 			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
 			print("=  Total number of nodes",len(self.nodes.keys()))
 			name = 'currentBatch'
 			#pickle.dump(connections, open('GraphData/'+ name +'_graphNodes.p', "wb"))
-			nodesPopulated = pool.map(self.w_populateTopicNode, connections)
-			print('\n=  Successfully populated another round of nodes')
-			for node in nodesPopulated:
-				if node != None:
-					if item.isPopulated():
-						self.nodes[node.getTopic().getName()] = node
+			nodesPopulated = pool.map(self.populateTopicNode, connections)
 					#self.populatedNodes[node.getTopic().getName()] = True;
-			print('=  Updated self.nodes\n')
+			print('=  Updated self.nodes\n', '='*70)
 
 		pool.close()
 		pool.join()
@@ -114,7 +115,11 @@ class GraphManager:
 		print('\nCount = ',len(list(self.nodes.keys())))
 		return
 
-	def populateTopicNode(self, node):
+	def populateTopicNode(self, key):
+		if key not in self.nodes.keys():
+			print('Invalid key:', key)
+			return None
+		node = self.nodes[key]
 		print("1. Entered: ",end='')
 
 		print(node.getTopic().getName())
@@ -134,7 +139,7 @@ class GraphManager:
 		print(keyxyz,'4. Created source element')
 		sourceElement.validateName(node)
 		print(keyxyz,'5. validated name')
-		if(node.getTopic().getName() in self.nodes):
+		if(node.getTopic().getName() in self.nodes and node.isPopulated()):
 			print('returning nothing')
 			return None
 
