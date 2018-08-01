@@ -109,6 +109,9 @@ class GraphManager:
 		pool.close()
 		pool.join()
 
+		for item in nodesPopulated:
+			if item != None:
+				self.nodes[item.getTopic().getName()] = item
 		print('\nCount = ',len(list(self.nodes.keys())))
 		return
 
@@ -122,14 +125,14 @@ class GraphManager:
 		#print(node.getTopic().getName())
 		keyxyz = node.getTopic().getName()
 		if(node.isPopulated()):
-			print(keyzyx,'Already populated... returning nothing')
+			print(keyxyz,'Already populated... returning nothing')
 			return None
 		#print(keyxyz,'2. Checked isPopulated')
 		#before performing operations-- we must validate the info of given TopicNode
 		try:
 			sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		except Exception as e:
-			print(keyzyx,"ERROR IN WEBTOOL:\n", e)
+			print(keyxyz,"ERROR IN WEBTOOL:\n", e)
 			return None
 
 		#print(keyxyz,'3. Got topic html source')
@@ -138,16 +141,17 @@ class GraphManager:
 		sourceElement.validateName(node)
 		#print(keyxyz,'5. validated name')
 		if(node.isPopulated()):
-			print(keyzyx,'returning nothing')
+			print(keyxyz,'returning nothing')
 			return None
 
 		#print('checked something')
 		try:
 			links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		except Exception as e:
-			print(keyzyx, "ERROR IN grabintro:\n", e)
+			print(keyxyz, "ERROR IN grabintro:\n", e)
 			return None
 		if links == None:
+			print('nothing in links')
 			return None
 		#print(keyxyz,'6. got links')
 		print(node.getTopic(), '|', end='')
