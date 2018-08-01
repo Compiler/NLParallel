@@ -83,27 +83,24 @@ class GraphManager:
 		nodesPopulated = [currentNode]
 		connections = []
 		merger = []
-		pool = Pool(cpu_count()+2)
+		pool = Pool(cpu_count() * 2)
 		print('=' * 70)
 		for currentDepth in range(1, depth):
 
 			print("=  At depth", currentDepth)
 			connections = []
 			print('=  Successfully populated another round of nodes\n')
-			for node in nodesPopulated:
-				if node != None:
-					self.nodes[node.getTopic().getName()] = node
 			for item in nodesPopulated:
 				if item != None:
-						for otherItem in list(item.getConnections().values()):
-							if otherItem != None:
-								topicName = otherItem.getTopic().getName()
-								self.nodes[topicName] = TopicNode(Topic(topicName))
-								connections.append(topicName)
+					self.nodes[item.getTopic().getName()] = item
+					for otherItem in list(item.getConnections().values()):
+						if otherItem != None:
+							topicName = otherItem.getTopic().getName()
+							self.nodes[topicName] = otherItem
+							connections.append(topicName)
 			print("=  Current number of connections:",len(connections))
 			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
 			print("=  Total number of nodes",len(self.nodes.keys()))
-			name = 'currentBatch'
 			#pickle.dump(connections, open('GraphData/'+ name +'_graphNodes.p', "wb"))
 			nodesPopulated = pool.map(self.populateTopicNode, connections)
 					#self.populatedNodes[node.getTopic().getName()] = True;
@@ -120,49 +117,49 @@ class GraphManager:
 			print('Invalid key:', key)
 			return None
 		node = self.nodes[key]
-		print("1. Entered: ",end='')
+		#print("1. Entered: ",end='')
 
-		print(node.getTopic().getName())
+		#print(node.getTopic().getName())
 		keyxyz = node.getTopic().getName()
 		if(node.isPopulated()):
+			print(keyzyx,'Already populated... returning nothing')
 			return None
-		print(keyxyz,'2. Checked isPopulated')
+		#print(keyxyz,'2. Checked isPopulated')
 		#before performing operations-- we must validate the info of given TopicNode
 		try:
 			sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		except Exception as e:
-			print("ERROR IN WEBTOOL:\n", e)
+			print(keyzyx,"ERROR IN WEBTOOL:\n", e)
 			return None
 
-		print(keyxyz,'3. Got topic html source')
+		#print(keyxyz,'3. Got topic html source')
 		sourceElement = SourceElement(sourceCode)
-		print(keyxyz,'4. Created source element')
+		#print(keyxyz,'4. Created source element')
 		sourceElement.validateName(node)
-		print(keyxyz,'5. validated name')
-		if(node.getTopic().getName() in self.nodes and node.isPopulated()):
-			print('returning nothing')
+		#print(keyxyz,'5. validated name')
+		if(node.isPopulated()):
+			print(keyzyx,'returning nothing')
 			return None
 
-		print('checked something')
+		#print('checked something')
 		try:
 			links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		except Exception as e:
-			print("ERROR IN grabintro:\n", e)
+			print(keyzyx, "ERROR IN grabintro:\n", e)
 			return None
 		if links == None:
 			return None
-		print(keyxyz,'6. got links')
+		#print(keyxyz,'6. got links')
 		print(node.getTopic(), '|', end='')
 		self.addInfoToNewNodes(node, links)
 		print()
-		print(keyxyz,'7. added info to new links(nodes)')
+		#print(keyxyz,'7. added info to new links(nodes)')
 		node.setCategory(sourceElement.getCategories())
-		print(keyxyz,'8. set categories')
+		#print(keyxyz,'8. set categories')
 		node.setIsPopulated()
-		print(keyxyz,'9. set node to populated')
+		#print(keyxyz,'9. set node to populated')
 		self.createConnectionDetails(node)
-		print(keyxyz,'10. added connection details')
-		print()
+		#print(keyxyz,'10. added connection details')
 		if dill.pickles(node):
 			return node
 		else:
@@ -186,7 +183,7 @@ class GraphManager:
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, links[link])
 			node.addConnection(nextTopic, nextTopicNode);
-			print('✓', end='')
+			print('Y', end='')
 
 
 	def createConnectionDetails(self, node):

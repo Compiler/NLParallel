@@ -65,7 +65,7 @@ class SourceElement:
 		links = {}
 		self.grabIntroLinks(links, topic)
 		#self.grabSeeAlsoLinks(links)
-
+		#print('Returning',len(links.keys()),'links back to',topic.getTopic().getName())
 		return links
 
 
