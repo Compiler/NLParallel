@@ -83,7 +83,7 @@ class GraphManager:
 		nodesPopulated = [currentNode]
 		connections = []
 		merger = []
-		pool = Pool(cpu_count() * 2)
+		pool = Pool(cpu_count() + 2)
 		print('=' * 70)
 		for currentDepth in range(1, depth):
 
@@ -102,7 +102,8 @@ class GraphManager:
 			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
 			print("=  Total number of nodes",len(self.nodes.keys()))
 			#pickle.dump(connections, open('GraphData/'+ name +'_graphNodes.p', "wb"))
-			nodesPopulated = pool.map(self.populateTopicNode, connections)
+			nodesPopulated = pool.map_async(self.populateTopicNode, connections)
+			nodesPopulated.wait()
 					#self.populatedNodes[node.getTopic().getName()] = True;
 			print('=  Updated self.nodes\n', '='*70)
 
