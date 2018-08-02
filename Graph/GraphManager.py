@@ -95,9 +95,10 @@ class GraphManager:
 					self.nodes[item.getTopic().getName()] = item
 					for otherItem in list(item.getConnections().values()):
 						if otherItem != None:
-							topicName = otherItem.getTopic().getName()
-							self.nodes[topicName] = otherItem
-							connections.append(topicName)
+							if otherItem.isPopulated() == False:
+								topicName = otherItem.getTopic().getName()
+								self.nodes[topicName] = otherItem
+								connections.append(topicName)
 			print("=  Current number of connections:",len(connections))
 			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
 			print("=  Total number of nodes",len(self.nodes.keys()))
@@ -119,65 +120,61 @@ class GraphManager:
 
 	def populateTopicNode(self, key):
 		print()
-		print("1.",end='')
+		#print("1.",end='')
 		if key not in self.nodes.keys():
-			print('(1.Failed)')
+			#print('(1.Failed)')
 			return None
 		node = self.nodes[key]
-		print("2.",end='')
+		#print("2.",end='')
 
 		#print(node.getTopic().getName())
 		keyxyz = node.getTopic().getName()
-		print("3.",end='')
+		#print("3.",end='')
 		if(node.isPopulated()):
-			print("(3.Failed)")
+			#print("(3.Failed)")
 			return None
 		#print(keyxyz,'2. Checked isPopulated')
 		#before performing operations-- we must validate the info of given TopicNode
-		try:
-			print("4.",end='')
-			sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
-		except Exception as e:
-			print("(4.Failed)")
-			return None
 
+		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
+		if sourceCode == None:
+			return None
 		#print(keyxyz,'3. Got topic html source')
 		sourceElement = SourceElement(sourceCode)
-		print("5.",end='')
+		#print("5.",end='')
 		#print(keyxyz,'4. Created source element')
 		sourceElement.validateName(node)
-		print("6.",end='')
+		#print("6.",end='')
 		#print(keyxyz,'5. validated name')
 		if(node.isPopulated()):
-			print("(6.Failed)")
+			#print("(6.Failed)")
 			return None
 
 		#print('checked something')
-		print("7.",end='')
+		#print("7.",end='')
 		try:
 			links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		except Exception as e:
-			print('(7.Failed)')
+			#print('(7.Failed)')
 			return None
-		print("8.", end = '')
+		#print("8.", end = '')
 		if links == None:
 			print("(8.Failed)")
 			return None
-		#print(node.getTopic(), '|', end='')
-		print("9.",end='')
+		print(node.getTopic(), '|', end='')
+		#print("9.",end='')
 		self.addInfoToNewNodes(node, links)
-		print("10.",end='')
+		#print("10.",end='')
 		node.setCategory(sourceElement.getCategories())
-		print("11.",end='')
+		#print("11.",end='')
 		node.setIsPopulated()
-		print("12.",end='')
+		#print("12.",end='')
 		self.createConnectionDetails(node)
-		print("13.",end='')
+		#print("13.",end='')
 		if dill.pickles(node):
-			print('(13.Failed)')
 			return node
 		else:
-			print("14.",end='')
+			#print("(13.Failed)")
 			print( dill.detect.badtypes(node, depth=1).keys())
 			quit()
 			return None
@@ -198,7 +195,7 @@ class GraphManager:
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, links[link])
 			node.addConnection(nextTopic, nextTopicNode);
-			#print('.', end='')
+			print('.', end='')
 
 
 	def createConnectionDetails(self, node):
@@ -222,7 +219,7 @@ class GraphManager:
 		name = topicNode.getTopic().getName()
 		n = any(re.findall('List of|Wikipedia|File:', name, re.IGNORECASE))
 		if n:
-			#print('(N)',  end='')
+			print('(N)',  end='')
 			return True
 		#check categories
 		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
@@ -230,7 +227,7 @@ class GraphManager:
 		for cat in categories:
 			c =  any(re.findall(catCheck, cat, re.IGNORECASE))
 			if c:
-				#print('(C)', end='')
+				print('(C)', end='')
 				return True
 
 		return False

@@ -31,5 +31,5 @@ class WebTool:
 				sourceCode = WebTool.getTopicSourceCode(urllib.request.quote(title))
 			except:
 				print('FAILED: Could not load', title)
-				quit()
+				return None
 		return sourceCode;
