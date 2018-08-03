@@ -10,6 +10,9 @@ from functools import partial
 from itertools import repeat, chain
 from multiprocessing import Pool, cpu_count, Manager
 from multiprocessing.managers import BaseManager
+
+import nltk
+
 class GraphManager:
 
 
@@ -17,6 +20,7 @@ class GraphManager:
 	def __init__(self):
 		self.nodes = {}
 		self.populatedNodes = {};
+		self.tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 
 	def saveGraph(self, name):
 		print("Saving graph...", end ='')
@@ -169,36 +173,26 @@ class GraphManager:
 			print('.', end='')
 
 
+
 	def createConnectionDetails(self, node):
+		data = node.getIntroText()
+		tokenized = self.tokenizer.tokenize(data)
 		for con in node.getConnections().keys():
 			name = re.escape(node.getDetailingName(con))
-			#(?:[\r\n]|\.\s[A-Z])(.*)
-			#(\.|[\r\n])([^.]*)
-			#(?:\.\s[A-Z])(.*)
-			m = re.search('(?:(\.\s[A-Z]))(?=(.*)' + name+ '(\s|\.))([^.]*)\.', node.getIntroText())
-			if m == None:
-				m = re.search('(?:([\r\n]))(?=(.*)' + name+ '(\s|\.))([^.]*)\.', node.getIntroText())
-			if m == None:
-				m = re.search('(?:[\r\n])(.*)' + name+ '([^.]*)\.', node.getIntroText())
-			node.addConnectionDetail(con, m.group()[1:])
+			for sentence in tokenized:
+				if name in sentence:
+					node.addConnectionDetail(con, sentence)
+					break
+			continue
+			#m = re.search('(?:(\.\s[A-Z]))(?=(.*)' + name+ '([^a-z^A-Z]))([^.]*)(\.\s[A-Z])', node.getIntroText())
+			#if m == None:
+				#m = re.search('(?:(\.\s[A-Z]))(?=(.*)' + name+ '([^a-z^A-Z]))(.*)(\.\s[A-Z])', node.getIntroText())
+			#if m == None:
+				#m = re.search('(?:([\r\n]))(?=(.*)' + name+ '([^a-z^A-Z]))([^.]*)(\.\s[A-Z])', node.getIntroText())
 			print(node.getTopic().getName(), '->', name)
+			node.addConnectionDetail(con, m.group()[1:])
 			print(m.group()[1:])
 			continue
-			print('UHHHHHHHHHHHHHHHHHHHHHH')
-			m = re.search(("\.(.*)" + name), node.getIntroText())
-			if(m == None):
-				m = re.search(("[\r\n]+(.*)" + name), node.getIntroText())
-				if(m == None):
-					print(name, '!', con.getName())
-					continue
-			#WILL PRODUCE weird errors if behind decimals or ellipse grammar
-			mn = re.search(name+"(.*)\.", node.getIntroText())
-			if(mn != None):
-				print(node.getTopic().getName(), '->', name)
-				print( m.group()[1:-(len(name))], '\n->', mn.group())
-				text = m.group()[1:-(len(name))] + ' ' +mn.group()
-				text = re.sub('\[\d+\]', '',text)
-				node.addConnectionDetail(con, text)
 
 
 

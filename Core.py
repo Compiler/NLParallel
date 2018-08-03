@@ -3,7 +3,7 @@ from Graph.Topic import Topic
 from Graph.GraphManager import GraphManager
 from BSHelpers.SourceElement import SourceElement
 import timeit, sys, codecs, pickle, os, psutil
-
+import nltk
 from Search.SearchUtils import SearchUtils
 
 
@@ -13,6 +13,7 @@ if __name__ == '__main__':
 	#depth = input('Enter the depth you want the tree to expand to: ')
 	startTime = timeit.default_timer()
 	#print('Beginning expansion...')
+	#nltk.download('punkt')
 
 	graphManager = GraphManager()
 	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(2))
