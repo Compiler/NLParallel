@@ -1202,7 +1202,18 @@ Collective noun
 	->Metonymy
 ==========================================================
 Communication studies
+	->Cultural studies
+	->Culture
 	->Discipline (academia)
+	->Economy
+	->Hermeneutics
+	->Human communication
+	->Mass media
+	->Ownership
+	->Political economy
+	->Politics
+	->Semiotics
+	->Social
 	->Statistics
 ==========================================================
 Computer science
@@ -2096,7 +2107,6 @@ Force
 	->Velocity
 ==========================================================
 Formal proof
-	->Automated proof checking
 	->Automated theorem proving
 	->Axiom
 	->Computational complexity theory
@@ -3769,37 +3779,6 @@ Law
 	->Statute
 	->System
 ==========================================================
-Laws of science
-	->Ambiguity
-	->Astronomy
-	->Axiom
-	->Biology
-	->Chemistry
-	->Empirical evidence
-	->Equation
-	->Equivocation
-	->Evidence
-	->Experiment
-	->Fact
-	->Falsifiability
-	->Geology
-	->Hyperbole
-	->Hypothesis
-	->Identity (mathematics)
-	->Mathematics
-	->Natural science
-	->Ontology
-	->Philosophy
-	->Physical constant
-	->Physical law
-	->Physics
-	->Prediction
-	->Scientific law
-	->Scientific method
-	->Scientific theory
-	->Theorem
-	->Unity of science
-==========================================================
 Level of measurement
 	->Dependent and independent variables
 	->Stanley Smith Stevens
@@ -4711,7 +4690,6 @@ Natural science
 	->Formal science
 	->Galileo Galilei
 	->Hard and soft science
-	->Laws of science
 	->Mathematical physics
 	->Observation
 	->Peer review
@@ -4720,6 +4698,7 @@ Natural science
 	->Presupposition
 	->Qualitative research
 	->Quantification (science)
+	->Scientific law
 	->Scientific method
 	->Social science
 ==========================================================
@@ -6061,6 +6040,39 @@ Science
 	->Universe
 	->Weapon
 	->Western world
+==========================================================
+Scientific law
+	->Ambiguity
+	->Astronomy
+	->Axiom
+	->Biology
+	->Chemistry
+	->Empirical evidence
+	->Equation
+	->Equivocation
+	->Evidence
+	->Experiment
+	->Fact
+	->Falsifiability
+	->Geology
+	->Hyperbole
+	->Hypothesis
+	->Identity (mathematics)
+	->Mathematics
+	->Natural science
+	->Observation
+	->Ontology
+	->Philosophy
+	->Physical constant
+	->Physical law
+	->Physics
+	->Prediction
+	->Reproducibility
+	->Scientific method
+	->Scientific theory
+	->Theorem
+	->Unity of science
+	->Universe
 ==========================================================
 Scientific method
 	->Branches of science
