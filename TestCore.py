@@ -7,14 +7,19 @@ from Search.SearchUtils import SearchUtils
 
 
 
-
-
 if __name__ == '__main__':
 
 	startTime = timeit.default_timer()
 
 
 	nodes = pickle.load(open("GraphData/p2_graphNodes.p", "rb"))
+
+	
+
+
+
+
+
 
 	elapsedTime = timeit.default_timer() - startTime
 	val = "{0:.2f}".format((elapsedTime / 60.0))

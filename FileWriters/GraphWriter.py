@@ -30,3 +30,12 @@ class GraphWriter:
 					writer.write("\n==========================================================\n")
 				except:
 					print("(!)", end = '')
+
+
+	def writeSIFGraph(nodes, fileName):
+		tnCount = 1
+		subtnCount = 1;
+		with open('NetworkSIFData/'+fileName+'.sif', 'w') as writer:
+			for key in nodes.keys():
+				for node in nodes[key].getConnections().keys():
+					writer.write(key +'\t'+node.getName()'\n')

@@ -15,13 +15,13 @@ if __name__ == '__main__':
 	#nltk.download('punkt')
 
 	graphManager = GraphManager()
-	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(2), True)
+	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(6), True)
 	#@graphManager.saveGraph('p1');
 	elapsedTime = timeit.default_timer() - startTime
 	val = "{0:.2f}".format((elapsedTime / 60.0))
 	print('Populated graph in', val, 'minutes.')
 
-	#quit()
+	quit()
 
 	nodes = pickle.load(open("GraphData/p2_graphNodes.p", "rb"))
 	print('Loaded')

@@ -89,7 +89,7 @@ class GraphManager:
 		nodesPopulated = [currentNode]
 		connections = []
 		merger = []
-		pool = Pool(cpu_count() * 2)
+		pool = Pool(cpu_count())
 		print()
 		print('=' * 70)
 		for currentDepth in range(1, depth):
