@@ -73,13 +73,15 @@ class GraphManager:
 			print("ERROR IN POPNODE:\n", e)
 			return None
 
-	def p_beginSearch(self, startingNode, depth):
+	def p_beginSearch(self, startingNode, depth, save = False):
 
 		#pool = Pool(cpu_count() * 2)
 		current_depth = 1
 		#pool.map(self.populateTopicNode, [startingNode])
 		self.nodes[startingNode.getTopic().getName()] = startingNode
 		startingNode = self.populateTopicNode('1.'+startingNode.getTopic().getName())
+		if save:
+			self.saveGraph('p1')
 		if depth == 1:
 			return
 
@@ -110,6 +112,9 @@ class GraphManager:
 			nodesPopulated.wait()
 			nodesPopulated = nodesPopulated.get()
 			print('=  Updated self.nodes\n', '='*70)
+			if save and currentDepth != depth-1:
+				val = str(currentDepth + 1)
+				self.saveGraph('p'+val)
 
 		pool.close()
 		pool.join()
@@ -117,6 +122,9 @@ class GraphManager:
 		for item in nodesPopulated:
 			if item != None:
 				self.nodes[item.getTopic().getName()] = item
+		if save:
+			val = str(currentDepth+1)
+			self.saveGraph('p' + val)
 		print('\nCount = ',len(list(self.nodes.keys())))
 		return
 

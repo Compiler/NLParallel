@@ -1,39 +1,21 @@
+from Graph.TopicNode import TopicNode
+from Graph.Topic import Topic
+from Graph.GraphManager import GraphManager
+from BSHelpers.SourceElement import SourceElement
+import timeit, sys, codecs, pickle, os, psutil
+from Search.SearchUtils import SearchUtils
 
 
 
 
 
 if __name__ == '__main__':
-	a = ''
-	b = ''
-	da = {}
-	db = {}
-	for i in range(1, len(a)+1):
-		if a[i-1:i] in da:
-			da[a[i-1:i]] = da.get(a[i-1:i]) + 1
-		else:
-			da[a[i-1:i]] = 1
-	for i in range(1, len(b)+1):
-		if b[i-1:i] in db:
-			db[b[i-1:i]] = db.get(b[i-1:i]) + 1
-		else:
-			db[b[i-1:i]] = 1
 
-	print(da.keys() == db.keys())
-	for key in da.keys():
-		if key in db:
-			if da.get(key) != db.get(key):
-				print(False)
-				quit()
-		else:
-			print(False)
-			quit()
+	startTime = timeit.default_timer()
 
-	for key in db.keys():
-		if key in da:
-			if da.get(key) != db.get(key):
-				print(False)
-				quit()
-		else:
-			print(False)
-			quit()
+
+	nodes = pickle.load(open("GraphData/p2_graphNodes.p", "rb"))
+
+	elapsedTime = timeit.default_timer() - startTime
+	val = "{0:.2f}".format((elapsedTime / 60.0))
+	print('Populated graph in', val, 'minutes.')
