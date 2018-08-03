@@ -37,4 +37,7 @@ class GraphWriter:
 		with open('NetworkSIFData/'+fileName+'.sif', 'w') as writer:
 			for key in nodes.keys():
 				for node in nodes[key].getConnections().keys():
-					writer.write(key +'\t'+edge+'\t'+node.getName()+'\n')
+					try:
+						writer.write(key +'\t'+edge+'\t'+node.getName()+'\n')
+					except:
+						pass
