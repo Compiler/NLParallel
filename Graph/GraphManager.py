@@ -119,14 +119,13 @@ class GraphManager:
 		return
 
 	def populateTopicNode(self, key):
-		print()
 		spot = key.find('.')
 		depth = key[:spot]
 		key = key[spot+1:]
 
 		node = self.nodes[key]
-		if node.getDepthFound() != None:
-			node.setDepthFound(key)
+		if node.getDepthFound() == 0:
+			node.setDepthFound(depth)
 		#print("2.",end='')
 
 		#print(node.getTopic().getName())

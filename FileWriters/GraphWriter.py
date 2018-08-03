@@ -14,6 +14,8 @@ class GraphWriter:
 			for item in sortedKeys:
 				try:
 					writer.write('')
+					ot = str(graph[item].getDepthFound()) + '. '
+					writer.write(ot)
 					writer.write(item)
 					subtnCount = 1;
 					tnCount += 1

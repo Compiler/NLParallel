@@ -13,7 +13,7 @@ class TopicNode:
 		self.nameValidated = False
 		self.categories = []
 		self.populated = False
-		self.depthFound = None
+		self.depthFound = 0
 
 
 	def setDepthFound(self, depth):
