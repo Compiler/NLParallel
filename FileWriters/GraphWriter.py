@@ -33,9 +33,8 @@ class GraphWriter:
 
 
 	def writeSIFGraph(nodes, fileName):
-		tnCount = 1
-		subtnCount = 1;
+		edge = 'edge'
 		with open('NetworkSIFData/'+fileName+'.sif', 'w') as writer:
 			for key in nodes.keys():
 				for node in nodes[key].getConnections().keys():
-					writer.write(key +'\t'+node.getName()'\n')
+					writer.write(key +'\t'+edge+'\t'+node.getName()+'\n')

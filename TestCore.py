@@ -4,7 +4,7 @@ from Graph.GraphManager import GraphManager
 from BSHelpers.SourceElement import SourceElement
 import timeit, sys, codecs, pickle, os, psutil
 from Search.SearchUtils import SearchUtils
-
+from FileWriters.GraphWriter import GraphWriter
 
 
 if __name__ == '__main__':
@@ -14,7 +14,8 @@ if __name__ == '__main__':
 
 	nodes = pickle.load(open("GraphData/p2_graphNodes.p", "rb"))
 
-	
+	GraphWriter.writeSIFGraph(nodes, 'graphBrain')
+
 
 
 
