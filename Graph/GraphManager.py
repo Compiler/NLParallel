@@ -75,7 +75,7 @@ class GraphManager:
 		current_depth = 1
 		#pool.map(self.populateTopicNode, [startingNode])
 		self.nodes[startingNode.getTopic().getName()] = startingNode
-		startingNode = self.populateTopicNode(startingNode.getTopic().getName())
+		startingNode = self.populateTopicNode('1.'+startingNode.getTopic().getName())
 		if depth == 1:
 			return
 
@@ -98,7 +98,7 @@ class GraphManager:
 							if otherItem.isPopulated() == False:
 								topicName = otherItem.getTopic().getName()
 								self.nodes[topicName] = otherItem
-								connections.append(topicName)
+								connections.append(str(currentDepth+1) + '.'+topicName)
 			print("=  Current number of connections:",len(connections))
 			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
 			print("=  Total number of nodes",len(self.nodes.keys()))
@@ -120,11 +120,13 @@ class GraphManager:
 
 	def populateTopicNode(self, key):
 		print()
-		#print("1.",end='')
-		if key not in self.nodes.keys():
-			#print('(1.Failed)')
-			return None
+		spot = key.find('.')
+		depth = key[:spot]
+		key = key[spot+1:]
+
 		node = self.nodes[key]
+		if node.getDepthFound() != None:
+			node.setDepthFound(key)
 		#print("2.",end='')
 
 		#print(node.getTopic().getName())

@@ -13,7 +13,14 @@ class TopicNode:
 		self.nameValidated = False
 		self.categories = []
 		self.populated = False
+		self.depthFound = None
 
+
+	def setDepthFound(self, depth):
+		self.depthFound = depth
+
+	def getDepthFound(self):
+		return self.depthFound
 
 	def isPopulated(self):
 		return self.populated

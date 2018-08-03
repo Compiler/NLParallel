@@ -14,9 +14,9 @@ if __name__ == '__main__':
 	startTime = timeit.default_timer()
 	#print('Beginning expansion...')
 
-	#graphManager = GraphManager()
-	#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(3))
-	#graphManager.saveGraph('p3');
+	graphManager = GraphManager()
+	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(3))
+	graphManager.saveGraph('p3');
 	elapsedTime = timeit.default_timer() - startTime
 	val = "{0:.2f}".format((elapsedTime / 60.0))
 	print('Populated graph in', val, 'minutes.')
