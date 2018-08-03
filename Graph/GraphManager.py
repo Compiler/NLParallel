@@ -174,9 +174,10 @@ class GraphManager:
 			name = re.escape(node.getDetailingName(con))
 			#(?:[\r\n]|\.\s[A-Z])(.*)
 			#(\.|[\r\n])([^.]*)
-			m = re.search('(?:\.\s[A-Z])(.*)' + name+ '([^.]*)\.', node.getIntroText())
+			#(?:\.\s[A-Z])(.*)
+			m = re.search('(?:(\.\s[A-Z]))(?=(.*)' + name+ '(\s|\.))([^.]*)\.', node.getIntroText())
 			if m == None:
-				m = re.search('(?:[\r\n])([^.]*)' + name+ '([^.]*)\.', node.getIntroText())
+				m = re.search('(?:([\r\n]))(?=(.*)' + name+ '(\s|\.))([^.]*)\.', node.getIntroText())
 			if m == None:
 				m = re.search('(?:[\r\n])(.*)' + name+ '([^.]*)\.', node.getIntroText())
 			node.addConnectionDetail(con, m.group()[1:])
