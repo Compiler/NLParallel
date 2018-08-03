@@ -23,10 +23,10 @@ if __name__ == '__main__':
 
 	#quit()
 
-	nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
+	nodes = pickle.load(open("GraphData/p2_graphNodes.p", "rb"))
 	print('Loaded')
 	search = SearchUtils(nodes)
-	path = search.dijkstra('Mathematics', 'Mass–energy equivalence')
+	path = search.dijkstra('Mathematics', 'Truth')
 	sz = len(path)
 	for i in range(0, sz):
 		print(path[sz - i - 1],  '->', end = '')

@@ -84,6 +84,7 @@ class GraphManager:
 		connections = []
 		merger = []
 		pool = Pool(cpu_count() * 2)
+		print()
 		print('=' * 70)
 		for currentDepth in range(1, depth):
 
@@ -94,19 +95,16 @@ class GraphManager:
 				if item != None:
 					self.nodes[item.getTopic().getName()] = item
 					for otherItem in list(item.getConnections().values()):
-						if otherItem != None:
-							if otherItem.isPopulated() == False:
-								topicName = otherItem.getTopic().getName()
-								self.nodes[topicName] = otherItem
-								connections.append(str(currentDepth+1) + '.'+topicName)
+						if otherItem != None and otherItem.isPopulated() == False:
+							topicName = otherItem.getTopic().getName()
+							self.nodes[topicName] = otherItem
+							connections.append(str(currentDepth+1) + '.'+topicName)
 			print("=  Current number of connections:",len(connections))
 			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
 			print("=  Total number of nodes",len(self.nodes.keys()))
-			#pickle.dump(connections, open('GraphData/'+ name +'_graphNodes.p', "wb"))
 			nodesPopulated = pool.map_async(self.populateTopicNode, connections)
 			nodesPopulated.wait()
 			nodesPopulated = nodesPopulated.get()
-					#self.populatedNodes[node.getTopic().getName()] = True;
 			print('=  Updated self.nodes\n', '='*70)
 
 		pool.close()
@@ -126,60 +124,32 @@ class GraphManager:
 		node = self.nodes[key]
 		if node.getDepthFound() == 0:
 			node.setDepthFound(depth)
-		#print("2.",end='')
-
-		#print(node.getTopic().getName())
 		keyxyz = node.getTopic().getName()
 		#print("3.",end='')
 		if(node.isPopulated()):
-			#print("(3.Failed)")
+			print("Populated!")
 			return None
-		#print(keyxyz,'2. Checked isPopulated')
-		#before performing operations-- we must validate the info of given TopicNode
-
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		if sourceCode == None:
 			return None
-		#print(keyxyz,'3. Got topic html source')
 		sourceElement = SourceElement(sourceCode)
-		#print("5.",end='')
-		#print(keyxyz,'4. Created source element')
 		sourceElement.validateName(node)
-		#print("6.",end='')
-		#print(keyxyz,'5. validated name')
 		if(node.isPopulated()):
-			#print("(6.Failed)")
 			return None
 
-		#print('checked something')
-		#print("7.",end='')
-		try:
-			links = sourceElement.grabIntroAndSeeAlsoLinks(node)
-		except Exception as e:
-			#print('(7.Failed)')
-			return None
-		#print("8.", end = '')
-		if links == None:
-			print("(8.Failed)")
-			return None
+		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
 		print(node.getTopic(), '|', end='')
-		#print("9.",end='')
 		self.addInfoToNewNodes(node, links)
-		#print("10.",end='')
 		node.setCategory(sourceElement.getCategories())
-		#print("11.",end='')
 		node.setIsPopulated()
-		#print("12.",end='')
 		self.createConnectionDetails(node)
-		#print("13.",end='')
+		print()
 		if dill.pickles(node):
 			return node
 		else:
-			#print("(13.Failed)")
 			print( dill.detect.badtypes(node, depth=1).keys())
 			quit()
 			return None
-		#print(node)
 
 	def addInfoToNewNodes(self, node, links):
 		for link in list(links.keys()):
@@ -202,14 +172,29 @@ class GraphManager:
 	def createConnectionDetails(self, node):
 		for con in node.getConnections().keys():
 			name = re.escape(node.getDetailingName(con))
+			#(?:[\r\n]|\.\s[A-Z])(.*)
+			#(\.|[\r\n])([^.]*)
+			m = re.search('(?:\.\s[A-Z])(.*)' + name+ '([^.]*)\.', node.getIntroText())
+			if m == None:
+				m = re.search('(?:[\r\n])([^.]*)' + name+ '([^.]*)\.', node.getIntroText())
+			if m == None:
+				m = re.search('(?:[\r\n])(.*)' + name+ '([^.]*)\.', node.getIntroText())
+			node.addConnectionDetail(con, m.group()[1:])
+			print(node.getTopic().getName(), '->', name)
+			print(m.group()[1:])
+			continue
+			print('UHHHHHHHHHHHHHHHHHHHHHH')
 			m = re.search(("\.(.*)" + name), node.getIntroText())
 			if(m == None):
 				m = re.search(("[\r\n]+(.*)" + name), node.getIntroText())
 				if(m == None):
+					print(name, '!', con.getName())
 					continue
 			#WILL PRODUCE weird errors if behind decimals or ellipse grammar
 			mn = re.search(name+"(.*)\.", node.getIntroText())
 			if(mn != None):
+				print(node.getTopic().getName(), '->', name)
+				print( m.group()[1:-(len(name))], '\n->', mn.group())
 				text = m.group()[1:-(len(name))] + ' ' +mn.group()
 				text = re.sub('\[\d+\]', '',text)
 				node.addConnectionDetail(con, text)

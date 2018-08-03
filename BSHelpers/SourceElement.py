@@ -81,8 +81,9 @@ class SourceElement:
 					val = val + element.text
 					introLinks = element.findAll('a', attrs={'href' : re.compile('^/wiki/')})
 					for element in introLinks:
-						links[element['href'][6:]] = element.text
-			topic.setIntroText(val)
+						links[element['href'][6:]] = element.text\
+
+			topic.setIntroText(re.sub('\[\d+\]', '',val))
 
 			return links
 		except Exception as e:
