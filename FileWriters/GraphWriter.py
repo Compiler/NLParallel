@@ -63,11 +63,11 @@ class GraphWriter:
 			for key in nodes.keys():
 				myKey = re.sub('[^\w]', '', myKey)
 				myKey = re.sub('\s', '_', myKey)
-				val = '  edge [\n  source ' + myKey +'\n  label "' + key + '"\n'
 				for node in nodes[key].getConnections().keys():
 					name = node.getName()
 					name = re.sub('[^\w]', '', name)
 					name = re.sub('\s', '_', name)
+					print('.',end='')
 					val = '  edge [\n  source ' + myKey +'  ' + '\n' + '  target ' + name +'\n  ]\n'
 					writer.write(val)
 			#except:
