@@ -2517,138 +2517,138 @@ graph
     label "Pure mathematics"
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target AncientGreek
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Quantity
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Mathematicalstructure
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Space
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Calculus
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Definitionsofmathematics
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Pattern
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Conjecture
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Mathematicalproof
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Abstractionmathematics
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Logic
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Counting
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Calculation
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Measurement
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Shape
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Motionphysics
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Greekmathematics
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Euclid
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target GiuseppePeano
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target DavidHilbert
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Truth
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Rigour
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Deductivereasoning
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Axiom
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Definition
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target GalileoGalilei
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target CarlFriedrichGauss
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target BenjaminPeirce
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target AlbertEinstein
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Naturalscience
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Socialscience
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Appliedmathematics
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Gametheory
   ]
   edge [
-  source Pure_mathematics  
+  source Mathematics  
   target Puremathematics
   ]

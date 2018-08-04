@@ -45,30 +45,39 @@ class GraphWriter:
 	def writeGMLGraph(nodes, fileName):
 		with open('NetworkData/GMLData/'+fileName+'.gml', 'w') as writer:
 			writer.write('graph\n[\n')
-			#try:
-			for key in nodes.keys():
-				myKey = re.sub('[^\w]', '', key)
-				myKey = re.sub('\s', '_', key)
-				val = '  node [\n    id ' + myKey +'\n    label "' + key + '"\n  ]\n'
-				for node in nodes[key].getConnections().keys():
-					name = node.getName()
-					name = re.sub('[^\w]', '', name)
-					name = re.sub('\s', '_', name)
-					#name = re.sub(',|\'|\.', '', name)
-					val += '  node [\n    id ' + name +'\n    label "' + node.getName() + '"\n  ]\n'
-					writer.write(val)
-			#except:
-				#print('fuck1')
-			#try:
-			for key in nodes.keys():
-				myKey = re.sub('[^\w]', '', myKey)
-				myKey = re.sub('\s', '_', myKey)
-				for node in nodes[key].getConnections().keys():
-					name = node.getName()
-					name = re.sub('[^\w]', '', name)
-					name = re.sub('\s', '_', name)
-					print('.',end='')
-					val = '  edge [\n  source ' + myKey +'  ' + '\n' + '  target ' + name +'\n  ]\n'
-					writer.write(val)
-			#except:
-				#print('fuck2')
+			try:
+				for key in nodes.keys():
+					print('re',len(list(nodes.keys())), ' - ', end = '')
+					print(len(list(nodes[key].getConnections().keys())))
+					myKey = key
+					myKey = re.sub('[^\w]', '', myKey)
+					myKey = re.sub('\s', '_', myKey)
+					val = '  node [\n    id ' + myKey +'\n    label "' + key + '"\n  ]\n'
+					print('re',len(list(nodes.keys())), ' - ', end = '')
+					print(len(list(nodes[key].getConnections().keys())))
+					for node in nodes[key].getConnections().keys():
+						name = re.sub('[^\w]', '', node.getName())
+						name = re.sub('\s', '_', name)
+						#name = re.sub(',|\'|\.', '', name)
+						val += '  node [\n    id ' + name +'\n    label "' + node.getName() + '"\n  ]\n'
+						writer.write(val)
+			except:
+				print('fuck1')
+			try:
+				for key in nodes.keys():
+					print(len(list(nodes.keys())), ' - ', end = '')
+					print(len(list(nodes[key].getConnections().keys())))
+					myKey = key
+					myKey = re.sub('[^\w]', '', myKey)
+					myKey = re.sub('\s', '_', myKey)
+
+					print(len(list(nodes.keys())), ' - ', end = '')
+					print(len(list(nodes[key].getConnections().keys())))
+					if len(list(nodes[key].getConnections().keys())) != 0:
+						for node in nodes[key].getConnections().keys():
+							name = re.sub('[^\w]', '', node.getName())
+							name = re.sub('\s', '_', name)
+							val ='  edge [\n  source ' + myKey +'  ' + '\n' + '  target ' + name +'\n  ]\n'
+							writer.write(val)
+			except:
+				print('fuck2')
