@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
 	startTime = timeit.default_timer()
 
-	nodes = pickle.load(open('GraphData/p2_graphNodes.p', "rb"))
+	nodes = pickle.load(open('GraphData/p4_graphNodes.p', "rb"))
 
 	#GraphWriter.writeSIFGraph(nodes, 'graphBrain_' + str(i))
 

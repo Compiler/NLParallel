@@ -15,8 +15,8 @@ if __name__ == '__main__':
 	#nltk.download('punkt')
 
 	graphManager = GraphManager()
-	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(6), True)
-	#@graphManager.saveGraph('p1');
+	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(5))
+	graphManager.saveGraph('p5');
 	elapsedTime = timeit.default_timer() - startTime
 	val = "{0:.2f}".format((elapsedTime / 60.0))
 	print('Populated graph in', val, 'minutes.')
