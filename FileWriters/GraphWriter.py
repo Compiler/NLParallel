@@ -41,3 +41,22 @@ class GraphWriter:
 						writer.write(key +'\t'+edge+'\t'+node.getName()+'\n')
 					except:
 						pass
+
+	def writeGMLGraph(nodes, fileName):
+		with open('NetworkData/GMLData/'+fileName+'.gml', 'w') as writer:
+			writer.write('graph\n[')
+			try:
+				for key in nodes.keys():
+					val = '  node [\n  name ' + key +'\n  label "' + key + '"\n  ]\n'
+					for node in nodes[key].getConnections().keys():
+						val += '  node [\n  name ' + node.getName() +'\n  label "' + node.getName() + '"\n  ]\n'
+						writer.write(val)
+
+				for key in nodes.keys():
+					val = '  edge [\n  source ' + key +'\n  label "' + key + '"\n'
+					for node in nodes[key].getConnections().keys():
+						val += '  target ' + node.getName() +'\n]\n'
+						writer.write(val)
+
+			except:
+				pass
