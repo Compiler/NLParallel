@@ -3,16 +3,23 @@ import re
 class GraphWriter:
 
 
+	def lgfToPickle(fileName):
+		filePath = 'GraphData/'+fileName +'.lgf'
+		with open(fileName, 'rb') as reader:
+
+
+
+
 	def writeGraph(graph, fileName):
 		tnCount = 1
 		subtnCount = 1;
 		with open(fileName, 'w') as writer:
-			val = str(len(graph.keys()))
-			writer.write(val)
-			writer.write('\n')
-			sortedKeys=sorted(graph.keys(), key=lambda x:x.lower())
+			try:
+				val = str(len(graph.keys()))
+				writer.write(val)
+				writer.write('\n')
+				sortedKeys=sorted(graph.keys(), key=lambda x:x.lower())
 			for item in sortedKeys:
-				try:
 					writer.write('')
 					ot = str(graph[item].getDepthFound()) + '. '
 					writer.write(ot)
