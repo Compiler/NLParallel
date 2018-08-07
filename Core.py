@@ -49,15 +49,15 @@ if __name__ == '__main__':
 	ac.addConnection(aca);
 	ac.addConnection(a);
 	ac.addConnection(acc);
-	aaa.addConection(aca);
+	aaa.addConnection(aca);
 	aaa.addConnection(ab)
 	abc.addConnection(c)
 	nodes['A'] = a; nodes['AA'] = aa
 
 	print('Loaded')
-	quit()
+	#quit()
 	search = SearchUtils(nodes)
-	path = search.dijkstra('A', 'ACA')
+	path = search.dijkstra('A', 'AB')
 	sz = len(path)
 	for i in range(0, sz):
 		print(path[sz - i - 1],  '->', end = '')
