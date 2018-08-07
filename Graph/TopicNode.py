@@ -50,6 +50,9 @@ class TopicNode:
 	#uses a Topic to TopicNode relationship
 	def addConnection(self, topic, topicNode):
 		self.connections[topic] = topicNode;
+	#uses a Topic to TopicNode relationship
+	def addConnection(self, topicNode):
+		self.connections[topicNode.getTopic()] = topicNode;
 
 	def addConnectionDetail(self, topic, details):
 		self.connectionDetails[topic] = details;

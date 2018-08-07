@@ -6,6 +6,7 @@ class GraphWriter:
 	def lgfToPickle(fileName):
 		filePath = 'GraphData/'+fileName +'.lgf'
 		with open(fileName, 'rb') as reader:
+			pass
 
 
 
@@ -19,22 +20,22 @@ class GraphWriter:
 				writer.write(val)
 				writer.write('\n')
 				sortedKeys=sorted(graph.keys(), key=lambda x:x.lower())
-			for item in sortedKeys:
-					writer.write('')
-					ot = str(graph[item].getDepthFound()) + '. '
-					writer.write(ot)
-					writer.write(item)
-					subtnCount = 1;
-					tnCount += 1
-					todo = []
-					for kk in list(graph[item].getConnections().keys()):
-						todo.append(kk.getName())
-					sortedValues=sorted(todo, key=str.lower)
-					for element in sortedValues:
-						writer.write("\n\t->")
-						writer.write(element)
+				for item in sortedKeys:
+						writer.write('')
+						ot = str(graph[item].getDepthFound()) + '. '
+						writer.write(ot)
+						writer.write(item)
+						subtnCount = 1;
+						tnCount += 1
+						todo = []
+						for kk in list(graph[item].getConnections().keys()):
+							todo.append(kk.getName())
+						sortedValues=sorted(todo, key=str.lower)
+						for element in sortedValues:
+							writer.write("\n\t->")
+							writer.write(element)
 
-					writer.write("\n==========================================================\n")
+						writer.write("\n==========================================================\n")
 				except:
 					print("(!)", end = '')
 
