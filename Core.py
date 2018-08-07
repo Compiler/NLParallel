@@ -1,6 +1,6 @@
 from Graph.TopicNode import TopicNode
 from Graph.Topic import Topic
-#from Graph.GraphManager import GraphManager
+from Graph.GraphManager import GraphManager
 from BSHelpers.SourceElement import SourceElement
 import timeit, sys, codecs, pickle, os, psutil
 from Search.SearchUtils import SearchUtils
@@ -52,12 +52,16 @@ if __name__ == '__main__':
 	aaa.addConnection(aca);
 	aaa.addConnection(ab)
 	abc.addConnection(c)
-	nodes['A'] = a; nodes['AA'] = aa
+	nodes['A'] = a; nodes['AA'] = aa; nodes['AB'] = ab; nodes['AC'] = ac;
+	nodes['AAA'] = aaa; nodes['ABA'] = aba; nodes['ABB'] = abb; nodes['ABC'] = abc;
+	nodes['ACA'] = aca; nodes['ACC'] = acc; nodes['C'] = c;
 
+	#graphManager = GraphManager()
+	#graphManager.saveGraph('test_graph');
 	print('Loaded')
 	#quit()
 	search = SearchUtils(nodes)
-	path = search.dijkstra('A', 'AB')
+	path = search.dijkstra('A', 'ACA')
 	sz = len(path)
 	for i in range(0, sz):
 		print(path[sz - i - 1],  '->', end = '')

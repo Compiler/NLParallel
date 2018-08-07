@@ -36,8 +36,8 @@ class GraphWriter:
 							writer.write(element)
 
 						writer.write("\n==========================================================\n")
-				except:
-					print("(!)", end = '')
+			except:
+				print("(!)", end = '')
 
 
 	def writeSIFGraph(nodes, fileName):
