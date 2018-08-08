@@ -39,6 +39,7 @@ class SearchUtils:
 					curDistance = distance[currentShortest] + edgeWeight
 					if curDistance < distance[currentShortest]:
 						distance[currentShortest] = curDistance
+						parent[currentShortest] = currentShortest
 				visited[currentShortest] = None
 				continue
 			for node in self.nodes[currentShortest].getConnections().keys():
@@ -63,4 +64,3 @@ class SearchUtils:
 			node = parent[node]
 		path.append(source)
 		return path
-		
