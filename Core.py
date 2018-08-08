@@ -23,45 +23,11 @@ if __name__ == '__main__':
 
 	#quit()
 
-	#nodes = pickle.load(open("GraphData/p2_graphNodes.p", "rb"))
-	nodes = {}
-	a = TopicNode(Topic('A'))
-	c = TopicNode(Topic('C'))
-	aa = TopicNode(Topic('AA'))
-	aaa = TopicNode(Topic('AAA'))
-	ab = TopicNode(Topic('AB'))
-	ac = TopicNode(Topic('AC'))
-	aca = TopicNode(Topic('ACA'))
-	acc = TopicNode(Topic('ACC'))
-	aba = TopicNode(Topic('ABA'))
-	abb = TopicNode(Topic('ABB'))
-	abc = TopicNode(Topic('ABC'))
+	nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
 
-	a.addConnection(aa);
-	a.addConnection(ab);
-	a.addConnection(ac);
-	ab.addConnection(aba);
-	ab.addConnection(abb);
-	ab.addConnection(abc);
-	aa.addConnection(aaa);
-	aa.addConnection(ab);
-	aa.addConnection(a);
-	ac.addConnection(aca);
-	ac.addConnection(a);
-	ac.addConnection(acc);
-	aaa.addConnection(aca);
-	aaa.addConnection(ab)
-	abc.addConnection(c)
-	nodes['A'] = a; nodes['AA'] = aa; nodes['AB'] = ab; nodes['AC'] = ac;
-	nodes['AAA'] = aaa; nodes['ABA'] = aba; nodes['ABB'] = abb; nodes['ABC'] = abc;
-	nodes['ACA'] = aca; nodes['ACC'] = acc; nodes['C'] = c;
-
-	#graphManager = GraphManager()
-	#graphManager.saveGraph('test_graph');
 	print('Loaded')
-	#quit()
 	search = SearchUtils(nodes)
-	path = search.dijkstra('A', 'ACA')
+	path = search.dijkstra('A', 'C')
 	sz = len(path)
 	for i in range(0, sz):
 		print(path[sz - i - 1],  '->', end = '')

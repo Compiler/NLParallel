@@ -49,9 +49,8 @@ class SearchUtils:
 				curDistance = distance[currentShortest] + edgeWeight
 				if curDistance < distance[node]:
 					distance[node] = curDistance
-
-				parent[node] = currentShortest
-				queue.put((distance[node], node))
+					parent[node] = currentShortest
+					queue.put((distance[node], node))
 				visited[currentShortest] = None
 		if goal not in distance:
 			print('no path found')
