@@ -188,9 +188,10 @@ class GraphManager:
 		for con in node.getConnections().keys():
 			name = re.escape(node.getDetailingName(con))
 			for sentence in tokenized:
-				if name in sentence:
+				if name in sentence or node.getDetailingName(con) in sentence:
 					node.addConnectionDetail(con, sentence)
 					break
+
 			continue
 			#m = re.search('(?:(\.\s[A-Z]))(?=(.*)' + name+ '([^a-z^A-Z]))([^.]*)(\.\s[A-Z])', node.getIntroText())
 			#if m == None:
@@ -211,7 +212,7 @@ class GraphManager:
 			print('(N)',  end='')
 			return True
 		#check categories
-		catCheck = 'outline of|portal:|list |lists |history of|glossary of|index of|wikipedia|file|help|template|category:'
+		catCheck = 'portal:|list |lists |wikipedia|file|help|template|category:'
 		categories = topicNode.getCategories()
 		for cat in categories:
 			c =  any(re.findall(catCheck, cat, re.IGNORECASE))

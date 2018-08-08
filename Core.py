@@ -2,32 +2,43 @@ from Graph.TopicNode import TopicNode
 from Graph.Topic import Topic
 from Graph.GraphManager import GraphManager
 from BSHelpers.SourceElement import SourceElement
-import timeit, sys, codecs, pickle, os, psutil
+import timeit, sys, codecs, pickle, os, psutil,re
 from Search.SearchUtils import SearchUtils
-
+import nltk
 
 
 
 if __name__ == '__main__':
+
+	tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+	data = ''' Who the fuck uses e.g. anymore lmao. Wildin'.
+
+	'''
+	tokenized = tokenizer.tokenize(data)
+	print(tokenized)
+	quit()
+
 	#depth = input('Enter the depth you want the tree to expand to: ')
 	startTime = timeit.default_timer()
 	#print('Beginning expansion...')
 	#nltk.download('punkt')
 
-	graphManager = GraphManager()
-	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(3))
-	graphManager.saveGraph('p3');
-	elapsedTime = timeit.default_timer() - startTime
-	val = "{0:.2f}".format((elapsedTime / 60.0))
-	print('Populated graph in', val, 'minutes.')
+	#ARGV: depth
+	if len(sys.argv) != 1:
+		graphManager = GraphManager()
+		graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(sys.argv[1]))
+		graphManager.saveGraph('p' + str(int(sys.argv[1])));
+		elapsedTime = timeit.default_timer() - startTime
+		val = "{0:.2f}".format((elapsedTime / 60.0))
+		print('Populated graph in', val, 'minutes.')
+		nodes = pickle.load(open("GraphData/p" +str(int(sys.argv[1]))+"_graphNodes.p", "rb"))
+	else:
+		nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
 
-	#quit()
-
-	nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
 
 	print('Loaded')
 	search = SearchUtils(nodes)
-	path = search.dijkstra('Mathematics', 'Bible')
+	path = search.dijkstra('Mathematics', 'Jupiter')
 	sz = len(path)
 	for i in range(0, sz):
 		print(path[sz - i - 1],  '->', end = '')
