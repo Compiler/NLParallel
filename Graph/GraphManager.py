@@ -177,13 +177,13 @@ class GraphManager:
 				continue
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, links[link])
-			node.addConnection(nextTopic, nextTopicNode);
+			node.addConnection(nextTopicNode);
 			print('.', end='')
 
 
 
 	def createConnectionDetails(self, node):
-		data = node.getIntroText()
+		data = re.sub('\(([^\)]+)\)', '',node.getIntroText())
 		tokenized = self.tokenizer.tokenize(data)
 		for con in node.getConnections().keys():
 			name = re.escape(node.getDetailingName(con))

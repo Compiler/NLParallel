@@ -61,8 +61,8 @@ class TopicNode:
 			return self.connectionDetails[topic]
 		else:
 			print(topic, 'is not in', self.topic,'set of connections... options:\n')
-			for i in self.connectionDetails.keys():
-				print(i.getName(), ', ',end ='')
+			#for i in self.connectionDetails.keys():
+				#print(i.getName(), ', ',end ='')
 	def getConnections(self):
 		return self.connections
 

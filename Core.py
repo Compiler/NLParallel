@@ -14,12 +14,12 @@ if __name__ == '__main__':
 	#print('Beginning expansion...')
 	#nltk.download('punkt')
 
-	#graphManager = GraphManager()
-	#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(5))
-	#graphManager.saveGraph('p5');
-	#elapsedTime = timeit.default_timer() - startTime
-	#val = "{0:.2f}".format((elapsedTime / 60.0))
-	#print('Populated graph in', val, 'minutes.')
+	graphManager = GraphManager()
+	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(3))
+	graphManager.saveGraph('p3');
+	elapsedTime = timeit.default_timer() - startTime
+	val = "{0:.2f}".format((elapsedTime / 60.0))
+	print('Populated graph in', val, 'minutes.')
 
 	#quit()
 
@@ -27,11 +27,11 @@ if __name__ == '__main__':
 
 	print('Loaded')
 	search = SearchUtils(nodes)
-	path = search.dijkstra('A', 'C')
+	path = search.dijkstra('Mathematics', 'Bible')
 	sz = len(path)
 	for i in range(0, sz):
 		print(path[sz - i - 1],  '->', end = '')
-	quit()
+	#quit()
 	print()
 	for i in range(0, sz-1):
 		print(nodes[path[sz - i - 1]].getConnectionDetail(Topic(path[sz-i-2])))
