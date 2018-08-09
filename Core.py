@@ -10,13 +10,7 @@ import nltk
 
 if __name__ == '__main__':
 
-	tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
-	data = ''' Who the fuck uses e.g. anymore lmao. Wildin'.
 
-	'''
-	tokenized = tokenizer.tokenize(data)
-	print(tokenized)
-	quit()
 
 	#depth = input('Enter the depth you want the tree to expand to: ')
 	startTime = timeit.default_timer()
@@ -39,6 +33,7 @@ if __name__ == '__main__':
 	print('Loaded')
 	search = SearchUtils(nodes)
 	path = search.dijkstra('Mathematics', 'Jupiter')
+
 	sz = len(path)
 	for i in range(0, sz):
 		print(path[sz - i - 1],  '->', end = '')

@@ -11,13 +11,9 @@ if __name__ == '__main__':
 
 	startTime = timeit.default_timer()
 
-	nodes = pickle.load(open('GraphData/p4_graphNodes.p', "rb"))
 
-	GraphWriter.writeGMLGraph(nodes, 'gmlTest4')
-
-
-
-
+	graphManager = GraphManager()
+	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), 3)
 
 
 

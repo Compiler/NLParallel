@@ -33,13 +33,6 @@ class GraphManager:
 		self.nodes = pickle.load(open("GraphData/" + name + "_graphNodes.p", "rb"))
 		print("Loaded successfully")
 
-	def dive(self):
-		#tmp = self.nodes
-		for item in list(self.nodes.keys()):
-			for node in self.nodes[item].getConnections().values():
-				#print('sending in :', node)
-				self.populateTopicNode(node);
-
 	def p_dive(self):
 		#tmp = self.nodes
 		pool = Pool(cpu_count() *2)
@@ -57,21 +50,6 @@ class GraphManager:
 		pool.close()
 		pool.join()
 
-	def beginSearch(self, currentNode, currentDepth, depth):
-		if currentDepth >= depth:
-			return
-		self.populateTopicNode(currentNode)
-		currentLevelLinks = currentNode.getConnections().values();
-
-		for item in list(currentLevelLinks):
-			self.beginSearch(item, currentDepth+1, depth)
-
-	def w_populateTopicNode(self, key):
-		try:
-			return self.populateTopicNode(key)
-		except Exception as e:
-			print("ERROR IN POPNODE:\n", e)
-			return None
 
 	def p_beginSearch(self, startingNode, depth, save = False):
 
