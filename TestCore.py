@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
 			chunkSize = 50 * i
 			graphManager = GraphManager()
-			#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), k, chunkSize)
+			graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), k, chunkSize)
 
 
 
