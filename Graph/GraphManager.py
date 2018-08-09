@@ -51,7 +51,7 @@ class GraphManager:
 		pool.join()
 
 
-	def p_beginSearch(self, startingNode, depth, save = False):
+	def p_beginSearch(self, startingNode, depth, save = False, poolChunkSize = 0):
 
 		#pool = Pool(cpu_count() * 2)
 		current_depth = 1
@@ -67,14 +67,14 @@ class GraphManager:
 		nodesPopulated = [currentNode]
 		connections = []
 		merger = []
-		pool = Pool(cpu_count())
-		print()
-		print('=' * 70)
+		pool = Pool(cpu_count()+2)
+		#print()
+		#print('=' * 70)
 		for currentDepth in range(1, depth):
 
-			print("=  At depth", currentDepth)
+			#print("=  At depth", currentDepth)
 			connections = []
-			print('=  Successfully populated another round of nodes\n')
+			#print('=  Successfully populated another round of nodes\n')
 			for item in nodesPopulated:
 				if item != None:
 					self.nodes[item.getTopic().getName()] = item
@@ -83,16 +83,20 @@ class GraphManager:
 							topicName = otherItem.getTopic().getName()
 							self.nodes[topicName] = otherItem
 							connections.append(str(currentDepth+1) + '.'+topicName)
-			print("=  Current number of connections:",len(connections))
-			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
-			print("=  Total number of nodes",len(self.nodes.keys()))
-			nodesPopulated = pool.map_async(self.populateTopicNode, connections)
+				if save and currentDepth != depth:
+					val = str(currentDepth)
+					self.saveGraph('p'+val)
+			#print("=  Current number of connections:",len(connections))
+			#print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
+			#print("=  Total number of nodes",len(self.nodes.keys()))
+			if poolChunkSize <= 0:
+				nodesPopulated = pool.map_async(self.populateTopicNode, connections)
+			else:
+				nodesPopulated = pool.map_async(self.populateTopicNode, connections, poolChunkSize)
 			nodesPopulated.wait()
 			nodesPopulated = nodesPopulated.get()
-			print('=  Updated self.nodes\n', '='*70)
-			if save and currentDepth != depth-1:
-				val = str(currentDepth + 1)
-				self.saveGraph('p'+val)
+			#print('=  Updated self.nodes\n', '='*70)
+
 
 		pool.close()
 		pool.join()
@@ -103,7 +107,7 @@ class GraphManager:
 		if save:
 			val = str(currentDepth+1)
 			self.saveGraph('p' + val)
-		print('\nCount = ',len(list(self.nodes.keys())))
+		#print('\nCount = ',len(list(self.nodes.keys())))
 		return
 
 	def populateTopicNode(self, key):
@@ -121,6 +125,7 @@ class GraphManager:
 			return None
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		if sourceCode == None:
+			#print('fuck off')
 			return None
 		sourceElement = SourceElement(sourceCode)
 		sourceElement.validateName(node)
@@ -128,12 +133,12 @@ class GraphManager:
 			return None
 
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
-		print(node.getTopic(), '|', end='')
+		#print(node.getTopic(), '|', end='')
 		self.addInfoToNewNodes(node, links)
 		node.setCategory(sourceElement.getCategories())
 		node.setIsPopulated()
 		self.createConnectionDetails(node)
-		print()
+		#print()
 		if dill.pickles(node):
 			return node
 		else:
@@ -145,7 +150,7 @@ class GraphManager:
 		for link in list(links.keys()):
 			nextTopic = Topic(link)
 			nextTopicNode = TopicNode(nextTopic)
-			#SourceElement.staticValidateName(nextTopicNode)
+			SourceElement.staticValidateName(nextTopicNode)
 			try:
 				SourceElement.staticValidation(nextTopicNode)
 			except Exception as e:
@@ -156,7 +161,7 @@ class GraphManager:
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, links[link])
 			node.addConnection(nextTopicNode);
-			print('.', end='')
+			#print('.', end='')
 
 
 
@@ -187,7 +192,7 @@ class GraphManager:
 		name = topicNode.getTopic().getName()
 		n = any(re.findall('List of|Wikipedia|File:', name, re.IGNORECASE))
 		if n:
-			print('(N)',  end='')
+			#print('(N)',  end='')
 			return True
 		#check categories
 		catCheck = 'portal:|list |lists |wikipedia|file|help|template|category:'
@@ -195,7 +200,7 @@ class GraphManager:
 		for cat in categories:
 			c =  any(re.findall(catCheck, cat, re.IGNORECASE))
 			if c:
-				print('(C)', end='')
+				#print('(C)', end='')
 				return True
 
 		return False

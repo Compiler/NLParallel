@@ -8,15 +8,16 @@ from FileWriters.GraphWriter import GraphWriter
 
 
 if __name__ == '__main__':
+	for k in range(2, 4):
+		for i in range(0, 21):
+			startTime = timeit.default_timer()
 
-	startTime = timeit.default_timer()
-
-
-	graphManager = GraphManager()
-	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), 3)
+			chunkSize = 50 * i
+			graphManager = GraphManager()
+			#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), k, chunkSize)
 
 
 
-	elapsedTime = timeit.default_timer() - startTime
-	val = "{0:.2f}".format((elapsedTime / 60.0))
-	print('Populated graph in', val, 'minutes.')
+			elapsedTime = timeit.default_timer() - startTime
+			val = "{0:.2f}".format((elapsedTime / 60.0))
+			print('Populated',k,'deep graph in', val, 'minutes using chunk size:', chunkSize)
