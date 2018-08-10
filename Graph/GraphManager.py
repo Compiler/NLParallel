@@ -58,8 +58,8 @@ class GraphManager:
 		#pool.map(self.populateTopicNode, [startingNode])
 		self.nodes[startingNode.getTopic().getName()] = startingNode
 		startingNode = self.populateTopicNode('1.'+startingNode.getTopic().getName())
-		if save:
-			self.saveGraph('p1')
+		#if save:
+			#self.saveGraph('p1')
 		if depth == 1:
 			return
 
@@ -83,9 +83,9 @@ class GraphManager:
 							topicName = otherItem.getTopic().getName()
 							self.nodes[topicName] = otherItem
 							connections.append(str(currentDepth+1) + '.'+topicName)
-				if save and currentDepth != depth:
-					val = str(currentDepth)
-					self.saveGraph('p'+val)
+				#if save and currentDepth != depth:
+					#val = str(currentDepth)
+					#self.saveGraph('p'+val)
 			#print("=  Current number of connections:",len(connections))
 			#print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
 			#print("=  Total number of nodes",len(self.nodes.keys()))
@@ -104,9 +104,9 @@ class GraphManager:
 		for item in nodesPopulated:
 			if item != None:
 				self.nodes[item.getTopic().getName()] = item
-		if save:
-			val = str(currentDepth+1)
-			self.saveGraph('p' + val)
+		#if save:
+			#val = str(currentDepth+1)
+			#self.saveGraph('p' + val)
 		#print('\nCount = ',len(list(self.nodes.keys())))
 		return
 
@@ -175,24 +175,13 @@ class GraphManager:
 					node.addConnectionDetail(con, sentence)
 					break
 
-			continue
-			#m = re.search('(?:(\.\s[A-Z]))(?=(.*)' + name+ '([^a-z^A-Z]))([^.]*)(\.\s[A-Z])', node.getIntroText())
-			#if m == None:
-				#m = re.search('(?:(\.\s[A-Z]))(?=(.*)' + name+ '([^a-z^A-Z]))(.*)(\.\s[A-Z])', node.getIntroText())
-			#if m == None:
-				#m = re.search('(?:([\r\n]))(?=(.*)' + name+ '([^a-z^A-Z]))([^.]*)(\.\s[A-Z])', node.getIntroText())
-			print(node.getTopic().getName(), '->', name)
-			node.addConnectionDetail(con, m.group()[1:])
-			print(m.group()[1:])
-			continue
-
 
 
 	def isBadLink(self, topicNode):
 		name = topicNode.getTopic().getName()
 		n = any(re.findall('List of|Wikipedia|File:', name, re.IGNORECASE))
 		if n:
-			#print('(N)',  end='')
+			print('(N)',  end='')
 			return True
 		#check categories
 		catCheck = 'portal:|list |lists |wikipedia|file|help|template|category:'
@@ -200,7 +189,7 @@ class GraphManager:
 		for cat in categories:
 			c =  any(re.findall(catCheck, cat, re.IGNORECASE))
 			if c:
-				#print('(C)', end='')
+				print('(C)', end='')
 				return True
 
 		return False
