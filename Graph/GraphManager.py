@@ -24,13 +24,13 @@ class GraphManager:
 
 	def saveGraph(self, name):
 		print("Saving graph...", end ='')
-		GraphWriter.writeGraph(self.nodes, 'GraphData/'+ name + '_graphData.lgf')
-		pickle.dump(self.nodes, open('GraphData/'+ name +'_graphNodes.p', "wb"))
+		GraphWriter.writeGraph(self.nodes, 'GraphData/LGF/'+ name + '_graphData.lgf')
+		pickle.dump(self.nodes, open('GraphData/P/'+ name +'_graphNodes.p', "wb"))
 		print("Save complete!")
 
 	def readGraph(self, name):
 		print("Reading in graph... ", end='')
-		self.nodes = pickle.load(open("GraphData/" + name + "_graphNodes.p", "rb"))
+		self.nodes = pickle.load(open("GraphData/P/" + name + "_graphNodes.p", "rb"))
 		print("Loaded successfully")
 
 	def p_dive(self):
