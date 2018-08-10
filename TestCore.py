@@ -10,11 +10,12 @@ from FileWriters.GraphWriter import GraphWriter
 
 if __name__ == '__main__':
 
+
 	startTime = timeit.default_timer()
 
 	#chunkSize = 50 * i
 	graphManager = GraphManager()
-	#graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), k, chunkSize)
+	graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), 2, True)
 
 
 

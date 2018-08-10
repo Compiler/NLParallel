@@ -58,8 +58,9 @@ class GraphManager:
 		#pool.map(self.populateTopicNode, [startingNode])
 		self.nodes[startingNode.getTopic().getName()] = startingNode
 		startingNode = self.populateTopicNode('1.'+startingNode.getTopic().getName())
-		#if save:
-			#self.saveGraph('p1')
+		if save:
+			print('saving 1 deep')
+			self.saveGraph('p1')
 		if depth == 1:
 			return
 
@@ -68,13 +69,13 @@ class GraphManager:
 		connections = []
 		merger = []
 		pool = Pool(cpu_count()+2)
-		#print()
-		#print('=' * 70)
+		print()
+		print('=' * 70)
 		for currentDepth in range(1, depth):
 
-			#print("=  At depth", currentDepth)
+			print("=  At depth", currentDepth)
 			connections = []
-			#print('=  Successfully populated another round of nodes\n')
+			print('=  Successfully populated another round of nodes\n')
 			for item in nodesPopulated:
 				if item != None:
 					self.nodes[item.getTopic().getName()] = item
@@ -83,19 +84,23 @@ class GraphManager:
 							topicName = otherItem.getTopic().getName()
 							self.nodes[topicName] = otherItem
 							connections.append(str(currentDepth+1) + '.'+topicName)
-				#if save and currentDepth != depth:
-					#val = str(currentDepth)
-					#self.saveGraph('p'+val)
-			#print("=  Current number of connections:",len(connections))
-			#print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
-			#print("=  Total number of nodes",len(self.nodes.keys()))
+
+			print("=  Current number of connections:",len(connections))
+			print("=  Current number of NodesPopulated in this iteration: ",len(nodesPopulated))
+			print("=  Total number of nodes",len(self.nodes.keys()))
+
+
 			if poolChunkSize <= 0:
 				nodesPopulated = pool.map_async(self.populateTopicNode, connections)
 			else:
 				nodesPopulated = pool.map_async(self.populateTopicNode, connections, poolChunkSize)
 			nodesPopulated.wait()
 			nodesPopulated = nodesPopulated.get()
-			#print('=  Updated self.nodes\n', '='*70)
+			print('=  Updated self.nodes\n', '='*70)
+			if save and currentDepth+1 != depth:
+				print('saving',currentDepth, 'deep')
+				val = str(currentDepth)
+				self.saveGraph('p'+val)
 
 
 		pool.close()
@@ -104,10 +109,12 @@ class GraphManager:
 		for item in nodesPopulated:
 			if item != None:
 				self.nodes[item.getTopic().getName()] = item
-		#if save:
-			#val = str(currentDepth+1)
-			#self.saveGraph('p' + val)
-		#print('\nCount = ',len(list(self.nodes.keys())))
+		if save:
+			print("last save")
+			val = str(currentDepth+1)
+			self.saveGraph('p' + val)
+
+		print('\nCount = ',len(list(self.nodes.keys())))
 		return
 
 	def populateTopicNode(self, key):
@@ -119,13 +126,10 @@ class GraphManager:
 		if node.getDepthFound() == 0:
 			node.setDepthFound(depth)
 		keyxyz = node.getTopic().getName()
-		#print("3.",end='')
 		if(node.isPopulated()):
-			print("Populated!")
 			return None
 		sourceCode = WebTool.getValidatedTopicSourceCode(node.getTopic().getName())
 		if sourceCode == None:
-			#print('fuck off')
 			return None
 		sourceElement = SourceElement(sourceCode)
 		sourceElement.validateName(node)
@@ -133,12 +137,12 @@ class GraphManager:
 			return None
 
 		links = sourceElement.grabIntroAndSeeAlsoLinks(node)
-		#print(node.getTopic(), '|', end='')
+		print(node.getTopic(), '|', end='')
 		self.addInfoToNewNodes(node, links)
 		node.setCategory(sourceElement.getCategories())
 		node.setIsPopulated()
 		self.createConnectionDetails(node)
-		#print()
+		print()
 		if dill.pickles(node):
 			return node
 		else:
@@ -161,7 +165,7 @@ class GraphManager:
 			#node.setDetailingName(nextTopic, links[link])
 			node.setDetailingName(nextTopic, links[link])
 			node.addConnection(nextTopicNode);
-			#print('.', end='')
+			print('.', end='')
 
 
 

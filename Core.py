@@ -20,11 +20,12 @@ if __name__ == '__main__':
 	#ARGV: depth
 	if len(sys.argv) != 1:
 		graphManager = GraphManager()
-		graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(sys.argv[1]))
-		graphManager.saveGraph('p' + str(int(sys.argv[1])));
+		graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(sys.argv[1]), True)
+		#graphManager.saveGraph('p' + str(int(sys.argv[1])));
 		elapsedTime = timeit.default_timer() - startTime
 		val = "{0:.2f}".format((elapsedTime / 60.0))
 		print('Populated graph in', val, 'minutes.')
+		quit()
 		nodes = pickle.load(open("GraphData/p" +str(int(sys.argv[1]))+"_graphNodes.p", "rb"))
 	else:
 		nodes = pickle.load(open("GraphData/p3_graphNodes.p", "rb"))
