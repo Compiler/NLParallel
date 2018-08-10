@@ -12,16 +12,12 @@ if __name__ == '__main__':
 
 
 
-	#depth = input('Enter the depth you want the tree to expand to: ')
 	startTime = timeit.default_timer()
-	#print('Beginning expansion...')
-	#nltk.download('punkt')
+	print('Beginning expansion...')
 
-	#ARGV: depth
 	if len(sys.argv) != 1:
 		graphManager = GraphManager()
 		graphManager.p_beginSearch(TopicNode(Topic('Mathematics')), (int)(sys.argv[1]), True)
-		#graphManager.saveGraph('p' + str(int(sys.argv[1])));
 		elapsedTime = timeit.default_timer() - startTime
 		val = "{0:.2f}".format((elapsedTime / 60.0))
 		print('Populated graph in', val, 'minutes.')
