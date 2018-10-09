@@ -7,7 +7,6 @@ from Search.SearchUtils import SearchUtils
 from FileWriters.GraphWriter import GraphWriter
 
 
-
 if __name__ == '__main__':
 
 
