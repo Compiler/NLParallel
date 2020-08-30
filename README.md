@@ -1,5 +1,6 @@
 # NLParallel
-This project wasn't planned or structured correctly. Just a spur of the night idea and it became a bit bigger than the initial prototype and thus, it's not easy to understand the code. 
+
+Research under Prof. Huang.
 
 This will take two topics and "connect" them by my means of connection. It uses machine learning to attempt and making the output more conhesive and the plan is to continue the intelligence towards how the connections develop. 
 
