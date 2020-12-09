@@ -2,7 +2,7 @@
 
 Research under Prof. Huang.
 
-This will take two topics and "connect" them by my means of connection. It uses machine learning to attempt and making the output more conhesive and the plan is to continue the intelligence towards how the connections develop. 
+This will take two topics and "connect" them by my means of connection. It uses machine learning to attempt to make the output more conhesive and the plan is to continue the intelligence towards how the connections develop. 
 
 To search the connection graph I used a research paper with O(nlogloglogn) runtime for the two nodes. The intention was to use cloud computing, the space complexity is much larger.
 
